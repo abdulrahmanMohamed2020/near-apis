@@ -3,6 +3,7 @@ package helpers;
 import apiuitls.ConfigManager;
 import constants.EndPoints;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import model.transactions.Transactions;
 
@@ -24,6 +25,29 @@ public class TransactionsServiceHelper {
         Transactions userTransactions = response.as(Transactions.class);
         response.prettyPrint();
         return userTransactions;
+    }
+
+    public Transactions getNftTransactions(String nftId, String userToken) {
+        response = RestAssured
+                .given().header("Authorization", "Bearer " + userToken)
+                .log().all()
+                .get(EndPoints.GET_TRANSACTIONS_OF_NFT.replace("{nftId}", nftId)).andReturn();
+
+        Transactions nftTransactions = response.as(Transactions.class);
+        response.prettyPrint();
+        return nftTransactions;
+    }
+
+    public Response updateTransaction(Transactions transaction,String transactionId, String userToken) {
+        response = RestAssured
+                .given().header("Authorization", "Bearer " + userToken)
+                .contentType(ContentType.JSON)
+                .body(transaction.getData().get(0))
+                .log().all()
+                .put(EndPoints.UPDATE_TRANSACTION.replace("{transactionId}", transactionId)).andReturn();
+
+        response.prettyPrint();
+        return response;
     }
 
     public int getUserStatusCode() {
