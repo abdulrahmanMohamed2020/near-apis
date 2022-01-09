@@ -5,7 +5,7 @@ import constants.EndPoints;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import model.User;
+import model.users.User;
 
 public class UserServiceHelper {
     //fetch the data from the endpoints
