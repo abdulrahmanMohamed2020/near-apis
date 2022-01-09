@@ -13,8 +13,8 @@ import static org.testng.Assert.*;
 public class TestGETUser {
 
     private UserServiceHelper userServiceHelper;
-    String userToken;
-    String userId;
+    private String userToken;
+    private String userId;
 
     @BeforeClass
     public void init() {
