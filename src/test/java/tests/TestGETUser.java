@@ -2,12 +2,9 @@ package tests;
 
 import helpers.UserServiceHelper;
 import io.restassured.response.Response;
-import model.users.Data;
 import model.users.User;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.json.JSONObject;
 
 import static org.testng.Assert.*;
 
@@ -25,24 +22,15 @@ public class TestGETUser {
 
     @Test(priority=0)
     public void testCreateUser() {
-        String phone = RandomStringUtils.random(7,false,true);
-        Data body = new Data();
-        body.setFullName("Abdo "+generateRandomStrings());
-        body.setWalletId(generateRandomStrings()+".near");
-        body.setEmail(generateRandomStrings()+"@test.com");
-        body.setPhone("001"+phone);
 
-        user = new User();
-        user.setData(body);
+        user = userServiceHelper.createUserBody();
 
         Response response = userServiceHelper.createUser(user);
         assertFalse(response.asString().contains("already exists"));
         assertFalse(response.asString().contains("is needed"));
 
-        JSONObject jsonObjectRes= new JSONObject(response.asPrettyString());
-        System.out.println(jsonObjectRes);
-        userToken = jsonObjectRes.getString("jwt_access_token");
-        userId = jsonObjectRes.getJSONObject("user_info").getString("user_id");
+        userToken = userServiceHelper.getTokenOfUser();
+        userId = userServiceHelper.getUserIdOfUser();
 
         assertEquals(response.getStatusCode(), 200, "The status code should be 200");
     }
@@ -58,7 +46,7 @@ public class TestGETUser {
 
     @Test(priority=2,dependsOnMethods = {"testCreateUser"})
     public void testUpdateUser() {
-        String updatedFullName = generateRandomStrings();
+        String updatedFullName = userServiceHelper.generateRandomStrings();
         user.getData().setFullName(updatedFullName);
 
         Response response = userServiceHelper.updateUser(user,userId,userToken);
@@ -82,9 +70,5 @@ public class TestGETUser {
 
         assertEquals(userServiceHelper.getUserStatusCode(), 200, "The status code should be 200");
         assertTrue(actualUser.getData().getStatus().equals("deleted"));
-    }
-
-    private String generateRandomStrings() {
-        return RandomStringUtils.random(7,97,122,true,true);
     }
 }

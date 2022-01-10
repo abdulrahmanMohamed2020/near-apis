@@ -5,7 +5,10 @@ import constants.EndPoints;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import model.users.Data;
 import model.users.User;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.json.JSONObject;
 
 public class UserServiceHelper {
     //fetch the data from the endpoints
@@ -62,6 +65,34 @@ public class UserServiceHelper {
 
         return response;
     }
+
+    public String getTokenOfUser() {
+        JSONObject jsonObjectRes= new JSONObject(response.asPrettyString());
+        return jsonObjectRes.getString("jwt_access_token");
+    }
+
+    public String getUserIdOfUser() {
+        JSONObject jsonObjectRes= new JSONObject(response.asPrettyString());
+        return jsonObjectRes.getJSONObject("user_info").getString("user_id");
+    }
+
+    public User createUserBody() {
+        String phone = RandomStringUtils.random(7,false,true);
+        Data body = new Data();
+        body.setFullName("Abdo "+generateRandomStrings());
+        body.setWalletId(generateRandomStrings()+".near");
+        body.setEmail(generateRandomStrings()+"@test.com");
+        body.setPhone("001"+phone);
+
+        User userBody = new User();
+        userBody.setData(body);
+        return userBody;
+    }
+
+    public String generateRandomStrings() {
+        return RandomStringUtils.random(7,97,122,true,true);
+    }
+
     public int getUserStatusCode() {
         return response.getStatusCode();
     }
