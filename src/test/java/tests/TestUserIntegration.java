@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class TestGETUser {
+public class TestUserIntegration {
 
     private User user;
     private UserServiceHelper userServiceHelper;
@@ -41,6 +41,7 @@ public class TestGETUser {
 
         assertEquals(userServiceHelper.getUserStatusCode(), 200, "The status code should be 200");
         assertNotNull(actualUser, "The user data is empty");
+        assertNotEquals(actualUser.getData().getFullName(),"","The Full Name is empty");
         assertEquals(actualUser.getData().getUserId(),userId, "The user data is empty");
     }
 
@@ -50,9 +51,10 @@ public class TestGETUser {
         user.getData().setFullName(updatedFullName);
 
         Response response = userServiceHelper.updateUser(user,userId,userToken);
+        assertEquals(response.getStatusCode(), 200, "The status code should be 200");
 
         response.prettyPrint();
-        assertEquals(response.getStatusCode(), 200, "The status code should be 200");
+        user = userServiceHelper.getUser(userId,userToken);
         assertEquals(user.getData().getFullName(),updatedFullName,"The full name doesn't get updated");
     }
 

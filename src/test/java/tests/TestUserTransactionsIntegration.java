@@ -15,7 +15,7 @@ import java.util.List;
 
 import static org.testng.Assert.*;
 
-public class TestGETUserTransactions {
+public class TestUserTransactionsIntegration {
 
     private TransactionsServiceHelper transactionsServiceHelper;
     private UserServiceHelper userServiceHelper;
@@ -42,7 +42,7 @@ public class TestGETUserTransactions {
     public void testGetUserTransactions() {
         Transactions userTransactions = transactionsServiceHelper.getUserTransactions(userId, userToken);
 
-        assertEquals(transactionsServiceHelper.getUserStatusCode(), 200, "The status code should be 200");
+        assertEquals(transactionsServiceHelper.getTransactionStatusCode(), 200, "The status code should be 200");
         assertEquals(userTransactions.getMessage(),"Transactions retrieved successfully!");
         assertNotNull(userTransactions, "The user transactions are empty");
     }
@@ -51,7 +51,8 @@ public class TestGETUserTransactions {
     public void testGetNftTransactions() {
         Transactions nftTransactions = transactionsServiceHelper.getNftTransactions(nftId, userToken);
 
-        assertEquals(transactionsServiceHelper.getUserStatusCode(), 200, "The status code should be 200");
+        assertEquals(transactionsServiceHelper.getTransactionStatusCode(), 200, "The status code should be 200");
+        assertEquals(nftTransactions.getMessage(),"Transactions for NFT "+nftId+" retrieved successfully!");
         assertNotNull(nftTransactions, "The user transactions are empty");
         assertFalse(nftTransactions.getData().isEmpty(), "The user transactions are empty");
     }
@@ -67,12 +68,27 @@ public class TestGETUserTransactions {
 
         data.add(transactionsData);
 
-
         transactionBody.setData(data);
         Response response = transactionsServiceHelper.updateTransaction(transactionBody,transactionId, userToken);
 
-        assertEquals(transactionsServiceHelper.getUserStatusCode(), 200, "The status code should be 200");
+        assertEquals(transactionsServiceHelper.getTransactionStatusCode(), 200, "The status code should be 200");
 
+    }
+
+    @Test
+    public void testDeleteTransaction() {
+        Response response = transactionsServiceHelper.deleteTransaction("JMHVKGBNbX1FYZ_1XjZCA",userToken);
+
+        assertEquals(transactionsServiceHelper.getTransactionStatusCode(), 200, "The status code should be 200");
+        assertEquals(response.jsonPath().get("message"), "Transaction deleted successfully!");
+    }
+
+    @Test
+    public void verifyTheTransactionStatusAfterDeleting() {
+        Transactions transactions = transactionsServiceHelper.getTransaction("JMHVKGBNbX1FYZ_1XjZCA", userToken);
+
+        assertEquals(transactionsServiceHelper.getTransactionStatusCode(), 200, "The status code should be 200");
+        assertTrue(transactions.getData().get(0).getStatus().equals("cancelled"));
     }
 
     @AfterClass

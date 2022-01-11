@@ -27,6 +27,17 @@ public class TransactionsServiceHelper {
         return userTransactions;
     }
 
+    public Transactions getTransaction(String transactionId, String userToken) {
+        response = RestAssured
+                .given().header("Authorization", "Bearer " + userToken)
+                .log().all()
+                .get(EndPoints.GET_TRANSACTION.replace("{transactionId}", transactionId)).andReturn();
+
+        Transactions transaction = response.as(Transactions.class);
+        response.prettyPrint();
+        return transaction;
+    }
+
     public Transactions getNftTransactions(String nftId, String userToken) {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
@@ -50,7 +61,17 @@ public class TransactionsServiceHelper {
         return response;
     }
 
-    public int getUserStatusCode() {
+    public Response deleteTransaction(String transactionId, String userToken) {
+        response = RestAssured
+                .given().header("Authorization", "Bearer " + userToken)
+                .log().all()
+                .when()
+                .delete(EndPoints.DELETE_TRANSACTION.replace("{transactionId}",transactionId)).andReturn();
+
+        return response;
+    }
+
+    public int getTransactionStatusCode() {
         return response.getStatusCode();
     }
 }

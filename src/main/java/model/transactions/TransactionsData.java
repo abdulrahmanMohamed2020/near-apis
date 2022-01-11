@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "transaction_id",
         "transaction_item_id",
         "type",
+        "status",
         "formattedtime",
         "counterparty"
 })
@@ -45,6 +46,8 @@ public class TransactionsData {
     private String transactionItemId;
     @JsonProperty("type")
     private String type;
+    @JsonProperty("status")
+    private String status;
     @JsonProperty("formattedtime")
     private String formattedtime;
     @JsonProperty("counterparty")
@@ -140,6 +143,16 @@ public class TransactionsData {
     @JsonProperty("type")
     public void setType(String type) {
         this.type = type;
+    }
+
+    @JsonProperty("status")
+    public String getStatus() {
+        return status;
+    }
+
+    @JsonProperty("status")
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @JsonProperty("formattedtime")
