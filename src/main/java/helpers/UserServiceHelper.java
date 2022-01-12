@@ -5,7 +5,7 @@ import constants.EndPoints;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import model.users.Data;
+import model.users.UserData;
 import model.users.User;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.json.JSONObject;
@@ -35,7 +35,7 @@ public class UserServiceHelper {
 
     public Response createUser(User user) {
         response = RestAssured
-                .given().body(user.getData())
+                .given().body(user.getUserData())
                 .contentType(ContentType.JSON)
                 .log().all()
                 .when()
@@ -47,7 +47,7 @@ public class UserServiceHelper {
     public Response updateUser(User user, String userId,String userToken) {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
-                .body(user.getData())
+                .body(user.getUserData())
                 .contentType(ContentType.JSON)
                 .log().all()
                 .when()
@@ -78,14 +78,14 @@ public class UserServiceHelper {
 
     public User createUserBody() {
         String phone = RandomStringUtils.random(7,false,true);
-        Data body = new Data();
+        UserData body = new UserData();
         body.setFullName("Abdo "+generateRandomStrings());
         body.setWalletId(generateRandomStrings()+".near");
         body.setEmail(generateRandomStrings()+"@test.com");
         body.setPhone("001"+phone);
 
         User userBody = new User();
-        userBody.setData(body);
+        userBody.setUserData(body);
         return userBody;
     }
 

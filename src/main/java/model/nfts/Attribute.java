@@ -1,4 +1,4 @@
-package model.users;
+package model.nfts;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,36 +11,36 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "message",
-        "data"
+        "attr_name",
+        "attr_value"
 })
-public class User {
+public class Attribute {
 
-    @JsonProperty("message")
-    private String message;
-    @JsonProperty("data")
-    private UserData data;
+    @JsonProperty("attr_name")
+    private String attrName;
+    @JsonProperty("attr_value")
+    private String attrValue;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("message")
-    public String getMessage() {
-        return message;
+    @JsonProperty("attr_name")
+    public String getAttrName() {
+        return attrName;
     }
 
-    @JsonProperty("message")
-    public void setMessage(String message) {
-        this.message = message;
+    @JsonProperty("attr_name")
+    public void setAttrName(String attrName) {
+        this.attrName = attrName;
     }
 
-    @JsonProperty("data")
-    public UserData getUserData() {
-        return data;
+    @JsonProperty("attr_value")
+    public String getAttrValue() {
+        return attrValue;
     }
 
-    @JsonProperty("data")
-    public void setUserData(UserData data) {
-        this.data = data;
+    @JsonProperty("attr_value")
+    public void setAttrValue(String attrValue) {
+        this.attrValue = attrValue;
     }
 
     @JsonAnyGetter

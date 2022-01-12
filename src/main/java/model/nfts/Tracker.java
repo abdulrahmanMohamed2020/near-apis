@@ -1,4 +1,4 @@
-package model.users;
+package model.nfts;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,36 +11,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "message",
-        "data"
+        "transaction_id"
 })
-public class User {
+public class Tracker {
 
-    @JsonProperty("message")
-    private String message;
-    @JsonProperty("data")
-    private UserData data;
+    @JsonProperty("transaction_id")
+    private String transactionId;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("message")
-    public String getMessage() {
-        return message;
+    @JsonProperty("transaction_id")
+    public String getTransactionId() {
+        return transactionId;
     }
 
-    @JsonProperty("message")
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    @JsonProperty("data")
-    public UserData getUserData() {
-        return data;
-    }
-
-    @JsonProperty("data")
-    public void setUserData(UserData data) {
-        this.data = data;
+    @JsonProperty("transaction_id")
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
     }
 
     @JsonAnyGetter

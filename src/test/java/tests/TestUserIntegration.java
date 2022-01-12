@@ -41,21 +41,21 @@ public class TestUserIntegration {
 
         assertEquals(userServiceHelper.getUserStatusCode(), 200, "The status code should be 200");
         assertNotNull(actualUser, "The user data is empty");
-        assertNotEquals(actualUser.getData().getFullName(),"","The Full Name is empty");
-        assertEquals(actualUser.getData().getUserId(),userId, "The user data is empty");
+        assertNotEquals(actualUser.getUserData().getFullName(),"","The Full Name is empty");
+        assertEquals(actualUser.getUserData().getUserId(),userId, "The user data is empty");
     }
 
     @Test(priority=2,dependsOnMethods = {"testCreateUser"})
     public void testUpdateUser() {
         String updatedFullName = userServiceHelper.generateRandomStrings();
-        user.getData().setFullName(updatedFullName);
+        user.getUserData().setFullName(updatedFullName);
 
         Response response = userServiceHelper.updateUser(user,userId,userToken);
         assertEquals(response.getStatusCode(), 200, "The status code should be 200");
 
         response.prettyPrint();
         user = userServiceHelper.getUser(userId,userToken);
-        assertEquals(user.getData().getFullName(),updatedFullName,"The full name doesn't get updated");
+        assertEquals(user.getUserData().getFullName(),updatedFullName,"The full name doesn't get updated");
     }
 
     @Test(priority=3,dependsOnMethods = {"testCreateUser"})
@@ -71,6 +71,6 @@ public class TestUserIntegration {
         User actualUser = userServiceHelper.getUser(userId, userToken);
 
         assertEquals(userServiceHelper.getUserStatusCode(), 200, "The status code should be 200");
-        assertTrue(actualUser.getData().getStatus().equals("deleted"));
+        assertTrue(actualUser.getUserData().getStatus().equals("deleted"));
     }
 }

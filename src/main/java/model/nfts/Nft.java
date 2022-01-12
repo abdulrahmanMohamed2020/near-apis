@@ -1,25 +1,23 @@
-package model.users;
+package model.nfts;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "message",
         "data"
 })
-public class User {
+public class Nft {
 
     @JsonProperty("message")
     private String message;
+    @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     @JsonProperty("data")
-    private UserData data;
+    private List<NftData> data;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -34,12 +32,12 @@ public class User {
     }
 
     @JsonProperty("data")
-    public UserData getUserData() {
+    public List<NftData> getNftData() {
         return data;
     }
 
     @JsonProperty("data")
-    public void setUserData(UserData data) {
+    public void setNftData(List<NftData> data) {
         this.data = data;
     }
 

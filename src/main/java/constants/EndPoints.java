@@ -3,6 +3,7 @@ package constants;
 public class EndPoints {
     private static final String USER_URI = "/users";
     private static final String TRANSACTIONS_URI = "/transactions";
+    private static final String NFT_URI = "/nfts";
 
     // Endpoints of users
     public static final String GET_USER = USER_URI+"/{userId}";
@@ -17,5 +18,12 @@ public class EndPoints {
     public static final String CREATE_TRANSACTION = TRANSACTIONS_URI;
     public static final String UPDATE_TRANSACTION = TRANSACTIONS_URI+"/{transactionId}";
     public static final String DELETE_TRANSACTION = TRANSACTIONS_URI+"/{transactionId}";
+
+    // Endpoints of nfts
+    public static final String GET_ALL_NFTS = NFT_URI;
+    public static final String CREATE_NFT = NFT_URI;
+    public static final String GET_SINGLE_NFT = NFT_URI+"/{nftId}";
+    public static final String UPDATE_NFT = NFT_URI+"/{nftId}";
+    public static final String DELETE_NFT = NFT_URI+"/{nftId}";
 
 }

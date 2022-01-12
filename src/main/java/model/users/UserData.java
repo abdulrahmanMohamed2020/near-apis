@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "phone",
         "verified"
 })
-public class Data {
+public class UserData {
 
     @JsonProperty("user_id")
     private String userId;
