@@ -14,3 +14,4 @@ root path and type
 ```
 allure serve allure-results
 ```
+(needs to be able to execute allure commands)
