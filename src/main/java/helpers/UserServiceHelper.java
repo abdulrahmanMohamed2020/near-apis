@@ -90,7 +90,7 @@ public class UserServiceHelper {
     }
 
     public String generateRandomStrings() {
-        return RandomStringUtils.random(7,97,122,true,true);
+        return RandomStringUtils.random(10,97,122,true,true);
     }
 
     public int getUserStatusCode() {

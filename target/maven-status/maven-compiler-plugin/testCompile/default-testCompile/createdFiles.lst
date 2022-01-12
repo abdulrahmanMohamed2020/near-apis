@@ -1,0 +1,5 @@
+tests/TestUserIntegration.class
+tests/TestPATCHUser.class
+tests/TestPOSTUser.class
+tests/TestDELETEUser.class
+tests/TestUserTransactionsIntegration.class

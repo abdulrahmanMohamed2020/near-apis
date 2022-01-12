@@ -3,7 +3,6 @@ package model.transactions;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
 
 import com.fasterxml.jackson.annotation.*;
 
@@ -12,7 +11,6 @@ import com.fasterxml.jackson.annotation.*;
         "message",
         "data"
 })
-@Generated("jsonschema2pojo")
 public class Transactions {
 
     @JsonProperty("message")

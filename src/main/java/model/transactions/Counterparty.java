@@ -2,7 +2,7 @@ package model.transactions;
 
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
+//import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "email",
         "phone"
 })
-@Generated("jsonschema2pojo")
 public class Counterparty {
 
     @JsonProperty("wallet_id")
