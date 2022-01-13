@@ -40,7 +40,7 @@ public class UserServiceHelper {
                 .log().all()
                 .when()
                 .post(EndPoints.CREATE_USER).andReturn();
-
+        response.then().assertThat().statusCode(200);
         return response;
     }
 
@@ -63,6 +63,7 @@ public class UserServiceHelper {
                 .when()
                 .delete(EndPoints.DELETE_USER.replace("{userId}",userId)).andReturn();
 
+        response.then().assertThat().statusCode(200);
         return response;
     }
 
