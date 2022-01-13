@@ -1,4 +1,4 @@
-package tests;
+package tests.usersTests;
 
 import helpers.UserServiceHelper;
 import io.restassured.response.Response;

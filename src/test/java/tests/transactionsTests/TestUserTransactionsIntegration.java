@@ -1,4 +1,4 @@
-package tests;
+package tests.transactionsTests;
 
 import helpers.TransactionsServiceHelper;
 import helpers.UserServiceHelper;

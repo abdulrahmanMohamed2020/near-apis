@@ -1,6 +1,6 @@
-tests/TestUserIntegration.class
-tests/TestPATCHUser.class
-tests/TestPOSTUser.class
-tests/TestDELETEUser.class
+tests/usersTests/TestUserIntegration.class
+tests/usersTests/TestDELETEUser.class
+tests/usersTests/TestPOSTUser.class
 tests/nftsTests/TestNfts.class
-tests/TestUserTransactionsIntegration.class
+tests/transactionsTests/TestUserTransactionsIntegration.class
+tests/usersTests/TestPATCHUser.class

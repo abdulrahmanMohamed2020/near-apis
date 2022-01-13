@@ -3,12 +3,12 @@
 <suite name="NearTC" verbose="0">
     <test name="Near app Tests APIs" parallel="classes" thread-count="5" verbose="0">
         <classes>
-            <class name="tests.TestPOSTUser"/>
-            <class name="tests.TestUserIntegration"/>
-            <class name="tests.TestDELETEUser"/>
+            <class name="tests.usersTests.TestPOSTUser"/>
+            <class name="tests.usersTests.TestUserIntegration"/>
+            <class name="tests.usersTests.TestDELETEUser"/>
             <class name="tests.nftsTests.TestNfts"/>
-            <class name="tests.TestUserTransactionsIntegration"/>
-            <class name="tests.TestPATCHUser"/>
+            <class name="tests.transactionsTests.TestUserTransactionsIntegration"/>
+            <class name="tests.usersTests.TestPATCHUser"/>
         </classes>
     </test>
 </suite> <!-- Suite -->
