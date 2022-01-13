@@ -1,13 +1,10 @@
 package model.transactions;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import com.fasterxml.jackson.annotation.*;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -34,8 +31,9 @@ public class TransactionsData {
     private String transactionValue;
     @JsonProperty("updated")
     private Long updated;
+    @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     @JsonProperty("recipient_id")
-    private String recipientId;
+    private List<String> recipientId = null;
     @JsonProperty("created")
     private Long created;
     @JsonProperty("transaction_id")
@@ -94,12 +92,12 @@ public class TransactionsData {
     }
 
     @JsonProperty("recipient_id")
-    public String getRecipientId() {
+    public List<String> getRecipientId() {
         return recipientId;
     }
 
     @JsonProperty("recipient_id")
-    public void setRecipientId(String recipientId) {
+    public void setRecipientId(List<String> recipientId) {
         this.recipientId = recipientId;
     }
 

@@ -6,6 +6,9 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import model.transactions.Transactions;
+import model.transactions.TransactionsData;
+
+import java.util.Collections;
 
 public class TransactionsServiceHelper {
 
@@ -14,6 +17,30 @@ public class TransactionsServiceHelper {
 
     public TransactionsServiceHelper() {
         RestAssured.baseURI = BASE_URL;
+    }
+
+    public Transactions createTransaction(String userId, String userToken) {
+        Transactions transaction = new Transactions();
+        TransactionsData transactionsData = new TransactionsData();
+
+        transactionsData.setSenderId("v5ny4Mo51he_dotJH0pVr");
+        transactionsData.setRecipientId(Collections.singletonList("1NIsaICcQ9kW3o5_Fdols"));
+        transactionsData.setTransactionItemId("7Uiu7ogjZPAjqUJ_DM7qK");
+        transactionsData.setTransactionValue("99 USD");
+        transactionsData.setType("gift");
+
+        transaction.setData(Collections.singletonList(transactionsData));
+        response = RestAssured
+                .given().header("Authorization", "Bearer " + userToken)
+                .contentType(ContentType.JSON)
+                .body(transactionsData)
+                .log().all()
+                .post(EndPoints.CREATE_TRANSACTION).andReturn();
+
+        transaction = response.as(Transactions.class);
+        System.out.println(transaction.getData().size());
+        response.prettyPrint();
+        return transaction;
     }
 
     public Transactions getUserTransactions(String userId, String userToken) {
