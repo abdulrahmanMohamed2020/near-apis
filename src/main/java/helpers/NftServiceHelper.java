@@ -5,6 +5,10 @@ import constants.EndPoints;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import model.nfts.Nft;
+import model.nfts.NftData;
+import java.io.File;
+import java.util.Collections;
+
 
 public class NftServiceHelper {
     private static String BASE_URL = ConfigManager.getInstance().getString("baseUrl").replace("\"","");
@@ -13,6 +17,29 @@ public class NftServiceHelper {
 
     public NftServiceHelper() {
         RestAssured.baseURI = BASE_URL;
+    }
+
+    public Nft createNft() {
+        File file = new File("resources/test-2.jpg");
+        Nft nft = new Nft();
+        NftData nftData = new NftData();
+
+        nftData.setTitle("Hello from automation!");
+        nftData.setDescription("This is my automation framework!");
+        nftData.setOwnerId("CCSM9zA6bQ11bbC-pbbp7");
+
+        nft.setNftData(Collections.singletonList(nftData));
+
+        response = RestAssured
+                    .given()
+                    .header("Authorization", "Bearer " + userToken)
+                    .multiPart("file",file,"multipart/form-data")
+                    .formParam("data",nft.getNftData())
+                    .post(EndPoints.CREATE_NFT).andReturn();
+
+        response.prettyPrint();
+        nft = response.as(Nft.class);
+        return nft;
     }
 
     public Nft getAllNftDetails() {

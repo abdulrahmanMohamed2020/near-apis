@@ -37,9 +37,20 @@ public class TestNfts {
     }
 
     @Test
+    public void testCreateNft() {
+        Nft nft = nftServiceHelper.createNft();
+
+        assertEquals(nft.getMessage(),"NFT creation successful!");
+        assertEquals(nftServiceHelper.getStatusCode(),200);
+        assertTrue(!nft.getNftData().get(0).getTitle().isEmpty(),"The Nft Title is empty");
+        assertTrue(!nft.getNftData().get(0).getDescription().isEmpty(),"The Nft Description is empty");
+        assertTrue(!nft.getNftData().get(0).getFileUrl().isEmpty(),"The Nft File Url is empty");
+        assertTrue(!nft.getNftData().get(0).getOwnerId().isEmpty(),"The Nft Owner ID is empty");
+    }
+
+    @Test
     public void testGetSingleNft() {
         Nft singleNft = nftServiceHelper.getSingleNftDetails();
-        //System.out.println(allNft.getNftData().size());
 
         assertEquals(nftServiceHelper.getStatusCode(),200, "The status code is wrong");
         assertEquals(singleNft.getMessage(),"NFT retrieved successfully!");
@@ -65,7 +76,7 @@ public class TestNfts {
         assertEquals(nftServiceHelper.getStatusCode(), 200, "The status code should be 200");
         assertTrue(nft.getNftData().get(0).getStatus().equals("deleted"));
     }
-
+//
 //    @AfterClass
 //    public void tearDown() {
 //        userServiceHelper.deleteUser(userId,userToken);
