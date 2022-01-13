@@ -1,19 +1,12 @@
 package tests.nftsTests;
 
 import helpers.NftServiceHelper;
-import helpers.TransactionsServiceHelper;
 import helpers.UserServiceHelper;
 import io.restassured.response.Response;
 import model.nfts.Nft;
-import model.transactions.Transactions;
-import model.transactions.TransactionsData;
 import model.users.User;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.testng.Assert.*;
 
@@ -60,10 +53,9 @@ public class TestNfts {
     @Test
     public void testDeleteNft() {
         Response response = nftServiceHelper.deleteNftDetails();
-        System.out.println(response.jsonPath().getString("message"));
 
         assertEquals(response.statusCode(),200, "The status code is wrong");
-        assertEquals(response.jsonPath().get("message"), "Nft deleted successfully!");
+        assertEquals(response.jsonPath().get("message"), "NFT deleted successfully!");
     }
 
     @Test

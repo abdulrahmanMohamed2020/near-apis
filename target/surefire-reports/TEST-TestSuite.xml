@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="10" failures="1" name="TestSuite" time="20.279" errors="0" skipped="0">
+<testsuite tests="14" failures="1" name="TestSuite" time="43.595" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="16.0.2+0"/>
@@ -58,8 +58,8 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="tests.TestUserIntegration" name="testCreateUser" time="9.836"/>
-  <testcase classname="tests.TestUserIntegration" name="testGetUser" time="1.019">
+  <testcase classname="tests.TestUserIntegration" name="testCreateUser" time="11.227"/>
+  <testcase classname="tests.TestUserIntegration" name="testGetUser" time="7.783">
     <failure message="The Full Name is empty did not expect [] but found []" type="java.lang.AssertionError">java.lang.AssertionError: The Full Name is empty did not expect [] but found []
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failEquals(Assert.java:1041)
@@ -68,13 +68,13 @@
 	at tests.TestUserIntegration.testGetUser(TestUserIntegration.java:44)
 </failure>
     <system-out>Request method:	GET
-Request URI:	https://api.nearlogin.io/users/ckEBLCf6JrhtKeEnLq1ag
+Request URI:	https://api.nearlogin.io/users/k6XM5C0zyYmzqMh9S0tap
 Proxy:			&lt;none&gt;
 Request params:	&lt;none&gt;
 Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiOWUwYzQ0ZjctZGU2Yi00NjkzLWIwZjUtYjAwY2E3NDVkZjMwIiwic3ViIjoiZTkxYzYxZTEtYmRmMC00MmU2LTgzZDQtMTJhNDcxOGMyZDc4IiwiZXZlbnRfaWQiOiI4M2YyYmU0Yy04ZTM5LTQ1ZTUtYTFhOS0zNDdmYzVkYWJmZTAiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQxOTg4OTYzLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDIwNzUzNjMsImlhdCI6MTY0MTk4ODk2MywianRpIjoiNjA3ZGM0MTItYTMxNS00MmI3LWI0YWQtMjlmZmQzODNlNzc4IiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6ImhsY3Vib2submVhciJ9.U8b1ABOOAaEWTZbxVDjxwEuFlEd9fbbvgkD1W__pXZxnQdNmazqk7c7Hh6-B7NSAB8w1Wr9QoPzGybtnmjz_3dpu5NfrLS0-J35uZ0ckRzWrkMHNwLesRXMRplEH-q8APVHErliijDPAg8njp7sOapZmmYOHKLjK0myClLtIOpNPkRnWAPL3yFGlNqV9ZtanXzHDWwUEnj-xX9aQge9EZ6tcAXZL1IhfYUm7D0kUGPZm5Z7kAzCJwmodUNahTS24JA1w5owA6IpbHzWMpLhyHAk105xiypm-RwkaGMyLXEotuTuHHcZY31WQSt9Rug8h7bS2TOmetWEGUeLRwhHcGg
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiNjllODE2OWItYTZmZS00YmJmLWFkOGYtNzIwNjNhMmU1ZmY3Iiwic3ViIjoiNWE4MGE4NzktZDY5OC00ZjgzLTg1ZjktNGUzMzhlMzliNGMzIiwiZXZlbnRfaWQiOiIxZjJhN2U5Mi1lNTg0LTQ3N2UtODZjOS04YWY4YmFlZWU4NzQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMDMzNTY1LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDIxMTk5NjUsImlhdCI6MTY0MjAzMzU2NSwianRpIjoiMjY1ZGI5YmQtYmEzZC00NzQxLThjYmEtZjkzNzJmMTg4ZjNhIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6ImNudXJsZHBnc3cubmVhciJ9.bMU0yy3h6fiIMnh4z9qmet8xHozr4iqr6Jc1SJrZmkVELumhqNy-qLOjBWb46cxWNuMIrVxBWaiNpDuIo5fRxU21HI7qUzNQ2_CBabA6uqRKry7F1sA_uscwaoNnRXXaKy95w8r-5TN0PT7FO4XUsG5WxQjAjOd8Nl3XzcVVZlEpSrKa7-6zUxS8FjigLslREarIEJTMGMmfwkaKEiP1q9AqhrQnb6Lep8hYcHmR70nGjEItn9OIS-eI6I9HdtyiR18YrZHbdvUxHgI7K7aK_Gua3zJ3Lb0er1N9zQINWSlI1e-YjR_6Ovl43yTw3layEcT3mz_9XrJgg6cTpESCeQ
 				Accept=*/*
 Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
@@ -82,25 +82,29 @@ Body:			&lt;none&gt;
 {
     &quot;message&quot;: &quot;User retrieved successfully!&quot;,
     &quot;data&quot;: {
-        &quot;user_id&quot;: &quot;ckEBLCf6JrhtKeEnLq1ag&quot;,
+        &quot;user_id&quot;: &quot;k6XM5C0zyYmzqMh9S0tap&quot;,
         &quot;wallet_status&quot;: &quot;pending&quot;,
         &quot;status&quot;: &quot;active&quot;,
-        &quot;created&quot;: 1641988957865,
+        &quot;created&quot;: 1642033564664,
         &quot;full_name&quot;: &quot;&quot;,
-        &quot;wallet_id&quot;: &quot;hlcubok.near&quot;,
-        &quot;email&quot;: &quot;ojlohwe@test.com&quot;,
-        &quot;phone&quot;: &quot;0011613812&quot;,
+        &quot;wallet_id&quot;: &quot;cnurldpgsw.near&quot;,
+        &quot;email&quot;: &quot;njuielfqne@test.com&quot;,
+        &quot;phone&quot;: &quot;0011959414&quot;,
         &quot;verified&quot;: false
     }
 }
 </system-out>
   </testcase>
-  <testcase classname="tests.TestUserIntegration" name="testUpdateUser" time="2.181"/>
-  <testcase classname="tests.TestUserIntegration" name="testDeleteUser" time="0.899"/>
-  <testcase classname="tests.TestUserIntegration" name="verifyTheUserStatusAfterDeleting" time="0.904"/>
-  <testcase classname="tests.TestUserTransactionsIntegration" name="testDeleteTransaction" time="1.909"/>
-  <testcase classname="tests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="0.909"/>
-  <testcase classname="tests.TestUserTransactionsIntegration" name="testGetUserTransactions" time="0.903"/>
-  <testcase classname="tests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="0.89"/>
-  <testcase classname="tests.TestUserTransactionsIntegration" name="verifyTheTransactionStatusAfterDeleting" time="0.829"/>
+  <testcase classname="tests.TestUserIntegration" name="testUpdateUser" time="7.535"/>
+  <testcase classname="tests.TestUserIntegration" name="testDeleteUser" time="1.408"/>
+  <testcase classname="tests.TestUserIntegration" name="verifyTheUserStatusAfterDeleting" time="1.286"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testDeleteNft" time="3.074"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testGetAllNfts" time="4.188"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testGetSingleNft" time="0.852"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="verifyTheNftStatusAfterDeleting" time="0.865"/>
+  <testcase classname="tests.TestUserTransactionsIntegration" name="testDeleteTransaction" time="0.886"/>
+  <testcase classname="tests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="0.981"/>
+  <testcase classname="tests.TestUserTransactionsIntegration" name="testGetUserTransactions" time="1.349"/>
+  <testcase classname="tests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="0.966"/>
+  <testcase classname="tests.TestUserTransactionsIntegration" name="verifyTheTransactionStatusAfterDeleting" time="1.195"/>
 </testsuite>

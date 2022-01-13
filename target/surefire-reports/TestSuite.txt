@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 30.767 sec <<< FAILURE!
-testGetUser(tests.TestUserIntegration)  Time elapsed: 1.019 sec  <<< FAILURE!
+Tests run: 14, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 53.43 sec <<< FAILURE!
+testGetUser(tests.TestUserIntegration)  Time elapsed: 7.783 sec  <<< FAILURE!
 java.lang.AssertionError: The Full Name is empty did not expect [] but found []
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failEquals(Assert.java:1041)
