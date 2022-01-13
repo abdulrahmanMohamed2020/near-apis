@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="NearTC">
-    <test name="Near app Tests APIs" parallel="classes" thread-count="2">
+<suite name="NearTC" verbose="0">
+    <test name="Near app Tests APIs" parallel="classes" thread-count="5" verbose="0">
         <classes>
-
+            <class name="tests.TestPOSTUser"/>
+            <class name="tests.TestUserIntegration"/>
+            <class name="tests.TestDELETEUser"/>
+            <class name="tests.nftsTests.TestNfts"/>
+            <class name="tests.TestUserTransactionsIntegration"/>
+            <class name="tests.TestPATCHUser"/>
         </classes>
     </test>
-
 </suite> <!-- Suite -->
