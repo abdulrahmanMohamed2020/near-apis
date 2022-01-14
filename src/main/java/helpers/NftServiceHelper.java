@@ -6,6 +6,8 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import model.nfts.Nft;
 import model.nfts.NftData;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.util.Collections;
 
@@ -13,6 +15,7 @@ import java.util.Collections;
 public class NftServiceHelper {
     private static String BASE_URL = ConfigManager.getInstance().getString("baseUrl").replace("\"","");
     private Response response;
+    private NftData nftData = new NftData();
 
     public NftServiceHelper() {
         RestAssured.baseURI = BASE_URL;
@@ -20,24 +23,18 @@ public class NftServiceHelper {
 
     public Nft createNftOnUser(String userId,String userToken) {
         File file = new File("resources/test-2.jpg");
-        Nft nft = new Nft();
-        NftData nftData = new NftData();
-
-        nftData.setTitle("Hello from automation!");
-        nftData.setDescription("This is my automation framework!");
-        nftData.setOwnerId(userId);
-
-        nft.setNftData(Collections.singletonList(nftData));
+        createNftDataForUser(userId);
 
         response = RestAssured
                     .given()
                     .header("Authorization", "Bearer " + userToken)
                     .multiPart("file",file,"multipart/form-data")
-                    .formParam("data",nft.getNftData())
+                    .formParam("data",nftData)
                     .post(EndPoints.CREATE_NFT).andReturn();
 
         response.prettyPrint();
-        nft = response.as(Nft.class);
+        Nft nft = response.as(Nft.class);
+        System.out.println(nftData.getTitle());
         return nft;
     }
 
@@ -91,6 +88,12 @@ public class NftServiceHelper {
 
         response.prettyPrint();
         return response;
+    }
+
+    public void createNftDataForUser(String userId) {
+        nftData.setTitle("Hello from automation!");
+        nftData.setDescription("This is my automation framework!");
+        nftData.setOwnerId(userId);
     }
 
     public int getStatusCode() {

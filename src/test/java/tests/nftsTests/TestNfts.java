@@ -4,7 +4,8 @@ import helpers.NftServiceHelper;
 import helpers.UserServiceHelper;
 import io.restassured.response.Response;
 import model.nfts.Nft;
-import model.users.User;
+import model.nfts.NftData;
+import model.users.UserData;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,7 +15,6 @@ import static org.testng.Assert.*;
 public class TestNfts {
     private NftServiceHelper nftServiceHelper;
     private UserServiceHelper userServiceHelper;
-    private User user;
     private String userToken;
     private String userId;
     private String nftId;
@@ -22,8 +22,7 @@ public class TestNfts {
     @BeforeClass
     public void init() {
         userServiceHelper = new UserServiceHelper();
-        user = userServiceHelper.createUserBody();
-        userServiceHelper.createUser(user);
+        userServiceHelper.createUser();
         userToken = userServiceHelper.getTokenOfUser();
         userId = userServiceHelper.getUserIdOfUser();
         nftServiceHelper = new NftServiceHelper();

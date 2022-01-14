@@ -11,12 +11,10 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.json.JSONObject;
 
 public class UserServiceHelper {
-    //fetch the data from the endpoints
-    // GET / POST / PATCH / DELETE
-    // we need to read config properties
 
     private static final String BASE_URL = ConfigManager.getInstance().getString("baseUrl").replace("\"", "");
     private Response response;
+    UserData userData = new UserData();
 
     public UserServiceHelper() {
         RestAssured.baseURI = BASE_URL;
@@ -26,32 +24,31 @@ public class UserServiceHelper {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
                 .log().all()
-                .get(EndPoints.GET_USER.replace("{userId}", userId)).andReturn();
+                .get(EndPoints.GET_USER.replace("{userId}", userId)).then().assertThat().statusCode(200).extract().response().andReturn();
 
         User actualUser = response.as(User.class);
         response.prettyPrint();
         return actualUser;
     }
 
-    public Response createUser(User user) {
+    public Response createUser() {
+        createUserData();
         response = RestAssured
-                .given().body(user.getUserData())
+                .given().body(userData)
                 .contentType(ContentType.JSON)
                 .log().all()
                 .when()
-                .post(EndPoints.CREATE_USER).andReturn();
-        response.then().assertThat().statusCode(200);
+                .post(EndPoints.CREATE_USER).then().assertThat().statusCode(200).extract().response().andReturn();
         return response;
     }
 
-    public Response updateUser(User user, String userId,String userToken) {
+    public Response updateUser(UserData userData, String userId,String userToken) {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
-                .body(user.getUserData())
+                .body(userData)
                 .contentType(ContentType.JSON)
-                .log().all()
                 .when()
-                .put(EndPoints.UPDATE_USER.replace("{userId}",userId)).andReturn();
+                .put(EndPoints.UPDATE_USER.replace("{userId}",userId)).then().assertThat().statusCode(200).extract().response().andReturn();
 
         return response;
     }
@@ -59,9 +56,8 @@ public class UserServiceHelper {
     public Response deleteUser(String userId, String userToken) {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
-                .log().all()
                 .when()
-                .delete(EndPoints.DELETE_USER.replace("{userId}",userId)).andReturn();
+                .delete(EndPoints.DELETE_USER.replace("{userId}",userId)).then().assertThat().statusCode(200).extract().response().andReturn();
 
         response.then().assertThat().statusCode(200);
         return response;
@@ -77,17 +73,12 @@ public class UserServiceHelper {
         return jsonObjectRes.getJSONObject("user_info").getString("user_id");
     }
 
-    public User createUserBody() {
+    public void createUserData() {
         String phone = RandomStringUtils.random(7,false,true);
-        UserData body = new UserData();
-        body.setFullName("Abdo "+generateRandomStrings());
-        body.setWalletId(generateRandomStrings()+".near");
-        body.setEmail(generateRandomStrings()+"@test.com");
-        body.setPhone("001"+phone);
-
-        User userBody = new User();
-        userBody.setUserData(body);
-        return userBody;
+        userData.setFullName("Abdo "+generateRandomStrings());
+        userData.setWalletId(generateRandomStrings()+".near");
+        userData.setEmail(generateRandomStrings()+"@test.com");
+        userData.setPhone("001"+phone);
     }
 
     public String generateRandomStrings() {
