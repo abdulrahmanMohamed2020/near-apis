@@ -69,7 +69,7 @@ public class TestUserTransactionsIntegration {
     public void testUpdateTransaction() {
         TransactionsData transactionsData = new TransactionsData();
 
-        transactionsData.setTransactionValue("88 USD");
+        transactionsData.setTransactionValue("15 USD");
         transactionsData.setType("regular");
 
         Response response = transactionsServiceHelper.updateTransaction(transactionsData, userToken);

@@ -6,7 +6,6 @@ import model.users.User;
 import model.users.UserData;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.*;
 
 public class TestUserIntegration {
@@ -31,18 +30,14 @@ public class TestUserIntegration {
 
         userToken = userServiceHelper.getTokenOfUser();
         userId = userServiceHelper.getUserIdOfUser();
-
-        assertEquals(response.getStatusCode(), 200, "The status code should be 200");
     }
 
     @Test(priority=1,dependsOnMethods = {"testCreateUser"})
     public void testGetUser() {
-        User actualUser = userServiceHelper.getUser(userId, userToken);
+        User actualUser = userServiceHelper.getUser(userId, userToken).as(User.class);
 
-        assertEquals(userServiceHelper.getUserStatusCode(), 200, "The status code should be 200");
         assertNotNull(actualUser, "The user data is empty");
         assertNotEquals(actualUser.getUserData().getFullName(),"","The Full Name is empty");
-        assertEquals(actualUser.getUserData().getUserId(),userId, "The user data is empty");
     }
 
     @Test(priority=2,dependsOnMethods = {"testCreateUser"})
@@ -50,11 +45,9 @@ public class TestUserIntegration {
         String updatedFullName = userServiceHelper.generateRandomStrings();
         userData.setFullName(updatedFullName);
 
-        response = userServiceHelper.updateUser(userData,userId,userToken);
-        assertEquals(response.getStatusCode(), 200, "The status code should be 200");
+        userServiceHelper.updateUser(userData,userId,userToken);
 
-        response.prettyPrint();
-        User user = userServiceHelper.getUser(userId,userToken);
+        User user = userServiceHelper.getUser(userId,userToken).as(User.class);
         assertEquals(user.getUserData().getFullName(),updatedFullName,"The full name doesn't get updated");
     }
 
@@ -68,9 +61,10 @@ public class TestUserIntegration {
 
     @Test(priority=4,dependsOnMethods = {"testCreateUser"})
     public void verifyTheUserStatusAfterDeleting() {
-        User actualUser = userServiceHelper.getUser(userId, userToken);
+        User actualUser = userServiceHelper.getUser(userId, userToken).as(User.class);
 
-        assertEquals(userServiceHelper.getUserStatusCode(), 200, "The status code should be 200");
-        assertTrue(actualUser.getUserData().getStatus().equals("deleted"));
+        assertEquals(actualUser.getUserData().getStatus(),
+                "deleted",
+                "The user status should be deleted");
     }
 }

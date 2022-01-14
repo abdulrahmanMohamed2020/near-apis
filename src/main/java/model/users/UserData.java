@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "status",
         "created",
         "full_name",
-        "wallet_id",
+        "walletName",
         "email",
         "phone",
         "verified"
@@ -33,8 +33,8 @@ public class UserData {
     private Long created;
     @JsonProperty("full_name")
     private String fullName;
-    @JsonProperty("wallet_id")
-    private String walletId;
+    @JsonProperty("walletName")
+    private String walletName;
     @JsonProperty("email")
     private String email;
     @JsonProperty("phone")
@@ -95,13 +95,13 @@ public class UserData {
     }
 
     @JsonProperty("walletName")
-    public String getWalletId() {
-        return walletId;
+    public String getWalletName() {
+        return walletName;
     }
 
     @JsonProperty("walletName")
-    public void setWalletId(String walletId) {
-        this.walletId = walletId;
+    public void setWalletName(String walletId) {
+        this.walletName = walletId;
     }
 
     @JsonProperty("email")

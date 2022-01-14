@@ -6,7 +6,6 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import model.nfts.Nft;
 import model.nfts.NftData;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.util.Collections;
@@ -34,7 +33,6 @@ public class NftServiceHelper {
 
         response.prettyPrint();
         Nft nft = response.as(Nft.class);
-        System.out.println(nftData.getTitle());
         return nft;
     }
 
