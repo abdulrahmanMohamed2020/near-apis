@@ -21,7 +21,7 @@ public class TestUserIntegration {
         userServiceHelper = new UserServiceHelper();
     }
 
-    @Test(priority=0)
+    @Test()
     public void testCreateUser() {
 
         response = userServiceHelper.createUser();
