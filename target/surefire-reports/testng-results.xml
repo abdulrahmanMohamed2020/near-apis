@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="17" passed="16" failed="1" skipped="0">
+<testng-results ignored="0" total="19" passed="18" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-01-15T03:20:24 EET" name="Command line suite" finished-at="2022-01-15T03:21:08 EET" duration-ms="43740">
+  <suite started-at="2022-01-15T04:08:33 EET" name="Command line suite" finished-at="2022-01-15T04:09:28 EET" duration-ms="55412">
     <groups>
     </groups>
-    <test started-at="2022-01-15T03:20:24 EET" name="Command line test" finished-at="2022-01-15T03:21:08 EET" duration-ms="43740">
+    <test started-at="2022-01-15T04:08:33 EET" name="Command line test" finished-at="2022-01-15T04:09:28 EET" duration-ms="55412">
       <class name="tests.usersTests.TestUserIntegration">
-        <test-method is-config="true" signature="init()[pri:0, instance:tests.usersTests.TestUserIntegration@158d2680]" started-at="2022-01-15T03:20:50 EET" name="init" finished-at="2022-01-15T03:20:50 EET" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:tests.usersTests.TestUserIntegration@2b662a77]" started-at="2022-01-15T04:09:07 EET" name="init" finished-at="2022-01-15T04:09:07 EET" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="testCreateUser()[pri:0, instance:tests.usersTests.TestUserIntegration@158d2680]" started-at="2022-01-15T03:20:50 EET" name="testCreateUser" finished-at="2022-01-15T03:20:51 EET" duration-ms="1619" status="PASS">
+        <test-method signature="testCreateUser()[pri:0, instance:tests.usersTests.TestUserIntegration@2b662a77]" started-at="2022-01-15T04:09:07 EET" name="testCreateUser" finished-at="2022-01-15T04:09:09 EET" duration-ms="1745" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateUser -->
-        <test-method signature="testGetUser()[pri:1, instance:tests.usersTests.TestUserIntegration@158d2680]" started-at="2022-01-15T03:20:51 EET" name="testGetUser" finished-at="2022-01-15T03:20:52 EET" depends-on-methods="tests.usersTests.TestUserIntegration.testCreateUser" duration-ms="875" status="FAIL">
+        <test-method signature="testGetUser()[pri:1, instance:tests.usersTests.TestUserIntegration@2b662a77]" started-at="2022-01-15T04:09:09 EET" name="testGetUser" finished-at="2022-01-15T04:09:11 EET" depends-on-methods="tests.usersTests.TestUserIntegration.testCreateUser" duration-ms="1655" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The Full Name is empty did not expect [] but found []]]>
@@ -71,87 +71,101 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetUser -->
-        <test-method signature="testUpdateUser()[pri:2, instance:tests.usersTests.TestUserIntegration@158d2680]" started-at="2022-01-15T03:20:52 EET" name="testUpdateUser" finished-at="2022-01-15T03:20:54 EET" depends-on-methods="tests.usersTests.TestUserIntegration.testCreateUser" duration-ms="1733" status="PASS">
+        <test-method signature="testUpdateUser()[pri:2, instance:tests.usersTests.TestUserIntegration@2b662a77]" started-at="2022-01-15T04:09:11 EET" name="testUpdateUser" finished-at="2022-01-15T04:09:13 EET" depends-on-methods="tests.usersTests.TestUserIntegration.testCreateUser" duration-ms="2446" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUpdateUser -->
-        <test-method signature="testDeleteUser()[pri:3, instance:tests.usersTests.TestUserIntegration@158d2680]" started-at="2022-01-15T03:20:54 EET" name="testDeleteUser" finished-at="2022-01-15T03:20:55 EET" depends-on-methods="tests.usersTests.TestUserIntegration.testCreateUser" duration-ms="788" status="PASS">
+        <test-method signature="testDeleteUser()[pri:3, instance:tests.usersTests.TestUserIntegration@2b662a77]" started-at="2022-01-15T04:09:13 EET" name="testDeleteUser" finished-at="2022-01-15T04:09:14 EET" depends-on-methods="tests.usersTests.TestUserIntegration.testCreateUser" duration-ms="831" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteUser -->
-        <test-method signature="verifyTheUserStatusAfterDeleting()[pri:4, instance:tests.usersTests.TestUserIntegration@158d2680]" started-at="2022-01-15T03:20:55 EET" name="verifyTheUserStatusAfterDeleting" finished-at="2022-01-15T03:20:56 EET" depends-on-methods="tests.usersTests.TestUserIntegration.testCreateUser" duration-ms="817" status="PASS">
+        <test-method signature="verifyTheUserStatusAfterDeleting()[pri:4, instance:tests.usersTests.TestUserIntegration@2b662a77]" started-at="2022-01-15T04:09:14 EET" name="verifyTheUserStatusAfterDeleting" finished-at="2022-01-15T04:09:15 EET" depends-on-methods="tests.usersTests.TestUserIntegration.testCreateUser" duration-ms="872" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTheUserStatusAfterDeleting -->
       </class> <!-- tests.usersTests.TestUserIntegration -->
       <class name="tests.nftsTests.TestNfts">
-        <test-method is-config="true" signature="init()[pri:0, instance:tests.nftsTests.TestNfts@77847718]" started-at="2022-01-15T03:20:56 EET" name="init" finished-at="2022-01-15T03:20:57 EET" duration-ms="1821" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:tests.nftsTests.TestNfts@7f0eb4b4]" started-at="2022-01-15T04:09:15 EET" name="init" finished-at="2022-01-15T04:09:17 EET" duration-ms="1742" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="testCreateNft()[pri:0, instance:tests.nftsTests.TestNfts@77847718]" started-at="2022-01-15T03:20:57 EET" name="testCreateNft" finished-at="2022-01-15T03:20:59 EET" duration-ms="1137" status="PASS">
+        <test-method signature="testCreateNft()[pri:0, instance:tests.nftsTests.TestNfts@7f0eb4b4]" started-at="2022-01-15T04:09:17 EET" name="testCreateNft" finished-at="2022-01-15T04:09:18 EET" duration-ms="1331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateNft -->
-        <test-method signature="testGetAllNfts()[pri:0, instance:tests.nftsTests.TestNfts@77847718]" started-at="2022-01-15T03:20:59 EET" name="testGetAllNfts" finished-at="2022-01-15T03:21:04 EET" duration-ms="5047" status="PASS">
+        <test-method signature="testGetAllNfts()[pri:0, instance:tests.nftsTests.TestNfts@7f0eb4b4]" started-at="2022-01-15T04:09:18 EET" name="testGetAllNfts" finished-at="2022-01-15T04:09:23 EET" duration-ms="4846" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetAllNfts -->
-        <test-method signature="testGetSingleNft()[pri:1, instance:tests.nftsTests.TestNfts@77847718]" started-at="2022-01-15T03:21:04 EET" name="testGetSingleNft" finished-at="2022-01-15T03:21:05 EET" depends-on-methods="tests.nftsTests.TestNfts.testCreateNft" duration-ms="1014" status="PASS">
+        <test-method signature="testGetSingleNft()[pri:1, instance:tests.nftsTests.TestNfts@7f0eb4b4]" started-at="2022-01-15T04:09:23 EET" name="testGetSingleNft" finished-at="2022-01-15T04:09:24 EET" depends-on-methods="tests.nftsTests.TestNfts.testCreateNft" duration-ms="966" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetSingleNft -->
-        <test-method signature="testUpdateNft()[pri:2, instance:tests.nftsTests.TestNfts@77847718]" started-at="2022-01-15T03:21:05 EET" name="testUpdateNft" finished-at="2022-01-15T03:21:06 EET" depends-on-methods="tests.nftsTests.TestNfts.testCreateNft" duration-ms="924" status="PASS">
+        <test-method signature="testUpdateNft()[pri:2, instance:tests.nftsTests.TestNfts@7f0eb4b4]" started-at="2022-01-15T04:09:24 EET" name="testUpdateNft" finished-at="2022-01-15T04:09:26 EET" depends-on-methods="tests.nftsTests.TestNfts.testCreateNft" duration-ms="1921" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUpdateNft -->
-        <test-method signature="testDeleteNft()[pri:3, instance:tests.nftsTests.TestNfts@77847718]" started-at="2022-01-15T03:21:06 EET" name="testDeleteNft" finished-at="2022-01-15T03:21:06 EET" depends-on-methods="tests.nftsTests.TestNfts.testCreateNft" duration-ms="823" status="PASS">
+        <test-method signature="testDeleteNft()[pri:3, instance:tests.nftsTests.TestNfts@7f0eb4b4]" started-at="2022-01-15T04:09:26 EET" name="testDeleteNft" finished-at="2022-01-15T04:09:27 EET" depends-on-methods="tests.nftsTests.TestNfts.testCreateNft" duration-ms="875" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteNft -->
-        <test-method signature="verifyTheNftStatusAfterDeleting()[pri:4, instance:tests.nftsTests.TestNfts@77847718]" started-at="2022-01-15T03:21:06 EET" name="verifyTheNftStatusAfterDeleting" finished-at="2022-01-15T03:21:07 EET" depends-on-methods="tests.nftsTests.TestNfts.testDeleteNft" duration-ms="852" status="PASS">
+        <test-method signature="verifyTheNftStatusAfterDeleting()[pri:4, instance:tests.nftsTests.TestNfts@7f0eb4b4]" started-at="2022-01-15T04:09:27 EET" name="verifyTheNftStatusAfterDeleting" finished-at="2022-01-15T04:09:28 EET" depends-on-methods="tests.nftsTests.TestNfts.testDeleteNft" duration-ms="812" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTheNftStatusAfterDeleting -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.nftsTests.TestNfts@77847718]" started-at="2022-01-15T03:21:07 EET" name="tearDown" finished-at="2022-01-15T03:21:08 EET" duration-ms="848" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.nftsTests.TestNfts@7f0eb4b4]" started-at="2022-01-15T04:09:28 EET" name="tearDown" finished-at="2022-01-15T04:09:28 EET" duration-ms="863" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.nftsTests.TestNfts -->
       <class name="tests.transactionsTests.TestUserTransactionsIntegration">
-        <test-method is-config="true" signature="init()[pri:0, instance:tests.transactionsTests.TestUserTransactionsIntegration@131774fe]" started-at="2022-01-15T03:20:24 EET" name="init" finished-at="2022-01-15T03:20:38 EET" duration-ms="13713" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:tests.transactionsTests.TestUserTransactionsIntegration@57a3af25]" started-at="2022-01-15T04:08:47 EET" name="init" finished-at="2022-01-15T04:08:54 EET" duration-ms="6458" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="testCreateTransaction()[pri:0, instance:tests.transactionsTests.TestUserTransactionsIntegration@131774fe]" started-at="2022-01-15T03:20:38 EET" name="testCreateTransaction" finished-at="2022-01-15T03:20:40 EET" duration-ms="1362" status="PASS">
+        <test-method signature="testCreateTransaction()[pri:0, instance:tests.transactionsTests.TestUserTransactionsIntegration@57a3af25]" started-at="2022-01-15T04:08:54 EET" name="testCreateTransaction" finished-at="2022-01-15T04:08:55 EET" duration-ms="1612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateTransaction -->
-        <test-method signature="testGetUserTransactions()[pri:1, instance:tests.transactionsTests.TestUserTransactionsIntegration@131774fe]" started-at="2022-01-15T03:20:40 EET" name="testGetUserTransactions" finished-at="2022-01-15T03:20:41 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="979" status="PASS">
+        <test-method signature="testGetUserTransactions()[pri:1, instance:tests.transactionsTests.TestUserTransactionsIntegration@57a3af25]" started-at="2022-01-15T04:08:55 EET" name="testGetUserTransactions" finished-at="2022-01-15T04:08:56 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="1014" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetUserTransactions -->
-        <test-method signature="testGetNftTransactions()[pri:3, instance:tests.transactionsTests.TestUserTransactionsIntegration@131774fe]" started-at="2022-01-15T03:20:41 EET" name="testGetNftTransactions" finished-at="2022-01-15T03:20:42 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="1023" status="PASS">
+        <test-method signature="testGetNftTransactions()[pri:3, instance:tests.transactionsTests.TestUserTransactionsIntegration@57a3af25]" started-at="2022-01-15T04:08:56 EET" name="testGetNftTransactions" finished-at="2022-01-15T04:08:58 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="1656" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetNftTransactions -->
-        <test-method signature="testUpdateTransaction()[pri:4, instance:tests.transactionsTests.TestUserTransactionsIntegration@131774fe]" started-at="2022-01-15T03:20:42 EET" name="testUpdateTransaction" finished-at="2022-01-15T03:20:43 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="1211" status="PASS">
+        <test-method signature="testUpdateTransaction()[pri:4, instance:tests.transactionsTests.TestUserTransactionsIntegration@57a3af25]" started-at="2022-01-15T04:08:58 EET" name="testUpdateTransaction" finished-at="2022-01-15T04:09:00 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="1612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUpdateTransaction -->
-        <test-method signature="testDeleteTransaction()[pri:5, instance:tests.transactionsTests.TestUserTransactionsIntegration@131774fe]" started-at="2022-01-15T03:20:43 EET" name="testDeleteTransaction" finished-at="2022-01-15T03:20:46 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="3335" status="PASS">
+        <test-method signature="testDeleteTransaction()[pri:5, instance:tests.transactionsTests.TestUserTransactionsIntegration@57a3af25]" started-at="2022-01-15T04:09:00 EET" name="testDeleteTransaction" finished-at="2022-01-15T04:09:02 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="1961" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteTransaction -->
-        <test-method signature="verifyTheTransactionStatusAfterDeleting()[pri:6, instance:tests.transactionsTests.TestUserTransactionsIntegration@131774fe]" started-at="2022-01-15T03:20:46 EET" name="verifyTheTransactionStatusAfterDeleting" finished-at="2022-01-15T03:20:47 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="885" status="PASS">
+        <test-method signature="verifyTheTransactionStatusAfterDeleting()[pri:6, instance:tests.transactionsTests.TestUserTransactionsIntegration@57a3af25]" started-at="2022-01-15T04:09:02 EET" name="verifyTheTransactionStatusAfterDeleting" finished-at="2022-01-15T04:09:03 EET" depends-on-methods="tests.transactionsTests.TestUserTransactionsIntegration.testCreateTransaction" duration-ms="1540" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyTheTransactionStatusAfterDeleting -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.transactionsTests.TestUserTransactionsIntegration@131774fe]" started-at="2022-01-15T03:20:47 EET" name="tearDown" finished-at="2022-01-15T03:20:50 EET" duration-ms="2427" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.transactionsTests.TestUserTransactionsIntegration@57a3af25]" started-at="2022-01-15T04:09:03 EET" name="tearDown" finished-at="2022-01-15T04:09:07 EET" duration-ms="4374" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.transactionsTests.TestUserTransactionsIntegration -->
+      <class name="tests.TestLogin">
+        <test-method is-config="true" signature="init()[pri:0, instance:tests.TestLogin@7f3b84b8]" started-at="2022-01-15T04:08:33 EET" name="init" finished-at="2022-01-15T04:08:35 EET" duration-ms="1717" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="createLoginOtp()[pri:0, instance:tests.TestLogin@7f3b84b8]" started-at="2022-01-15T04:08:35 EET" name="createLoginOtp" finished-at="2022-01-15T04:08:45 EET" duration-ms="9663" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLoginOtp -->
+        <test-method signature="verifyLoginOtp()[pri:0, instance:tests.TestLogin@7f3b84b8]" started-at="2022-01-15T04:08:45 EET" name="verifyLoginOtp" finished-at="2022-01-15T04:08:47 EET" duration-ms="2454" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginOtp -->
+      </class> <!-- tests.TestLogin -->
     </test> <!-- Command line test -->
   </suite> <!-- Command line suite -->
 </testng-results>

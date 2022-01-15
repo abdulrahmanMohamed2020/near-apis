@@ -1,5 +1,6 @@
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/usersTests/TestPOSTUser.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/transactionsTests/TestUserTransactionsIntegration.java
+/Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/TestLogin.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/usersTests/TestPATCHUser.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/usersTests/TestDELETEUser.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/usersTests/TestUserIntegration.java

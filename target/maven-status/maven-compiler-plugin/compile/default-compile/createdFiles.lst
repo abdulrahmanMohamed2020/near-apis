@@ -8,6 +8,7 @@ model/users/User.class
 model/transactions/Transactions.class
 apiuitls/ConfigManager.class
 helpers/UserServiceHelper.class
+helpers/LoginServiceHelper.class
 constants/EndPoints.class
 model/nfts/Attribute.class
 model/users/UserData.class
