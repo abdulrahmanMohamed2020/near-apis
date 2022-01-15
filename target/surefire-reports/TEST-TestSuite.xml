@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="21" failures="1" name="TestSuite" time="39.497" errors="0" skipped="0">
+<testsuite tests="26" failures="2" name="TestSuite" time="46.227" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="16.0.2+0"/>
@@ -58,18 +58,23 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="tests.TestLogin" name="createLoginOtp" time="6.527"/>
-  <testcase classname="tests.TestLogin" name="verifyLoginOtp" time="2.763"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testCreateTransaction" time="1.533"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetUserTransactions" time="0.946"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="1.779"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="1.519"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testDeleteTransaction" time="1.498"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="verifyTheTransactionStatusAfterDeleting" time="1.522"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="createContact" time="1.865"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="getContact" time="0.852"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testCreateUser" time="1.808"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUser" time="1.653">
+  <testcase classname="tests.TestLogin" name="testCreateLoginOtp" time="6.033"/>
+  <testcase classname="tests.TestLogin" name="testVerifyLoginOtp" time="2.584"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testCreateTransaction" time="1.518"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetUserTransactions" time="1.07"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="2.066"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="1.555"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testDeleteTransaction" time="1.548"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="verifyTheTransactionStatusAfterDeleting" time="1.456"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testCreateContact" time="1.645"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testGetContactsOfAnUser" time="6.996"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testImportOneOrMoreContacts" time="0.872"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testGetContact" time="0.859"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testUpdateContact" time="1.521"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testDeleteContact" time="0.858"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="verifyTheContactStatusAfterDeleting" time="0.838"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testCreateUser" time="1.867"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUser" time="1.485">
     <failure message="The Full Name is empty did not expect [] but found []" type="java.lang.AssertionError">java.lang.AssertionError: The Full Name is empty did not expect [] but found []
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failEquals(Assert.java:1041)
@@ -78,13 +83,13 @@
 	at tests.usersTests.TestUserIntegration.testGetUser(TestUserIntegration.java:40)
 </failure>
     <system-out>Request method:	GET
-Request URI:	https://api.nearlogin.io/users/P3x7mJ-C_rHprhaR6vO7L
+Request URI:	https://api.nearlogin.io/users/OD4qeTdTVJGIrCaYvHGKJ
 Proxy:			&lt;none&gt;
 Request params:	&lt;none&gt;
 Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiNmM4ZWNhZTItZWIyNi00M2Y2LWE2Y2YtMDZiNGIwMjVmMWI3Iiwic3ViIjoiZmUzZjBlYzItMzI0NC00MTk4LWI3YTMtM2M5Zjk4ZTViYTU0IiwiZXZlbnRfaWQiOiIzODgyZGQ3Ni0xMjU3LTQ5MjctODAzMS1lYTE5NTg4YmZjOGUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMjU2NTY4LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDIzNDI5NjgsImlhdCI6MTY0MjI1NjU2OCwianRpIjoiMjc0Y2Q1YTQtN2Y1OC00Njc0LWE3MWQtMjU4ZDdjNGMzZGVhIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6ImZkcmF4aWhrdWEubmVhciJ9.ywZfyEisE8EmzunoI9mok4ouiKdU0LyEd2Koix4KR9DWUetp8kUOE2Ej0nk4oq_WtfC8XMDNayFS92tL2vcVHtBM8sdZUH8gSGwNqu_u63ltRAyL_DNJfVhdJfx1WCZw6rLEcnBTYJPYo4sHFvGSsRiofskDHJnuNU5EgSmxBA-fRsfFymGt4EQAYJDCfixiG6cjMAwMPAk5m60_h8MmnP2N7ad-msXmMf2UvYcKEsJl0Vd9Af8dF61Sdt9JKR9pwSyHa1K32vR9x2u4F_gia8YruHASg9ZdFfnNRoTef3zu36cB2rVCUw32aX6LGvpMjHCidfIMxif_H4qXmRynSg
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiZTVkYmM0NDYtMzNlYy00M2EwLWI1MDAtNjQ5MjFjOTM3ZDQ1Iiwic3ViIjoiMjlmZmI4YzUtYzk4MS00MmQyLWFjY2ItYjExYWMyOThhNzUwIiwiZXZlbnRfaWQiOiI5ODgwZTJkMi05M2Q1LTRjNGQtOGE5YS1lYzYzODhhYzE5ZTkiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMjkwMDc5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDIzNzY0NzksImlhdCI6MTY0MjI5MDA3OSwianRpIjoiNGJhYjBmOWMtYzA0Zi00YWI3LWFjOTMtZWY2MGEwZTM2MWZmIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6ImFidGl3ZHBnYnIubmVhciJ9.ZLlOh0e-JDAe6vtU512D4JowD4uT4LrM2INeRdnWFKj7kwX1Aj7yplcerZbEJEmRc4NPuHHBPTiF9U-VKjM0hQjAeyIGCPGtT370sbi2wSF5ApMjvWQVUwdtbo5_WwfxbXmBa4PNEeSsmj6aT4R-2ZoImg1U1pWYRJUFBOLwJe2HtK2l0CU4TNEkJYjydeBPYfa-JAA_h_GxqEA6fH5hEcgI81C_jJ7VJoWfRs8nqNY3S_ZChEaTLu9Bp1h7HdvfmDOqANzuK9O6xXmXpP8khgWhUFLf-NsKLgnJEvdeAN5xkb1ceG7JsLGMiGm5fEHtqnEeMIkWCNekFqX9d6wgVg
 				Accept=*/*
 Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
@@ -92,26 +97,68 @@ Body:			&lt;none&gt;
 {
     &quot;message&quot;: &quot;User retrieved successfully!&quot;,
     &quot;data&quot;: {
-        &quot;user_id&quot;: &quot;P3x7mJ-C_rHprhaR6vO7L&quot;,
+        &quot;user_id&quot;: &quot;OD4qeTdTVJGIrCaYvHGKJ&quot;,
         &quot;wallet_status&quot;: &quot;pending&quot;,
         &quot;status&quot;: &quot;active&quot;,
-        &quot;created&quot;: 1642256567551,
+        &quot;created&quot;: 1642290079342,
         &quot;full_name&quot;: &quot;&quot;,
-        &quot;wallet_id&quot;: &quot;fdraxihkua.near&quot;,
-        &quot;email&quot;: &quot;onabpikcdu@test.com&quot;,
-        &quot;phone&quot;: &quot;0014846214&quot;,
+        &quot;wallet_id&quot;: &quot;abtiwdpgbr.near&quot;,
+        &quot;email&quot;: &quot;vbsfruexir@test.com&quot;,
+        &quot;phone&quot;: &quot;0015019377&quot;,
         &quot;verified&quot;: false
     }
 }
 </system-out>
   </testcase>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testUpdateUser" time="2.658"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testDeleteUser" time="0.823"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="verifyTheUserStatusAfterDeleting" time="0.824"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testCreateNft" time="1.208"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testGetAllNfts" time="4.546"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testGetSingleNft" time="1.531"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testUpdateNft" time="1.639"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testDeleteNft" time="0.923"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="verifyTheNftStatusAfterDeleting" time="1.08"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testUpdateUser" time="2.361"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testDeleteUser" time="0.819"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="verifyTheUserStatusAfterDeleting" time="0.827"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testCreateNft" time="1.22"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testGetAllNfts" time="2.047">
+    <failure message="1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;500&gt;.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at jdk.internal.reflect.GeneratedMethodAccessor135.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at jdk.internal.reflect.GeneratedMethodAccessor134.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at helpers.NftServiceHelper.getAllNftDetails(NftServiceHelper.java:43)
+	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:43)
+</failure>
+  </testcase>
+  <testcase classname="tests.nftsTests.TestNfts" name="testGetSingleNft" time="0.887"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testUpdateNft" time="1.645"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testDeleteNft" time="0.823"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="verifyTheNftStatusAfterDeleting" time="0.827"/>
 </testsuite>
