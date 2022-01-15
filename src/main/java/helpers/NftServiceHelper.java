@@ -3,6 +3,7 @@ package helpers;
 import apiuitls.ConfigManager;
 import constants.EndPoints;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import model.nfts.NftData;
 
@@ -79,6 +80,20 @@ public class NftServiceHelper {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
                 .delete(EndPoints.DELETE_NFT.replace("{nftId}",nftId))
+                .then().assertThat().statusCode(200)
+                .extract().response().andReturn();
+
+        response.prettyPrint();
+        return response;
+    }
+
+    // Not ready for testing yet
+    public Response claimNft(String userId,String userToken) {
+        response = RestAssured
+                .given().header("Authorization", "Bearer " + userToken)
+                .contentType(ContentType.JSON)
+                .body(userId)
+                .post(EndPoints.CLAIM_NFT.replace("{nftId}","nftId"))
                 .then().assertThat().statusCode(200)
                 .extract().response().andReturn();
 

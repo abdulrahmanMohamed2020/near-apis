@@ -30,5 +30,6 @@ public class EndPoints {
     public static final String GET_SINGLE_NFT = NFT_URI+"/{nftId}";
     public static final String UPDATE_NFT = NFT_URI+"/{nftId}";
     public static final String DELETE_NFT = NFT_URI+"/{nftId}";
+    public static final String CLAIM_NFT = NFT_URI+"/{nftId}/claim";
 
 }
