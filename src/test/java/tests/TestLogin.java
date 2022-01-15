@@ -20,7 +20,7 @@ public class TestLogin {
     }
 
     @Test()
-    public void createLoginOtp() {
+    public void testCreateLoginOtp() {
         Response response = loginServiceHelper.createLoginOtp();
 
         assertEquals(response.jsonPath().get("message"),"Code sent on email!");
@@ -28,7 +28,7 @@ public class TestLogin {
     }
 
     @Test()
-    public void verifyLoginOtp() {
+    public void testVerifyLoginOtp() {
         Response response = loginServiceHelper.verifyLoginOtp();
 
         JSONObject verifyLoginBody = new JSONObject(response.asPrettyString());

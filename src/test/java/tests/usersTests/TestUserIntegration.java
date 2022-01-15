@@ -25,8 +25,8 @@ public class TestUserIntegration {
     public void testCreateUser() {
 
         response = userServiceHelper.createUser();
-        assertFalse(response.asString().contains("already exists"));
-        assertFalse(response.asString().contains("is needed"));
+        assertFalse(response.asString().contains("already exists"),"User already exists");
+        assertFalse(response.asString().contains("is needed"),"one or more attribute is needed");
 
         userToken = userServiceHelper.getTokenOfUser();
         userId = userServiceHelper.getUserIdOfUser();
