@@ -52,6 +52,7 @@ public class ContactsData {
     private String archivedDate;
     @JsonProperty("app_id")
     private String appId;
+    @JsonFormat(with = JsonFormat.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY)
     @JsonProperty("groups")
     private List<String> groups = null;
     @JsonProperty("updated")

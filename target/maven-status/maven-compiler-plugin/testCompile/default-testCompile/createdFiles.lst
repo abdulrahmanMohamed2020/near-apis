@@ -1,6 +1,7 @@
 tests/usersTests/TestUserIntegration.class
 tests/TestLogin.class
 tests/transactionsTests/TestUserTransactionsIntegration.class
+tests/contactsTests/TestContacts.class
 tests/usersTests/TestDELETEUser.class
 tests/usersTests/TestPOSTUser.class
 tests/nftsTests/TestNfts.class
