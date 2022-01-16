@@ -5,6 +5,7 @@ import io.restassured.response.Response;
 import model.users.User;
 import model.users.UserData;
 import org.testng.annotations.*;
+import static io.restassured.module.jsv.JsonSchemaValidator.*;
 
 import static org.testng.Assert.*;
 
@@ -31,6 +32,8 @@ public class TestUserIntegration {
     public void testGetUser() {
         response = userServiceHelper.getUser(userId, userToken);
         actualUser = response.as(User.class);
+
+        response.then().assertThat().body(matchesJsonSchemaInClasspath("schemas/user-schema.json"));
 
         assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(actualUser.getMessage(), "User retrieved successfully!");
