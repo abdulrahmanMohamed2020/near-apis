@@ -4,74 +4,52 @@ import helpers.ContactsServiceHelper;
 import helpers.UserServiceHelper;
 import io.restassured.response.Response;
 import model.contacts.Contacts;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import model.users.User;
+import org.testng.annotations.*;
 
 import static org.testng.Assert.assertEquals;
 
 public class TestContacts {
 
-    private ContactsServiceHelper contactsServiceHelper;
-    private UserServiceHelper userServiceHelper;
+    private ContactsServiceHelper contactsServiceHelper = new ContactsServiceHelper();
+    private UserServiceHelper userServiceHelper = new UserServiceHelper();
+    private User user;
+    private Contacts contacts;
     private String userToken;
     private String ownerId;
     private String contactId;
 
-    @BeforeClass
+    @BeforeMethod
     public void init() {
-        userServiceHelper = new UserServiceHelper();
-        userServiceHelper.createUser();
-        userToken = userServiceHelper.getTokenOfUser();
-        ownerId = userServiceHelper.getUserIdOfUser();
-        contactsServiceHelper = new ContactsServiceHelper();
-    }
+        user = userServiceHelper.createUser().as(User.class);
+        userToken = user.getJwtAccessToken();
+        ownerId = user.getUserData().getUserId();
 
-    @Test()
-    public void testCreateContact() {
-        Contacts contacts = contactsServiceHelper.createContact(ownerId,userToken).as(Contacts.class);
+        contacts = contactsServiceHelper.createContact(ownerId,userToken).as(Contacts.class);
 
         contactId=contacts.getData().get(0).getContactId();
         assertEquals(contacts.getMessage(),"Contact added successfully!");
     }
 
-    @Test(priority = 1, dependsOnMethods = {"testCreateContact"})
+    @Test()
     public void testGetContact() {
-        Contacts contacts = contactsServiceHelper.getContact(contactId,userToken).as(Contacts.class);
+        contacts = contactsServiceHelper.getContact(contactId,userToken).as(Contacts.class);
 
         assertEquals(contacts.getMessage(),"Contact retrieved successfully!");
     }
 
-    @Test(priority = 2, dependsOnMethods = {"testCreateContact"})
+    @Test()
     public void testUpdateContact() {
-        Contacts contacts =
+        contacts =
                 contactsServiceHelper
                         .updateContact(contactId, userToken).as(Contacts.class);
 
         assertEquals(contacts.getMessage(),"Contact updated successfully!");
     }
 
-    @Test(priority = 3, dependsOnMethods = {"testCreateContact"})
-    public void testDeleteContact() {
-        Response response =
-                contactsServiceHelper
-                        .deleteContact(contactId,userToken);
-
-        assertEquals(response.jsonPath().get("message"), "Contact deleted successfully!");
-    }
-
-    @Test(priority = 4, dependsOnMethods = {"testCreateContact"})
-    public void verifyTheContactStatusAfterDeleting() {
-        Contacts contacts =
-                contactsServiceHelper
-                        .getContact(contactId,userToken).as(Contacts.class);
-
-        assertEquals(contacts.getData().get(0).getStatus(),"archived");
-    }
-
-    @Test(dependsOnMethods = {"testCreateContact"})
+    @Test()
     public void testGetContactsOfAnUser() {
-        Contacts contacts =
+        contacts =
                 contactsServiceHelper
                         .getContactsOfAnUser(ownerId, userToken).as(Contacts.class);
 
@@ -79,16 +57,25 @@ public class TestContacts {
         assertEquals(contacts.getMessage(),"Contacts retrieved successfully!");
     }
 
-    @Test(dependsOnMethods = {"testCreateContact"})
+    @Test()
     public void testImportOneOrMoreContacts() {
-        Contacts contacts = contactsServiceHelper.importOneOrMoreContacts(ownerId,userToken).as(Contacts.class);
+        contacts = contactsServiceHelper.importOneOrMoreContacts(ownerId,userToken).as(Contacts.class);
 
         assertEquals(contacts.getMessage(),"Contacts added successfully!");
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
         userServiceHelper.deleteUser(ownerId,userToken);
-        System.out.println("User is Deleted Successfully!!");
+
+        contacts =
+                contactsServiceHelper
+                        .deleteContact(contactId,userToken).as(Contacts.class);
+        assertEquals(contacts.getMessage(), "Contact deleted successfully!");
+
+        contacts =
+                contactsServiceHelper
+                        .getContact(contactId,userToken).as(Contacts.class);
+        assertEquals(contacts.getData().get(0).getStatus(),"archived");
     }
 }

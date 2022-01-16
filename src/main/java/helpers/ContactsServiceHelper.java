@@ -21,7 +21,9 @@ public class ContactsServiceHelper {
 
         ContactsData contactsData = new ContactsData();
         contactsData.setOwnerId(ownerId);
-        contactsData.setFirstName("Automation Test");
+        contactsData.setFirstName("Automation");
+        contactsData.setDob("1997-01-14");
+        contactsData.setLastName("Test");
 
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
@@ -29,8 +31,7 @@ public class ContactsServiceHelper {
                 .body(contactsData)
                 .log().all()
                 .post(EndPoints.CREATE_CONTACT)
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -91,6 +92,8 @@ public class ContactsServiceHelper {
         ContactsData contactsData = new ContactsData();
         contactsData.setOwnerId(ownerId);
         contactsData.setFirstName("Test import contacts");
+        contactsData.setDob("1997-01-14");
+        contactsData.setLastName("Automation");
 
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)

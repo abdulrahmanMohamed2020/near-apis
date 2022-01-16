@@ -1,0 +1,1 @@
+{"uuid":"cebc0bd4-fce2-4c82-9874-5dd1ceac8b2b","name":"tests.nftsTests.TestNfts.setUp","children":["9bf95ea4-3531-4780-8402-a98c71e1e099"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1642358087964,"stop":1642358090938}],"afters":[],"start":1642358087964,"stop":1642358090938}

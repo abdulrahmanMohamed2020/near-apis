@@ -15,6 +15,7 @@ import static org.testng.Assert.*;
 public class TestNfts {
     private NftServiceHelper nftServiceHelper = new NftServiceHelper();
     private UserServiceHelper userServiceHelper = new UserServiceHelper();
+    private User user;
     private NftData nftData = new NftData();
     private String userToken;
     private String userId;
@@ -23,8 +24,9 @@ public class TestNfts {
 
     @BeforeMethod
     public void setUp() {
-        userToken = userServiceHelper.createUser().as(User.class).getJwtAccessToken();
-        userId = userServiceHelper.createUser().as(User.class).getUserData().getUserId();
+        user = userServiceHelper.createUser().as(User.class);
+        userToken = user.getJwtAccessToken();
+        userId = user.getUserData().getUserId();
 
         nft = nftServiceHelper.createNftOnUser(userId,userToken).as(Nft.class);
         nftId = nft.getNftData().get(0).getNftId();
@@ -77,7 +79,7 @@ public class TestNfts {
     public void tearDown() {
         userServiceHelper.deleteUser(userId,userToken);
         Response response = nftServiceHelper.deleteNftDetails(nftId,userToken);
-        Nft nft = nftServiceHelper.getSingleNftDetails(nftId,userToken).as(Nft.class);
+        nft = nftServiceHelper.getSingleNftDetails(nftId,userToken).as(Nft.class);
 
         assertEquals(response.statusCode(),200, "The status code is wrong");
         assertEquals(nft.getNftData().get(0).getStatus(), "deleted");

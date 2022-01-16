@@ -17,19 +17,6 @@
           <include name="tearDownAndDeleteUser"/>
         </methods>
       </class> <!-- tests.usersTests.TestUserIntegration -->
-      <class name="tests.contactsTests.TestContacts">
-        <methods>
-          <include name="testCreateContact"/>
-          <include name="init"/>
-          <include name="testDeleteContact"/>
-          <include name="testImportOneOrMoreContacts"/>
-          <include name="testUpdateContact"/>
-          <include name="testGetContact"/>
-          <include name="verifyTheContactStatusAfterDeleting"/>
-          <include name="tearDown"/>
-          <include name="testGetContactsOfAnUser"/>
-        </methods>
-      </class> <!-- tests.contactsTests.TestContacts -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->
