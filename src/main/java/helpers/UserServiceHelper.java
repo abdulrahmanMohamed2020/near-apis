@@ -2,6 +2,7 @@ package helpers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
@@ -24,6 +25,7 @@ public class UserServiceHelper {
         createUserData();
         response = RestAssured
                 .given().body(userData)
+                .filter(new AllureRestAssured())
                 .contentType(ContentType.JSON)
                 .log().all()
                 .when()
@@ -36,7 +38,8 @@ public class UserServiceHelper {
 
     public Response getUser(String userId, String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .log().all()
                 .get(EndPoints.GET_USER.replace("{userId}", userId))
                 .andReturn();
@@ -47,7 +50,8 @@ public class UserServiceHelper {
 
     public Response updateUser(UserData userData, String userId,String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .body(userData)
                 .contentType(ContentType.JSON)
                 .put(EndPoints.UPDATE_USER.replace("{userId}",userId))
@@ -59,7 +63,8 @@ public class UserServiceHelper {
 
     public Response deleteUser(String userId, String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .when()
                 .delete(EndPoints.DELETE_USER.replace("{userId}",userId))
                 .andReturn();
@@ -70,7 +75,8 @@ public class UserServiceHelper {
 
     public Response getWrongUser(String userId, String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .log().all()
                 .get(EndPoints.GET_USER.replace("{userId}", userId))
                 .andReturn();
@@ -88,7 +94,8 @@ public class UserServiceHelper {
             userData.setPhone(null);
         }
         response = RestAssured
-                .given().body(userData)
+                .given().filter(new AllureRestAssured())
+                .body(userData)
                 .contentType(ContentType.JSON)
                 .log().all()
                 .post(EndPoints.CREATE_USER)

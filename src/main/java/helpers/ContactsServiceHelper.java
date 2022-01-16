@@ -2,6 +2,7 @@ package helpers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -26,7 +27,8 @@ public class ContactsServiceHelper {
         contactsData.setLastName("Test");
 
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .contentType(ContentType.JSON)
                 .body(contactsData)
                 .log().all()
@@ -39,7 +41,8 @@ public class ContactsServiceHelper {
 
     public Response getContact(String contactId, String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .log().all()
                 .get(EndPoints.GET_CONTACT.replace("{contactId}",contactId))
                 .andReturn();
@@ -54,7 +57,8 @@ public class ContactsServiceHelper {
         contactsData.setJobTitle("eng");
 
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .contentType(ContentType.JSON)
                 .body(contactsData)
                 .put(EndPoints.UPDATE_CONTACT.replace("{contactId}", contactId))
@@ -66,7 +70,8 @@ public class ContactsServiceHelper {
 
     public Response deleteContact(String contactId, String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .delete(EndPoints.DELETE_CONTACT.replace("{contactId}",contactId))
                 .andReturn();
 
@@ -75,7 +80,8 @@ public class ContactsServiceHelper {
 
     public Response getContactsOfAnUser(String userId, String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_CONTACTS_OF_AN_USER.replace("{userId}",userId))
                 .andReturn();
 
@@ -92,7 +98,8 @@ public class ContactsServiceHelper {
         contactsData.setLastName("Automation");
 
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .contentType(ContentType.JSON)
                 .body(Collections.singletonList(contactsData))
                 .log().all()

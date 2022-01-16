@@ -2,6 +2,7 @@ package helpers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -23,7 +24,7 @@ public class NftServiceHelper {
         createNftDataForUser(userId);
 
         response = RestAssured
-                .given()
+                .given().filter(new AllureRestAssured())
                 .header("Authorization", "Bearer " + userToken)
                 .multiPart("file",file,"multipart/form-data")
                 .formParam("data",nftData)
@@ -36,7 +37,7 @@ public class NftServiceHelper {
 
     public Response getAllNftDetails(String userToken) {
         response = RestAssured
-                .given()
+                .given().filter(new AllureRestAssured())
                 .header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_ALL_NFTS)
                 .andReturn();
@@ -46,7 +47,7 @@ public class NftServiceHelper {
 
     public Response getSingleNftDetails(String nftId,String userToken) {
         response = RestAssured
-                .given()
+                .given().filter(new AllureRestAssured())
                 .header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_SINGLE_NFT.replace("{nftId}",nftId))
                 .andReturn();
@@ -57,7 +58,7 @@ public class NftServiceHelper {
 
     public Response updateNft(NftData nftData,String nftId,String userToken) {
         response = RestAssured
-                .given()
+                .given().filter(new AllureRestAssured())
                 .header("Authorization", "Bearer " + userToken)
                 .formParam("data",nftData)
                 .put(EndPoints.UPDATE_NFT.replace("{nftId}",nftId))
@@ -69,7 +70,8 @@ public class NftServiceHelper {
 
     public Response deleteNftDetails(String nftId,String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .delete(EndPoints.DELETE_NFT.replace("{nftId}",nftId))
                 .andReturn();
 
@@ -80,7 +82,8 @@ public class NftServiceHelper {
     // Not ready for testing yet
     public Response claimNft(String userId,String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .contentType(ContentType.JSON)
                 .body(userId)
                 .post(EndPoints.CLAIM_NFT.replace("{nftId}","nftId"))

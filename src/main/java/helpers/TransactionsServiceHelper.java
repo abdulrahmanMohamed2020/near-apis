@@ -2,6 +2,7 @@ package helpers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -22,7 +23,8 @@ public class TransactionsServiceHelper {
         transactionsData = createTransactionBody(userId, nftId, recipientId);
 
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .contentType(ContentType.JSON)
                 .body(transactionsData)
                 .log().all()
@@ -34,7 +36,8 @@ public class TransactionsServiceHelper {
 
     public Response getUserTransactions(String userId, String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .log().all()
                 .get(EndPoints.GET_TRANSACTIONS_OF_AN_USER.replace("{userId}", userId))
                 .andReturn();
@@ -45,7 +48,8 @@ public class TransactionsServiceHelper {
 
     public Response getTransaction(String userToken, String transactionId) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_TRANSACTION.replace("{transactionId}", transactionId))
                 .andReturn();
 
@@ -55,7 +59,8 @@ public class TransactionsServiceHelper {
 
     public Response getNftTransactions(String nftId, String userToken) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_TRANSACTIONS_OF_NFT.replace("{nftId}", nftId))
                 .andReturn();
 
@@ -65,7 +70,8 @@ public class TransactionsServiceHelper {
 
     public Response updateTransaction(TransactionsData transactionsData, String userToken, String transactionId) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .contentType(ContentType.JSON)
                 .body(transactionsData)
                 .put(EndPoints.UPDATE_TRANSACTION.replace("{transactionId}", transactionId))
@@ -77,7 +83,8 @@ public class TransactionsServiceHelper {
 
     public Response deleteTransaction(String userToken, String transactionId) {
         response = RestAssured
-                .given().header("Authorization", "Bearer " + userToken)
+                .given().filter(new AllureRestAssured())
+                .header("Authorization", "Bearer " + userToken)
                 .log().all()
                 .delete(EndPoints.DELETE_TRANSACTION.replace("{transactionId}",transactionId))
                 .andReturn();

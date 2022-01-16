@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 18, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 152.134 sec <<< FAILURE!
-testUserAttributes(tests.usersTests.TestUserIntegration)  Time elapsed: 1.125 sec  <<< FAILURE!
+Tests run: 18, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 132.231 sec <<< FAILURE!
+testUserAttributes(tests.usersTests.TestUserIntegration)  Time elapsed: 0.882 sec  <<< FAILURE!
 java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertFalse(Assert.java:67)
-	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:51)
+	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:56)
 
-testGetAllNfts(tests.nftsTests.TestNfts)  Time elapsed: 1.994 sec  <<< FAILURE!
+testGetAllNfts(tests.nftsTests.TestNfts)  Time elapsed: 2.156 sec  <<< FAILURE!
 java.lang.AssertionError: The status code should be 200 expected [200] but found [500]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)

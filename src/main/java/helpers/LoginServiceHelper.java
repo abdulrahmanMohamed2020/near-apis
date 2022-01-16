@@ -2,6 +2,7 @@ package helpers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -17,7 +18,7 @@ public class LoginServiceHelper {
     public Response createLoginOtp() {
 
         response = RestAssured
-                .given()
+                .given().filter(new AllureRestAssured())
                 .contentType(ContentType.JSON)
                 .body("{\"walletName\": \"permanentuser.near\"}")
                 .log().all()
@@ -32,7 +33,7 @@ public class LoginServiceHelper {
     public Response verifyLoginOtp() {
 
         response = RestAssured
-                .given()
+                .given().filter(new AllureRestAssured())
                 .contentType(ContentType.JSON)
                 .body("{\n" +
                         "    \"walletName\": \"permanentuser.near\",\n" +

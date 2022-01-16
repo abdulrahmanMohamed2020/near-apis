@@ -47,6 +47,8 @@ public class TestUserIntegration {
         response = userServiceHelper.getUser(userId, userToken);
         actualUser = response.as(User.class);
 
+        response.then().assertThat().body(matchesJsonSchemaInClasspath("schemas/user-schema.json"));
+
         assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(actualUser.getMessage(), "User retrieved successfully!");
         assertNotNull(actualUser, "The user data is empty");
