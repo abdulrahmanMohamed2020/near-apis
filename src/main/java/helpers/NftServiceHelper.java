@@ -28,8 +28,7 @@ public class NftServiceHelper {
                 .multiPart("file",file,"multipart/form-data")
                 .formParam("data",nftData)
                 .post(EndPoints.CREATE_NFT)
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -40,8 +39,7 @@ public class NftServiceHelper {
                 .given()
                 .header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_ALL_NFTS)
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         return response;
     }
@@ -51,8 +49,7 @@ public class NftServiceHelper {
                 .given()
                 .header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_SINGLE_NFT.replace("{nftId}",nftId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -64,8 +61,7 @@ public class NftServiceHelper {
                 .header("Authorization", "Bearer " + userToken)
                 .formParam("data",nftData)
                 .put(EndPoints.UPDATE_NFT.replace("{nftId}",nftId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -75,8 +71,7 @@ public class NftServiceHelper {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
                 .delete(EndPoints.DELETE_NFT.replace("{nftId}",nftId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -89,8 +84,7 @@ public class NftServiceHelper {
                 .contentType(ContentType.JSON)
                 .body(userId)
                 .post(EndPoints.CLAIM_NFT.replace("{nftId}","nftId"))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -100,9 +94,5 @@ public class NftServiceHelper {
         nftData.setTitle("Hello from automation!");
         nftData.setDescription("This is my automation framework!");
         nftData.setOwnerId(userId);
-    }
-
-    public int getStatusCode() {
-        return response.getStatusCode();
     }
 }

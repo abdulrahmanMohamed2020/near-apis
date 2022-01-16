@@ -216,6 +216,26 @@
           <div class="suite-Command_line_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
+              <span class="class-name">tests.nftsTests.TestNfts</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetAllNfts">
+                  </a> <!-- testGetAllNfts -->
+                  <span class="method-name">testGetAllNfts</span>
+                  <div class="stack-trace">java.lang.AssertionError: The status code should be 200 expected [200] but found [500]
+	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:49)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 42 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-failed -->
+          <div class="suite-Command_line_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
               <span class="class-name">tests.usersTests.TestUserIntegration</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -225,53 +245,9 @@
                   </a> <!-- testUserAttributes -->
                   <span class="method-name">testUserAttributes</span>
                   <div class="stack-trace">java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
-	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:45)
+	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:51)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 40 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Command_line_suite-class-failed -->
-          <div class="suite-Command_line_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">tests.nftsTests.TestNfts</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testGetAllNfts">
-                  </a> <!-- testGetAllNfts -->
-                  <span class="method-name">testGetAllNfts</span>
-                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
-Expected status code &lt;200&gt; but was &lt;500&gt;.
-
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
-	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
-	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
-	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
-	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
-	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
-	at helpers.NftServiceHelper.getAllNftDetails(NftServiceHelper.java:43)
-	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:43)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 50 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -491,80 +467,80 @@ data.addRows(18);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testCreateLoginOtp')
 data.setCell(0, 2, 'tests.TestLogin')
-data.setCell(0, 3, 10640);
+data.setCell(0, 3, 6652);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testVerifyLoginOtp')
 data.setCell(1, 2, 'tests.TestLogin')
-data.setCell(1, 3, 3170);
+data.setCell(1, 3, 3417);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testUpdateNft')
-data.setCell(2, 2, 'tests.nftsTests.TestNfts')
-data.setCell(2, 3, 2798);
+data.setCell(2, 1, 'testUpdateUser')
+data.setCell(2, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(2, 3, 2941);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testUpdateUser')
-data.setCell(3, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(3, 3, 2305);
+data.setCell(3, 1, 'testUpdateNft')
+data.setCell(3, 2, 'tests.nftsTests.TestNfts')
+data.setCell(3, 3, 2491);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testGetAllNfts')
-data.setCell(4, 2, 'tests.nftsTests.TestNfts')
-data.setCell(4, 3, 2174);
+data.setCell(4, 1, 'testUpdateContact')
+data.setCell(4, 2, 'tests.contactsTests.TestContacts')
+data.setCell(4, 3, 2094);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testGetNftTransactions')
-data.setCell(5, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(5, 3, 1830);
+data.setCell(5, 1, 'testGetAllNfts')
+data.setCell(5, 2, 'tests.nftsTests.TestNfts')
+data.setCell(5, 3, 1992);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testGetContact')
-data.setCell(6, 2, 'tests.contactsTests.TestContacts')
-data.setCell(6, 3, 1612);
+data.setCell(6, 1, 'testGetNftTransactions')
+data.setCell(6, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(6, 3, 1605);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testUpdateTransaction')
-data.setCell(7, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(7, 3, 1513);
+data.setCell(7, 1, 'testGetContact')
+data.setCell(7, 2, 'tests.contactsTests.TestContacts')
+data.setCell(7, 3, 1569);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testUpdateContact')
-data.setCell(8, 2, 'tests.contactsTests.TestContacts')
-data.setCell(8, 3, 1507);
+data.setCell(8, 1, 'testUpdateTransaction')
+data.setCell(8, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(8, 3, 1530);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testGetSingleNft')
-data.setCell(9, 2, 'tests.nftsTests.TestNfts')
-data.setCell(9, 3, 975);
+data.setCell(9, 1, 'testGetContactsOfAnUser')
+data.setCell(9, 2, 'tests.contactsTests.TestContacts')
+data.setCell(9, 3, 1254);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testGetWrongUser')
+data.setCell(10, 1, 'testUserAttributes')
 data.setCell(10, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(10, 3, 939);
+data.setCell(10, 3, 1103);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testImportOneOrMoreContacts')
-data.setCell(11, 2, 'tests.contactsTests.TestContacts')
-data.setCell(11, 3, 930);
+data.setCell(11, 1, 'testGetUserTransactions')
+data.setCell(11, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(11, 3, 1042);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testGetUserTransactions')
-data.setCell(12, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(12, 3, 903);
+data.setCell(12, 1, 'testGetUser')
+data.setCell(12, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(12, 3, 1007);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testGetUser')
+data.setCell(13, 1, 'testGetUnauthorizedUser')
 data.setCell(13, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(13, 3, 863);
+data.setCell(13, 3, 1001);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'testGetUserWithProvidingEmptyUserId')
-data.setCell(14, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(14, 3, 825);
+data.setCell(14, 1, 'testImportOneOrMoreContacts')
+data.setCell(14, 2, 'tests.contactsTests.TestContacts')
+data.setCell(14, 3, 936);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'testGetContactsOfAnUser')
-data.setCell(15, 2, 'tests.contactsTests.TestContacts')
-data.setCell(15, 3, 813);
+data.setCell(15, 1, 'testGetUserWithProvidingEmptyUserId')
+data.setCell(15, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(15, 3, 870);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'testGetUnauthorizedUser')
-data.setCell(16, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(16, 3, 810);
+data.setCell(16, 1, 'testGetSingleNft')
+data.setCell(16, 2, 'tests.nftsTests.TestNfts')
+data.setCell(16, 3, 867);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'testUserAttributes')
+data.setCell(17, 1, 'testGetWrongUser')
 data.setCell(17, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(17, 3, 785);
+data.setCell(17, 3, 826);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 35 seconds</span>
+              <span class="suite-total-time">Total running time: 33 seconds</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -597,219 +573,219 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testCreateLoginOtp</span>
-                <span class="method-start">61 ms</span>
+                <span class="method-start">54 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyLoginOtp</span>
-                <span class="method-start">10966 ms</span>
+                <span class="method-start">6903 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.transactionsTests.TestUserTransactionsIntegration</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">14149 ms</span>
+                <span class="method-start">10349 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetNftTransactions</span>
-                <span class="method-start">23895 ms</span>
+                <span class="method-start">19896 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">25730 ms</span>
+                <span class="method-start">21503 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">32819 ms</span>
+                <span class="method-start">28873 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetUserTransactions</span>
-                <span class="method-start">40333 ms</span>
+                <span class="method-start">36260 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">41237 ms</span>
+                <span class="method-start">37304 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">45399 ms</span>
+                <span class="method-start">41866 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testUpdateTransaction</span>
-                <span class="method-start">51741 ms</span>
+                <span class="method-start">49646 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">53257 ms</span>
+                <span class="method-start">51180 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.contactsTests.TestContacts</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">init</span>
-                <span class="method-start">57482 ms</span>
+                <span class="method-name">setUp</span>
+                <span class="method-start">56206 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetContact</span>
-                <span class="method-start">60048 ms</span>
+                <span class="method-start">59530 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">61664 ms</span>
+                <span class="method-start">61100 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">init</span>
-                <span class="method-start">64794 ms</span>
+                <span class="method-name">setUp</span>
+                <span class="method-start">64575 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetContactsOfAnUser</span>
-                <span class="method-start">67474 ms</span>
+                <span class="method-start">68045 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">68291 ms</span>
+                <span class="method-start">69307 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">init</span>
-                <span class="method-start">70722 ms</span>
+                <span class="method-name">setUp</span>
+                <span class="method-start">71906 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testImportOneOrMoreContacts</span>
-                <span class="method-start">73458 ms</span>
+                <span class="method-start">75444 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">74390 ms</span>
+                <span class="method-start">76394 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
-                <span class="method-name">init</span>
-                <span class="method-start">76924 ms</span>
+                <span class="method-name">setUp</span>
+                <span class="method-start">79204 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testUpdateContact</span>
-                <span class="method-start">79695 ms</span>
+                <span class="method-start">82266 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">81204 ms</span>
+                <span class="method-start">84364 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.usersTests.TestUserIntegration</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUpCreateUser</span>
-                <span class="method-start">83717 ms</span>
+                <span class="method-start">87340 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetUnauthorizedUser</span>
-                <span class="method-start">85413 ms</span>
+                <span class="method-start">89710 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownAndDeleteUser</span>
-                <span class="method-start">86224 ms</span>
+                <span class="method-start">90714 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpCreateUser</span>
-                <span class="method-start">88512 ms</span>
+                <span class="method-start">92728 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetUser</span>
-                <span class="method-start">90201 ms</span>
+                <span class="method-start">94913 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownAndDeleteUser</span>
-                <span class="method-start">91066 ms</span>
+                <span class="method-start">96009 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpCreateUser</span>
-                <span class="method-start">92688 ms</span>
+                <span class="method-start">98517 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetUserWithProvidingEmptyUserId</span>
-                <span class="method-start">94430 ms</span>
+                <span class="method-start">100955 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownAndDeleteUser</span>
-                <span class="method-start">95256 ms</span>
+                <span class="method-start">101827 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpCreateUser</span>
-                <span class="method-start">96863 ms</span>
+                <span class="method-start">104138 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetWrongUser</span>
-                <span class="method-start">98634 ms</span>
+                <span class="method-start">106356 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownAndDeleteUser</span>
-                <span class="method-start">99574 ms</span>
+                <span class="method-start">107184 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpCreateUser</span>
-                <span class="method-start">101165 ms</span>
+                <span class="method-start">108829 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testUpdateUser</span>
-                <span class="method-start">102941 ms</span>
+                <span class="method-start">110933 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownAndDeleteUser</span>
-                <span class="method-start">105247 ms</span>
+                <span class="method-start">113876 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpCreateUser</span>
-                <span class="method-start">106823 ms</span>
+                <span class="method-start">115917 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testUserAttributes</span>
-                <span class="method-start">108446 ms</span>
+                <span class="method-start">118257 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownAndDeleteUser</span>
-                <span class="method-start">109249 ms</span>
+                <span class="method-start">119386 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.nftsTests.TestNfts</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">110865 ms</span>
+                <span class="method-start">121354 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testGetAllNfts</span>
-                <span class="method-start">113777 ms</span>
+                <span class="method-start">124344 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">115960 ms</span>
+                <span class="method-start">126351 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">119105 ms</span>
+                <span class="method-start">131318 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetSingleNft</span>
-                <span class="method-start">122080 ms</span>
+                <span class="method-start">134884 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">123058 ms</span>
+                <span class="method-start">135753 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">125449 ms</span>
+                <span class="method-start">138974 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testUpdateNft</span>
-                <span class="method-start">128648 ms</span>
+                <span class="method-start">141825 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">131447 ms</span>
+                <span class="method-start">144318 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -19,16 +19,20 @@ public class TestUserIntegration {
 
     @BeforeMethod()
     public void setUpCreateUser() {
-        actualUser = userServiceHelper.createUser().as(User.class);
+        response = userServiceHelper.createUser();
+        actualUser = response.as(User.class);
 
         userToken = actualUser.getJwtAccessToken();
         userId = actualUser.getUserData().getUserId();
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
     }
 
     @Test()
     public void testGetUser() {
-        actualUser = userServiceHelper.getUser(userId, userToken).as(User.class);
+        response = userServiceHelper.getUser(userId, userToken);
+        actualUser = response.as(User.class);
 
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(actualUser.getMessage(), "User retrieved successfully!");
         assertNotNull(actualUser, "The user data is empty");
         assertTrue(actualUser.getUserData().getWalletName().contains(".near"),
@@ -37,8 +41,10 @@ public class TestUserIntegration {
 
     @Test()
     public void testUserAttributes() {
-        actualUser = userServiceHelper.getUser(userId, userToken).as(User.class);
+        response = userServiceHelper.getUser(userId, userToken);
+        actualUser = response.as(User.class);
 
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(actualUser.getMessage(), "User retrieved successfully!");
         assertNotNull(actualUser, "The user data is empty");
         assertFalse(actualUser.getUserData().getUserId().isEmpty(),"The Full Name is empty");
@@ -55,10 +61,13 @@ public class TestUserIntegration {
         String updatedFullName = userServiceHelper.generateRandomStrings();
         userData.setFullName(updatedFullName);
 
-        userServiceHelper.updateUser(userData,userId,userToken);
+        response = userServiceHelper.updateUser(userData,userId,userToken);
 
         User user = userServiceHelper.getUser(userId,userToken).as(User.class);
-        assertEquals(user.getUserData().getFullName(),updatedFullName,"The full name doesn't get updated");
+
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
+        assertEquals(user.getUserData().getFullName(),updatedFullName,
+                "The full name doesn't get updated");
     }
 
     @Test()

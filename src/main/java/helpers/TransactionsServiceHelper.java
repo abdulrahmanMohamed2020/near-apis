@@ -6,7 +6,6 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import model.transactions.TransactionsData;
-
 import java.util.Collections;
 
 public class TransactionsServiceHelper {
@@ -28,8 +27,7 @@ public class TransactionsServiceHelper {
                 .body(transactionsData)
                 .log().all()
                 .post(EndPoints.CREATE_TRANSACTION)
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
         response.prettyPrint();
         return response;
     }
@@ -39,8 +37,7 @@ public class TransactionsServiceHelper {
                 .given().header("Authorization", "Bearer " + userToken)
                 .log().all()
                 .get(EndPoints.GET_TRANSACTIONS_OF_AN_USER.replace("{userId}", userId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -50,8 +47,7 @@ public class TransactionsServiceHelper {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_TRANSACTION.replace("{transactionId}", transactionId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -61,8 +57,7 @@ public class TransactionsServiceHelper {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_TRANSACTIONS_OF_NFT.replace("{nftId}", nftId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -74,8 +69,7 @@ public class TransactionsServiceHelper {
                 .contentType(ContentType.JSON)
                 .body(transactionsData)
                 .put(EndPoints.UPDATE_TRANSACTION.replace("{transactionId}", transactionId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -86,8 +80,7 @@ public class TransactionsServiceHelper {
                 .given().header("Authorization", "Bearer " + userToken)
                 .log().all()
                 .delete(EndPoints.DELETE_TRANSACTION.replace("{transactionId}",transactionId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         return response;
     }
@@ -100,9 +93,5 @@ public class TransactionsServiceHelper {
         transactionsData.setType("gift");
 
         return transactionsData;
-    }
-
-    public int getTransactionStatusCode() {
-        return response.getStatusCode();
     }
 }

@@ -42,8 +42,7 @@ public class ContactsServiceHelper {
                 .given().header("Authorization", "Bearer " + userToken)
                 .log().all()
                 .get(EndPoints.GET_CONTACT.replace("{contactId}",contactId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -59,8 +58,7 @@ public class ContactsServiceHelper {
                 .contentType(ContentType.JSON)
                 .body(contactsData)
                 .put(EndPoints.UPDATE_CONTACT.replace("{contactId}", contactId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -70,8 +68,7 @@ public class ContactsServiceHelper {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
                 .delete(EndPoints.DELETE_CONTACT.replace("{contactId}",contactId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         return response;
     }
@@ -80,8 +77,7 @@ public class ContactsServiceHelper {
         response = RestAssured
                 .given().header("Authorization", "Bearer " + userToken)
                 .get(EndPoints.GET_CONTACTS_OF_AN_USER.replace("{userId}",userId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -101,8 +97,7 @@ public class ContactsServiceHelper {
                 .body(Collections.singletonList(contactsData))
                 .log().all()
                 .post(EndPoints.IMPORT_CONTACTS)
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;

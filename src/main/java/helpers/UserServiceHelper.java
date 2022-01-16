@@ -8,8 +8,6 @@ import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import model.users.UserData;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.json.JSONObject;
-import static org.testng.Assert.assertEquals;
 
 public class UserServiceHelper {
 
@@ -33,7 +31,6 @@ public class UserServiceHelper {
                 .andReturn();
 
         response.prettyPrint();
-        assertEquals(response.statusCode(),200);
         return response;
     }
 
@@ -45,7 +42,6 @@ public class UserServiceHelper {
                 .andReturn();
 
         response.prettyPrint();
-        assertEquals(response.statusCode(),200);
         return response;
     }
 
@@ -58,7 +54,6 @@ public class UserServiceHelper {
                 .andReturn();
 
         response.prettyPrint();
-        assertEquals(response.statusCode(),200);
         return response;
     }
 
@@ -70,7 +65,6 @@ public class UserServiceHelper {
                 .andReturn();
 
         response.prettyPrint();
-        assertEquals(response.statusCode(),200);
         return response;
     }
 
@@ -102,14 +96,6 @@ public class UserServiceHelper {
 
         response.prettyPrint();
         return response;
-    }
-
-    public String getTokenOfUser() {
-        return new JSONObject(response.asPrettyString()).getString("jwt_access_token");
-    }
-
-    public String getUserIdOfUser() {
-        return new JSONObject(response.asPrettyString()).getJSONObject("user_info").getString("user_id");
     }
 
     public void createUserData() {

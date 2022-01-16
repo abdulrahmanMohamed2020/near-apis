@@ -15,6 +15,7 @@ import static org.testng.Assert.*;
 public class TestUserTransactionsIntegration {
 
     private TransactionsServiceHelper transactionsServiceHelper = new TransactionsServiceHelper();
+    private Response response;
     private UserServiceHelper userServiceHelper = new UserServiceHelper();
     private User sender;
     private User recipient;
@@ -30,53 +31,61 @@ public class TestUserTransactionsIntegration {
 
     @BeforeMethod
     public void setUp() {
-        sender = userServiceHelper.createUser().as(User.class);
+        response = userServiceHelper.createUser();
+        sender = response.as(User.class);
         userToken = sender.getJwtAccessToken();
         senderId = sender.getUserData().getUserId();
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
 
-        recipient = userServiceHelper.createUser().as(User.class);
+        response = userServiceHelper.createUser();
+        recipient = response.as(User.class);
         recipientId = recipient.getUserData().getUserId();
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
 
-        nft = nftServiceHelper.createNftOnUser(senderId, userToken).as(Nft.class);
+        response = nftServiceHelper.createNftOnUser(senderId, userToken);
+        nft = response.as(Nft.class);
         nftId = nft.getNftData().get(0).getNftId();
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
 
-        transaction =
-                transactionsServiceHelper
-                        .createTransaction(senderId, userToken, nftId , recipientId).as(Transactions.class);
+        response = transactionsServiceHelper
+                .createTransaction(senderId, userToken, nftId , recipientId);
+        transaction =response.as(Transactions.class);
 
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(transaction.getMessage(),"Transaction created successfully!");
         assertNotNull(transaction, "The user transactions are empty");
 
         // this because the transaction id doesn't return in the create response
-        transaction =
-                transactionsServiceHelper
-                        .getUserTransactions(senderId, userToken).as(Transactions.class);
+        response = transactionsServiceHelper
+                .getUserTransactions(senderId, userToken);
+        transaction =response.as(Transactions.class);
         transactionId = transaction.getData().get(0).getTransactionId();
 
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(transaction.getMessage(),"Transactions retrieved successfully!");
         assertNotNull(transaction, "The user transactions are empty");
     }
 
     @Test()
     public void testGetUserTransactions() {
-        transaction =
-                transactionsServiceHelper
-                        .getUserTransactions(senderId, userToken).as(Transactions.class);
+        response = transactionsServiceHelper
+                .getUserTransactions(senderId, userToken);
+        transaction =response.as(Transactions.class);
 
         transactionId = transaction.getData().get(0).getTransactionId();
 
-        assertEquals(transactionsServiceHelper.getTransactionStatusCode(), 200, "The status code should be 200");
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(transaction.getMessage(),"Transactions retrieved successfully!");
         assertNotNull(transaction, "The user transactions are empty");
     }
 
     @Test()
     public void testGetNftTransactions() {
-        transaction =
-                transactionsServiceHelper
-                        .getNftTransactions(nftId, userToken).as(Transactions.class);
+        response = transactionsServiceHelper
+                .getNftTransactions(nftId, userToken);
+        transaction = response.as(Transactions.class);
 
-        assertEquals(transactionsServiceHelper.getTransactionStatusCode(), 200, "The status code should be 200");
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(transaction.getMessage(),"Transactions for NFT "+nftId+" retrieved successfully!");
         assertNotNull(transaction, "The user transactions are empty");
     }
@@ -88,10 +97,9 @@ public class TestUserTransactionsIntegration {
         transactionsData.setTransactionValue("15 USD");
         transactionsData.setType("regular");
 
-        Response response = transactionsServiceHelper.updateTransaction(transactionsData, userToken, transactionId);
+        response = transactionsServiceHelper.updateTransaction(transactionsData, userToken, transactionId);
 
         assertEquals(response.statusCode(), 200, "The status code should be 200");
-
     }
 
     @AfterMethod
@@ -101,18 +109,17 @@ public class TestUserTransactionsIntegration {
         nftServiceHelper.deleteNftDetails(nftId,userToken);
         System.out.println("Users and Nft are Deleted Successfully!!");
 
-        transaction =
-                transactionsServiceHelper
-                        .deleteTransaction(userToken, transactionId).as(Transactions.class);
+        response = transactionsServiceHelper
+                .deleteTransaction(userToken, transactionId);
+        transaction = response.as(Transactions.class);
 
-        assertEquals(transactionsServiceHelper.getTransactionStatusCode(), 200, "The status code should be 200");
+        assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(transaction.getMessage(), "Transaction deleted successfully!");
 
         transaction =
                 transactionsServiceHelper
                         .getTransaction(userToken, transactionId).as(Transactions.class);
 
-        assertEquals(transactionsServiceHelper.getTransactionStatusCode(), 200, "The status code should be 200");
         assertEquals(transaction.getData().get(0).getStatus(), "cancelled");
         System.out.println("Transaction Deleted Successfully!!");
 
