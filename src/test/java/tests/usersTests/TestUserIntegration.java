@@ -31,7 +31,8 @@ public class TestUserIntegration {
 
         assertEquals(actualUser.getMessage(), "User retrieved successfully!");
         assertNotNull(actualUser, "The user data is empty");
-        assertTrue(actualUser.getUserData().getWalletName().contains(".near"));
+        assertTrue(actualUser.getUserData().getWalletName().contains(".near"),
+                "The Wallet Name doesn't end with .near");
     }
 
     @Test()

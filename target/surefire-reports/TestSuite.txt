@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 24, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 105.66 sec <<< FAILURE!
-testGetContactsOfAnUser(tests.contactsTests.TestContacts)  Time elapsed: 7.421 sec  <<< FAILURE!
+Tests run: 24, Failures: 3, Errors: 0, Skipped: 6, Time elapsed: 93.438 sec <<< FAILURE!
+testCreateContact(tests.contactsTests.TestContacts)  Time elapsed: 1.606 sec  <<< FAILURE!
 java.lang.AssertionError: 1 expectation failed.
-Expected status code <200> but was <503>.
+Expected status code <200> but was <500>.
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -41,21 +41,17 @@ Expected status code <200> but was <503>.
 	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
-	at helpers.ContactsServiceHelper.getContactsOfAnUser(ContactsServiceHelper.java:82)
-	at tests.contactsTests.TestContacts.testGetContactsOfAnUser(TestContacts.java:76)
+	at helpers.ContactsServiceHelper.createContact(ContactsServiceHelper.java:32)
+	at tests.contactsTests.TestContacts.testCreateContact(TestContacts.java:32)
 
-testGetUser(tests.usersTests.TestUserIntegration)  Time elapsed: 0.811 sec  <<< FAILURE!
-java.lang.NullPointerException: Cannot invoke "String.contains(java.lang.CharSequence)" because the return value of "model.users.UserData.getWalletName()" is null
-	at tests.usersTests.TestUserIntegration.testGetUser(TestUserIntegration.java:34)
-
-testUserAttributes(tests.usersTests.TestUserIntegration)  Time elapsed: 0.821 sec  <<< FAILURE!
+testUserAttributes(tests.usersTests.TestUserIntegration)  Time elapsed: 0.783 sec  <<< FAILURE!
 java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertFalse(Assert.java:67)
-	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:44)
+	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:45)
 
-testGetAllNfts(tests.nftsTests.TestNfts)  Time elapsed: 1.866 sec  <<< FAILURE!
+testGetAllNfts(tests.nftsTests.TestNfts)  Time elapsed: 1.984 sec  <<< FAILURE!
 java.lang.AssertionError: 1 expectation failed.
 Expected status code <200> but was <500>.
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -69,7 +65,8 @@ Expected status code <200> but was <500>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at jdk.internal.reflect.GeneratedMethodAccessor138.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -81,7 +78,8 @@ Expected status code <200> but was <500>.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor137.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
