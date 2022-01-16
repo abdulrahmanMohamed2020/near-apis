@@ -4,31 +4,29 @@ import helpers.NftServiceHelper;
 import helpers.UserServiceHelper;
 import io.restassured.response.Response;
 import model.nfts.Nft;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import model.nfts.NftData;
+import model.users.User;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
 public class TestNfts {
-    private NftServiceHelper nftServiceHelper;
-    private UserServiceHelper userServiceHelper;
+    private NftServiceHelper nftServiceHelper = new NftServiceHelper();
+    private UserServiceHelper userServiceHelper = new UserServiceHelper();
+    private NftData nftData = new NftData();
     private String userToken;
     private String userId;
     private String nftId;
+    private Nft nft;
 
-    @BeforeClass
-    public void init() {
-        userServiceHelper = new UserServiceHelper();
-        userServiceHelper.createUser();
-        userToken = userServiceHelper.getTokenOfUser();
-        userId = userServiceHelper.getUserIdOfUser();
-        nftServiceHelper = new NftServiceHelper();
-    }
+    @BeforeMethod
+    public void setUp() {
+        userToken = userServiceHelper.createUser().as(User.class).getJwtAccessToken();
+        userId = userServiceHelper.createUser().as(User.class).getUserData().getUserId();
 
-    @Test()
-    public void testCreateNft() {
-        Nft nft = nftServiceHelper.createNftOnUser(userId,userToken).as(Nft.class);
+        nft = nftServiceHelper.createNftOnUser(userId,userToken).as(Nft.class);
         nftId = nft.getNftData().get(0).getNftId();
 
         assertEquals(nft.getMessage(),"NFT creation successful!");
@@ -47,7 +45,7 @@ public class TestNfts {
         assertEquals(nftServiceHelper.getStatusCode(),200, "The status code is wrong");
     }
 
-    @Test(priority = 1,dependsOnMethods = {"testCreateNft"})
+    @Test()
     public void testGetSingleNft() {
         Nft singleNft = nftServiceHelper.getSingleNftDetails(nftId,userToken).as(Nft.class);
 
@@ -59,33 +57,29 @@ public class TestNfts {
         assertFalse(singleNft.getNftData().get(0).getOwnerId().isEmpty(), "The Nft Owner ID is empty");
     }
 
-    @Test(priority = 2,dependsOnMethods = {"testCreateNft"})
+    @Test()
     public void testUpdateNft() {
-        Nft nft = nftServiceHelper.updateNft(nftId,userToken).as(Nft.class);
+        nftData.setTitle("Hello from automation after passing CRUD endpoints!!");
+        nftData.setDescription("This is my automation framework from creation to tear down!");
 
-        assertEquals(nftServiceHelper.getStatusCode(),200);
-        assertEquals(nft.getMessage(),"NFT updated successfully!");
-    }
+        nftServiceHelper.updateNft(nftData,nftId,userToken).as(Nft.class);
 
-    @Test(priority = 3,dependsOnMethods = {"testCreateNft"})
-    public void testDeleteNft() {
-        Response response = nftServiceHelper.deleteNftDetails(nftId,userToken);
-
-        assertEquals(response.statusCode(),200, "The status code is wrong");
-        assertEquals(response.jsonPath().get("message"), "NFT deleted successfully!");
-    }
-
-    @Test(priority = 4,dependsOnMethods = {"testDeleteNft"})
-    public void verifyTheNftStatusAfterDeleting() {
         Nft nft = nftServiceHelper.getSingleNftDetails(nftId,userToken).as(Nft.class);
 
-        assertEquals(nftServiceHelper.getStatusCode(), 200, "The status code should be 200");
-        assertEquals(nft.getNftData().get(0).getStatus(), "deleted");
+        assertEquals(nftServiceHelper.getStatusCode(),200);
+        assertEquals(nft.getNftData().get(0).getTitle(),
+                "Hello from automation after passing CRUD endpoints!!");
+        assertEquals(nft.getNftData().get(0).getDescription(),
+                "This is my automation framework from creation to tear down!");
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
         userServiceHelper.deleteUser(userId,userToken);
-        System.out.println("User is Deleted Successfully!!");
+        Response response = nftServiceHelper.deleteNftDetails(nftId,userToken);
+        Nft nft = nftServiceHelper.getSingleNftDetails(nftId,userToken).as(Nft.class);
+
+        assertEquals(response.statusCode(),200, "The status code is wrong");
+        assertEquals(nft.getNftData().get(0).getStatus(), "deleted");
     }
 }

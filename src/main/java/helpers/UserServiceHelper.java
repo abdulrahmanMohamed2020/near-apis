@@ -4,6 +4,7 @@ import apiuitls.ConfigManager;
 import constants.EndPoints;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import model.users.UserData;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -18,6 +19,7 @@ public class UserServiceHelper {
 
     public UserServiceHelper() {
         RestAssured.baseURI = BASE_URL;
+        RestAssured.registerParser("text/plain", Parser.JSON);
     }
 
     public Response createUser() {
@@ -26,6 +28,7 @@ public class UserServiceHelper {
                 .given().body(userData)
                 .contentType(ContentType.JSON)
                 .log().all()
+                .when()
                 .post(EndPoints.CREATE_USER)
                 .andReturn();
 

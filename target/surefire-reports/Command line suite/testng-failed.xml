@@ -5,18 +5,27 @@
     <classes>
       <class name="tests.nftsTests.TestNfts">
         <methods>
-          <include name="init"/>
+          <include name="setUp"/>
           <include name="tearDown"/>
           <include name="testGetAllNfts"/>
         </methods>
       </class> <!-- tests.nftsTests.TestNfts -->
       <class name="tests.usersTests.TestUserIntegration">
         <methods>
-          <include name="testCreateUser"/>
+          <include name="testGetUser"/>
+          <include name="setUpCreateUser"/>
           <include name="testUserAttributes"/>
-          <include name="init"/>
+          <include name="tearDownAndDeleteUser"/>
         </methods>
       </class> <!-- tests.usersTests.TestUserIntegration -->
+      <class name="tests.contactsTests.TestContacts">
+        <methods>
+          <include name="testCreateContact"/>
+          <include name="init"/>
+          <include name="tearDown"/>
+          <include name="testGetContactsOfAnUser"/>
+        </methods>
+      </class> <!-- tests.contactsTests.TestContacts -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->

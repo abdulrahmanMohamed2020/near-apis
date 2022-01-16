@@ -12,14 +12,23 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "message",
-        "data"
+        "user_info",
+        "jwt_access_token",
+        "jwt_id_token",
+        "jwt_refresh_token"
 })
 public class User {
 
     @JsonProperty("message")
     private String message;
-    @JsonProperty("data")
+    @JsonProperty("user_info")
     private UserData data;
+    @JsonProperty("jwt_access_token")
+    private String jwtAccessToken;
+    @JsonProperty("jwt_id_token")
+    private String jwtIdToken;
+    @JsonProperty("jwt_refresh_token")
+    private String jwtRefreshToken;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -41,6 +50,36 @@ public class User {
     @JsonProperty("data")
     public void setUserData(UserData data) {
         this.data = data;
+    }
+
+    @JsonProperty("jwt_access_token")
+    public String getJwtAccessToken() {
+        return jwtAccessToken;
+    }
+
+    @JsonProperty("jwt_access_token")
+    public void setJwtAccessToken(String jwtAccessToken) {
+        this.jwtAccessToken = jwtAccessToken;
+    }
+
+    @JsonProperty("jwt_id_token")
+    public String getJwtIdToken() {
+        return jwtIdToken;
+    }
+
+    @JsonProperty("jwt_id_token")
+    public void setJwtIdToken(String jwtIdToken) {
+        this.jwtIdToken = jwtIdToken;
+    }
+
+    @JsonProperty("jwt_refresh_token")
+    public String getJwtRefreshToken() {
+        return jwtRefreshToken;
+    }
+
+    @JsonProperty("jwt_refresh_token")
+    public void setJwtRefreshToken(String jwtRefreshToken) {
+        this.jwtRefreshToken = jwtRefreshToken;
     }
 
     @JsonAnyGetter

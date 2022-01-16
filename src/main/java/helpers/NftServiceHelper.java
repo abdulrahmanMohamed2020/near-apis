@@ -58,12 +58,7 @@ public class NftServiceHelper {
         return response;
     }
 
-    public Response updateNft(String nftId,String userToken) {
-        NftData nftData = new NftData();
-
-        nftData.setTitle("Hello from automation after passing CRUD endpoints!!");
-        nftData.setDescription("This is my automation framework from creation to tear down!");
-
+    public Response updateNft(NftData nftData,String nftId,String userToken) {
         response = RestAssured
                 .given()
                 .header("Authorization", "Bearer " + userToken)

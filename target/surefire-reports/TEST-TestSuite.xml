@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="32" failures="2" name="TestSuite" time="45.02" errors="0" skipped="0">
+<testsuite tests="24" failures="4" name="TestSuite" time="45.29" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="16.0.2+0"/>
@@ -58,43 +58,84 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="tests.TestLogin" name="testCreateLoginOtp" time="5.342"/>
-  <testcase classname="tests.TestLogin" name="testVerifyLoginOtp" time="2.129"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testCreateTransaction" time="1.546"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetUserTransactions" time="1.067"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="1.018"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="0.879"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testDeleteTransaction" time="0.919"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="verifyTheTransactionStatusAfterDeleting" time="0.879"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testCreateContact" time="0.907"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testGetContactsOfAnUser" time="7.302"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testImportOneOrMoreContacts" time="0.827"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testGetContact" time="0.862"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testUpdateContact" time="0.888"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testDeleteContact" time="0.845"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="verifyTheContactStatusAfterDeleting" time="0.844"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testCreateUser" time="1.757"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testCreateUserWithoutEmailOrPhone" time="0.783"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testCreateUserWithoutWalletName" time="0.8"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUnauthorizedUser" time="0.764"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUserWithProvidingEmptyUserId" time="0.873"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetWrongUser" time="0.942"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUser" time="1.032"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testUserAttributes" time="0.991">
-    <failure message="The Full Name is empty expected [false] but found [true]" type="java.lang.AssertionError">java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertFalse(Assert.java:67)
-	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:51)
+  <testcase classname="tests.TestLogin" name="testCreateLoginOtp" time="6.97"/>
+  <testcase classname="tests.TestLogin" name="testVerifyLoginOtp" time="2.771"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testCreateTransaction" time="1.572"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetUserTransactions" time="0.97"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="1.681"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="1.508"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testDeleteTransaction" time="1.631"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="verifyTheTransactionStatusAfterDeleting" time="1.534"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testCreateContact" time="1.623"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testGetContactsOfAnUser" time="7.421">
+    <failure message="1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;503&gt;.
+" type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;503&gt;.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at helpers.ContactsServiceHelper.getContactsOfAnUser(ContactsServiceHelper.java:82)
+	at tests.contactsTests.TestContacts.testGetContactsOfAnUser(TestContacts.java:76)
 </failure>
-    <system-out>Request method:	GET
-Request URI:	https://api.nearlogin.io/users/ui4Umawlf2M8Zp3H6SZOP
+  </testcase>
+  <testcase classname="tests.contactsTests.TestContacts" name="testImportOneOrMoreContacts" time="0.922"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testGetContact" time="1.669"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testUpdateContact" time="1.447"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testDeleteContact" time="1.673"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="verifyTheContactStatusAfterDeleting" time="0.885"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUnauthorizedUser" time="0.773"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUser" time="0.811">
+    <failure message="Cannot invoke &quot;String.contains(java.lang.CharSequence)&quot; because the return value of &quot;model.users.UserData.getWalletName()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;String.contains(java.lang.CharSequence)&quot; because the return value of &quot;model.users.UserData.getWalletName()&quot; is null
+	at tests.usersTests.TestUserIntegration.testGetUser(TestUserIntegration.java:34)
+</failure>
+    <system-out>{
+    &quot;message&quot;: &quot;User deleted successfully!&quot;,
+    &quot;data&quot;: {
+        
+    }
+}
+Request method:	GET
+Request URI:	https://api.nearlogin.io/users/5xNsVv1lVM-vXfD32L0FI
 Proxy:			&lt;none&gt;
 Request params:	&lt;none&gt;
 Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYjhjNWJmMjgtMGUxZi00MjBkLWI3NDctNjljYWJmOTE0Yzk1Iiwic3ViIjoiMDU0Mzc1YjQtNDg1Mi00ZDg0LWI3ODgtNjQxNTY4NTA3NjdhIiwiZXZlbnRfaWQiOiI1OWM5ZjViYS0zNjZjLTQyMDUtYThjOS1hMzFmNzQ2OTAyOGQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzA0NDY5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDIzOTA4NjksImlhdCI6MTY0MjMwNDQ2OSwianRpIjoiN2VkY2I2ZmUtY2MxMS00ZjBiLWI3NDktMGIwMmJlZmUxZTExIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Ind5bHB4eWlndXkubmVhciJ9.dSV0-HCMTZUWkwo8L1GUvCbFkKMjp2oEIb82CXsb0_BsI7_F9FpmWXR7Ma9JKiFbS5Xs0rfRXVRdwF9NkhTcMl2kJQUPGG6gmXwyQNTQ94bwLT7Nr2rgQOSFdFz-17g_eMwk4dp7RRaF_y7pnvW_WRgH9mXfVcTH-jF7UNazgBPavGqoZxr8_3lylMRqZrU-o2J2w8KaN7vCGtsN6oDL17xyKT5WE50W5_G7Jxf9F-NacSMBR9TRL6dCtvQA3uSYjZunM6Ueo9leCyTD-cNbARZZcwe9EeTsOQUlx3zkMoclpuJ9uQ0pYkDzNYH490uotxjHHfH2yAjj5xymeUM79A
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiN2E5YzU2YWItM2NiNy00N2M4LTkwMmMtM2FkYjViYzJmNjMzIiwic3ViIjoiMjc4ZDc2N2UtZjY2ZC00YTIwLWE1ZjYtY2Y2OWQyMThjY2M5IiwiZXZlbnRfaWQiOiIwOTgxMDg3NS0yZTI2LTRkMDMtYTM3Zi00OWMwYTBjMTI0OTIiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzUxNDMxLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI0Mzc4MzEsImlhdCI6MTY0MjM1MTQzMSwianRpIjoiY2NjNTNkZTYtZTBlMC00MWYyLTk4ZGItMGE0YjM2NTYxY2VmIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6ImFjcGZxaWdva28ubmVhciJ9.KnVi6PRMB6MQ4aSDk6MyN8RZqn4HHXnm25sAREUNBF1QVe_lVHJG11fWiNtbn857gh6DLqqFHSYXtrIOTSF2Xyls5dViiZDIE1tceFHZGExatX3U_3iJ3WKuZIDBCFOeXqi-ZgLrQ7Wir0AjdF8cXJgIC2LWVqAjFB56B6qwwK5w2kH9xvMmpEYeWdLUuTZ0yD8YUnH4aJiHmlYd6rLJ8tdCSkPiSNT0K8UI1cA7W3T6qEzU8BST7f_9mFGTyyb5WSv296ZczBcVL6OFJ2ak-N-Jto_GybUnk99J_RpUtGdrbJSeW4mvcvtPHY7RjxIT48Pgs31m3dKveUKQWolGKA
 				Accept=*/*
 Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
@@ -102,24 +143,186 @@ Body:			&lt;none&gt;
 {
     &quot;message&quot;: &quot;User retrieved successfully!&quot;,
     &quot;data&quot;: {
-        &quot;user_id&quot;: &quot;ui4Umawlf2M8Zp3H6SZOP&quot;,
+        &quot;updated&quot;: 1642351433058,
+        &quot;user_id&quot;: &quot;5xNsVv1lVM-vXfD32L0FI&quot;,
         &quot;wallet_status&quot;: &quot;created&quot;,
-        &quot;status&quot;: &quot;active&quot;,
-        &quot;created&quot;: 1642304469002,
+        &quot;status&quot;: &quot;deleted&quot;,
+        &quot;created&quot;: 1642351430781,
         &quot;full_name&quot;: &quot;&quot;,
-        &quot;email&quot;: &quot;tebqwfjqlt@test.com&quot;,
-        &quot;wallet_id&quot;: &quot;wylpxyiguy.near&quot;,
-        &quot;phone&quot;: &quot;0011228524&quot;,
+        &quot;email&quot;: &quot;hxbjkhjqlf@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;acpfqigoko.near&quot;,
+        &quot;phone&quot;: &quot;0011271769&quot;,
+        &quot;verified&quot;: false
+    }
+}
+Request method:	POST
+Request URI:	https://api.nearlogin.io/user/create
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;full_name&quot;: &quot;Abdo oghklydqdp&quot;,
+    &quot;walletName&quot;: &quot;shjltfauye.near&quot;,
+    &quot;email&quot;: &quot;amjrkvjrey@test.com&quot;,
+    &quot;phone&quot;: &quot;0019163479&quot;
+}
+{
+    &quot;jwt_access_token&quot;: &quot;eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiZTM5MjhhYzctNmVhZi00MGI4LTg1NTAtYmE4OTIxMzQzYjUxIiwic3ViIjoiNTFiNjU5YjgtYzE2Yi00YWRjLThhYzQtNmM3ZjFiOGE1ZjlhIiwiZXZlbnRfaWQiOiI1MzVmMGEyYi04NTFmLTQ0NTEtOTgzYS02ODNkMWE2NTIzZDEiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzUxNDM3LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI0Mzc4MzcsImlhdCI6MTY0MjM1MTQzNywianRpIjoiNzc1MTIzYTYtOTI4MS00YTc4LWJjZjItOWUyYzQ0ZWY1MGNkIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InNoamx0ZmF1eWUubmVhciJ9.zYLG3L6pnwEQ_NVmULwayyvW-LdCiKTybsmHA5atcIm14xXT0rWP5tWL2NjssvZJVJ3n3b8DNFmQ1ox5aBF8hCDBVA3pm0UahDcZk3s-j4EsBh_deMaogIs_WXjyAA_MQ5Vsj6xUCK07Gh07W0_7jyUZwI9dKEiK5CDu688lx0s-EZqt43EE3-bK1BM_cKD-mpdVgyE3N8G1WLm3vqvxTu2h-bDJhULNpNeWDVCGaCmdJHPiAbPO0x9mk5FCIcImUg1lZoDSKJyw3GZCIVEt7m_tvV7X9Oyy8rP43_ExC9OsNKRLOr-JH0DFg5MZHLLgjJPHlk9nIM_tTw5Qslze-Q&quot;,
+    &quot;jwt_id_token&quot;: &quot;eyJraWQiOiJScTVVUXU5UUZoRnlzVGQyZTBXb3BnYlBrcWRcL0pzMWprV1Y2RGtRNGdjND0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiZTM5MjhhYzctNmVhZi00MGI4LTg1NTAtYmE4OTIxMzQzYjUxIiwic3ViIjoiNTFiNjU5YjgtYzE2Yi00YWRjLThhYzQtNmM3ZjFiOGE1ZjlhIiwiYXVkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJldmVudF9pZCI6IjUzNWYwYTJiLTg1MWYtNDQ1MS05ODNhLTY4M2QxYTY1MjNkMSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQyMzUxNDM3LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJjb2duaXRvOnVzZXJuYW1lIjoic2hqbHRmYXV5ZS5uZWFyIiwiZXhwIjoxNjQyNDM3ODM3LCJpYXQiOjE2NDIzNTE0MzcsImp0aSI6IjAxZDU0NmFiLTk0ZmMtNGI4OS05MzUwLWZmZGJmZWZmMDJlNCJ9.elAUARHTYKgm5dNjWA8TQSyeI5LwVpA9jkj90ZPKzSDP5E-bMeDj659t1MEbEgNFxLs0KTwtdTGFPQ0e8Pd4H2Z1vRYI8yAqyLZNKIdwsh1iOqoQdMePy1v97jkOfhMpWcDzB4mY6OIWTWln8feUeEWtUKnEPPi39dLcqLjIj9xcoCLZzUbZLUg2IGzOHUI_E-afRSE_XpESKxAzw6GTEsgcwTIeKkHXxngFiJZmZ3vBRqqNnnDR4ihSW9zyJZjZZlIqGIlKsN6pA6CQVsaN3Vs-c0WynLVCmcFQaRwRrs22gK_ZBsbb1D6NgM5TMF1qe0hIfnsIveDwkPJucEV6dg&quot;,
+    &quot;jwt_refresh_token&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.yRjFoan6MJ8OkcvQByokNCY6q9j5pxPosBg3MYtg-vpZwsEhPH-7yJmnk-1y5gImVQ4ArIuDHgoL-r4ros160T1FtU7Pn07q7KRveC62GGAyrx6kn36_h4qmYZ1I7nTAgBJ57Et4svYmZD3RDNYaIGOraR1NPHjhiW3t3sEodpYfmO5dQxwqSjVtCgGpEq7Dk8yDXJoM-hHEYiiKb-dg-2Lcd1YSdlNsWs9FjfzSapdZ66zGDY9sIRr_F2_IbIT4KEjydOQqFy-YkMf8LtdQbiCk_U4UZPQMkw9H4SDqElq1koG3Fcwlh6Cy-U0HvXFWUBdUrQhPfuS1RdbvLjDv_Q.G1t9N7fHF-wLNwQN.ufc5geAGOiGopKD9_azmqVrxFsgXCETU93w39uiNKe6ZIgLv_3XkRpBay4qsXqtJFSznxfKFLLgsj4O1CO39DW7_hiNlWLlxAYAciQaTbyGgCyDtqkQ5xWsTekv9TgyTyP2hQgo0pFwpI3RVgGZ9xvnQeyx2-Sol5pveZ545FyxhLivG3iCz7zMMZ28eborfGmJqCIO96r8idDv19xRTibufHEW3mu7qE6pHRtzkpbcQnGleCIH8mUulraKfj9azhUjm8nVe44yf2b-boWcamSUOhqh513dYZotOkvHQ4TLX5lO1yUQs2x8KMecDyMKWnkvy4xhPaiXTgd0PwLx2rzq1AdRnqDSc-MKtaBUnBHnD5P2RvvcGTZDnfaU9bHJiTFJBdc-fV3RKhgnNkSI1gNj0U0MGYTMNzoEz9LyZ2N_ymiR03iPRARb-FElPrr_DE_f-9wQDH-rZvHejTA-HxpHP4C-23LTFdvkhC5feGKuK8cBe_XeRVKgQOn_RG1EyshOCblWDh-oARtlmMETU7hmzfdCWeIyCMJpWro6m2nH2qPprBrt6icYNztYUhvUran5OhZzwGkOIJPdLUKP_L_mLRUekbF8a7eWb4jYCBQWrhzWptr1_Os0XUV1N5CT__LfsQj8dtur00iWM_ZuIpusOGxe9qazDYlArlrlp46t0fnwBF8umZ_GIgoC9TRBKE-aqyyacvI6myTt2uNh5oQRJZjzZICG0n5W47GjTYFy2GSC26AEyaPnwKIlBFHQVz7zftiAqsXQjGnBa-7vKFTwms5lenQQ6D796rAWTAvNXPp_r4rrK6usOzj7ZMbhcTyHnMP9LcbSRTDPMum_UeCKjtkFXm3zK6kYO9sw0RR1vbnsOpyyXZA-2Jg9bZQP0k0RjWLA1HZpI0CaY_ubgEU7OXH9JLyMiIDmD1oFioxB7KGzWNROI5KYkkKBm4T0iNJaOY5nN3qz4J3V08f7xVc5tdVSkkNAidX-oS9WxqJ-3gG1Zx-1myVPyckbVcWS3xB7GfgfGD0ADW9A-ANkOL2rEXlhP5LO9X4T7XzqeFk8Ghf735XGaNL_DoiohAUD-nSrP4wrx9fNlEIInt9R88qdBnyIcwgg_7tuMQCazm2n-JVDD6VTgOuqPDNpOUrWSLLYYaythAGjvVQ75QNg6n4qMMspj6RgOz6fdLeajLUmLYS_rZ3-aX3zebdt90ykLe2uXHI-z87PCmkymrWEVFFoSvd0HHrazU9VtjFeMwdc93Q-wjEemAle7VVGly4tpfAr7TKotttiezDvq9j13.oiX63Q-qTRXxUMEW91f-qg&quot;,
+    &quot;user_info&quot;: {
+        &quot;user_id&quot;: &quot;BdEPMyHuCdFFIPpDOHBrM&quot;,
+        &quot;wallet_status&quot;: &quot;pending&quot;,
+        &quot;status&quot;: &quot;active&quot;,
+        &quot;created&quot;: 1642351436802,
+        &quot;full_name&quot;: &quot;&quot;,
+        &quot;email&quot;: &quot;amjrkvjrey@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;shjltfauye.near&quot;,
+        &quot;phone&quot;: &quot;0019163479&quot;,
+        &quot;verified&quot;: false
+    }
+}
+Request method:	GET
+Request URI:	https://api.nearlogin.io/users/BdEPMyHuCdFFIPpDOHBrM
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiZTM5MjhhYzctNmVhZi00MGI4LTg1NTAtYmE4OTIxMzQzYjUxIiwic3ViIjoiNTFiNjU5YjgtYzE2Yi00YWRjLThhYzQtNmM3ZjFiOGE1ZjlhIiwiZXZlbnRfaWQiOiI1MzVmMGEyYi04NTFmLTQ0NTEtOTgzYS02ODNkMWE2NTIzZDEiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzUxNDM3LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI0Mzc4MzcsImlhdCI6MTY0MjM1MTQzNywianRpIjoiNzc1MTIzYTYtOTI4MS00YTc4LWJjZjItOWUyYzQ0ZWY1MGNkIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InNoamx0ZmF1eWUubmVhciJ9.zYLG3L6pnwEQ_NVmULwayyvW-LdCiKTybsmHA5atcIm14xXT0rWP5tWL2NjssvZJVJ3n3b8DNFmQ1ox5aBF8hCDBVA3pm0UahDcZk3s-j4EsBh_deMaogIs_WXjyAA_MQ5Vsj6xUCK07Gh07W0_7jyUZwI9dKEiK5CDu688lx0s-EZqt43EE3-bK1BM_cKD-mpdVgyE3N8G1WLm3vqvxTu2h-bDJhULNpNeWDVCGaCmdJHPiAbPO0x9mk5FCIcImUg1lZoDSKJyw3GZCIVEt7m_tvV7X9Oyy8rP43_ExC9OsNKRLOr-JH0DFg5MZHLLgjJPHlk9nIM_tTw5Qslze-Q
+				Accept=*/*
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+{
+    &quot;message&quot;: &quot;User retrieved successfully!&quot;,
+    &quot;data&quot;: {
+        &quot;user_id&quot;: &quot;BdEPMyHuCdFFIPpDOHBrM&quot;,
+        &quot;wallet_status&quot;: &quot;pending&quot;,
+        &quot;status&quot;: &quot;active&quot;,
+        &quot;created&quot;: 1642351436802,
+        &quot;full_name&quot;: &quot;&quot;,
+        &quot;wallet_id&quot;: &quot;shjltfauye.near&quot;,
+        &quot;email&quot;: &quot;amjrkvjrey@test.com&quot;,
+        &quot;phone&quot;: &quot;0019163479&quot;,
         &quot;verified&quot;: false
     }
 }
 </system-out>
   </testcase>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testUpdateUser" time="1.851"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testDeleteUser" time="0.852"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="verifyTheUserStatusAfterDeleting" time="0.86"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testCreateNft" time="1.658"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testGetAllNfts" time="1.883">
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUserWithProvidingEmptyUserId" time="0.923"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetWrongUser" time="0.884"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testUpdateUser" time="2.345"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testUserAttributes" time="0.821">
+    <failure message="The Full Name is empty expected [false] but found [true]" type="java.lang.AssertionError">java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertFalse(Assert.java:67)
+	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:44)
+</failure>
+    <system-out>{
+    &quot;message&quot;: &quot;User deleted successfully!&quot;,
+    &quot;data&quot;: {
+        
+    }
+}
+Request method:	GET
+Request URI:	https://api.nearlogin.io/users/0J2LbCK0GHBOSWcCuo2vK
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiMDc3OGU2NmQtNzg5Ny00MjcyLWI3YmMtYzcwNTRlY2RmMTRhIiwic3ViIjoiMmI2YmYyZmUtYWYyOC00NmY2LWJmY2QtZjE3ZGM2NzNhODgzIiwiZXZlbnRfaWQiOiIwOTlhNDY0My03ZGJmLTQyOTgtYjJkNC1hZGIwOGM0MDRjYWUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzUxNDUwLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI0Mzc4NTAsImlhdCI6MTY0MjM1MTQ1MCwianRpIjoiYmYzNjZmMzMtN2VmZS00M2I0LWE0MjYtM2EzNmI5MWRlYzIxIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Im9xdGxteG9zcmUubmVhciJ9.pimd-4ffN0ifzLPdqOT9mg58rwcGpFE7A5R9suTTS0te-x7EnokDZJDG9Ysq_dk1tZD4cMyzFitLHJuE6H_Bk3DGkvFSQ9qb208RXNLoTDISno4tf2ARXur-6RXDcUFJs_qPJUoIBBt9Vqs4V2hJfQggbQb70FLn0ITHLJi7NzdcHv8AiXl3Z-kNviVDPbED1XNy6Kb7nEx8hSeJF6a4YxQiHMUsucTfvmmj688X7_z4LFEETOATdMTU5HFHOVSyfA4PcoizwnbZk33oHNgZ6X9aNU5EOQaPCyTigKLmaEeM_bM9l6FBu_cBxmpTOehaTzl2HiTyblCyVWIT_uB2-g
+				Accept=*/*
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+{
+    &quot;message&quot;: &quot;User retrieved successfully!&quot;,
+    &quot;data&quot;: {
+        &quot;updated&quot;: 1642351453481,
+        &quot;user_id&quot;: &quot;0J2LbCK0GHBOSWcCuo2vK&quot;,
+        &quot;wallet_status&quot;: &quot;created&quot;,
+        &quot;status&quot;: &quot;deleted&quot;,
+        &quot;created&quot;: 1642351449634,
+        &quot;full_name&quot;: &quot;dqratncmhu&quot;,
+        &quot;email&quot;: &quot;aqutckgjqm@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;oqtlmxosre.near&quot;,
+        &quot;phone&quot;: &quot;0017570381&quot;,
+        &quot;verified&quot;: false
+    }
+}
+Request method:	POST
+Request URI:	https://api.nearlogin.io/user/create
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;full_name&quot;: &quot;Abdo joqunqeofa&quot;,
+    &quot;walletName&quot;: &quot;ynfvkvnqer.near&quot;,
+    &quot;email&quot;: &quot;drtstkrlcy@test.com&quot;,
+    &quot;phone&quot;: &quot;0017474029&quot;
+}
+{
+    &quot;jwt_access_token&quot;: &quot;eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiZWYxMDZlOWUtNDdiZi00Mzc1LWFhOWQtYjFiZTBmY2U5ZDI5Iiwic3ViIjoiOThlZWEyYzktYzVhNi00MTM3LTlkMWUtNDI4MTMyNjVjOTZhIiwiZXZlbnRfaWQiOiI1MDNmN2QzMy0xYWM2LTRhYzMtYTI4Yi04YmE1ZGE5NjIwMmIiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzUxNDU2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI0Mzc4NTYsImlhdCI6MTY0MjM1MTQ1NiwianRpIjoiYmI4N2U1YjMtYTBhMS00MGUzLTk0NzgtNDQxOTMzYjdiZjAwIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InluZnZrdm5xZXIubmVhciJ9.vzA1ST_SW7MOiEc_PLQNUtt9qetra0_h56uas12xd0F8ViQbnhfo2iahYnB-d25RSFwL4jMHAcpWDR42cMdpyW9Pw0jo_HBjsQzlvVupwo3Eopf58JXBLueqYzy5bVRdTlrjz0XWmjWI56Dhh8dH8XkhDsvHGedyVMe--nbkh7i4jmqXJo4ji9kzCp--SaQnoHNliMCOFI_fKzJVIC2PAHfmUW0-naOntSIHxt16y6gOiunx_Wksz7yUyrzkKhsJKkVjQBJ2f9_vnWCYCZ2iWbn2OMEiuuFse0TdvAV40ozwyMr-VJesd2a0w8tIeuiaR6H9BAE7hhV9TBJCtDITig&quot;,
+    &quot;jwt_id_token&quot;: &quot;eyJraWQiOiJScTVVUXU5UUZoRnlzVGQyZTBXb3BnYlBrcWRcL0pzMWprV1Y2RGtRNGdjND0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiZWYxMDZlOWUtNDdiZi00Mzc1LWFhOWQtYjFiZTBmY2U5ZDI5Iiwic3ViIjoiOThlZWEyYzktYzVhNi00MTM3LTlkMWUtNDI4MTMyNjVjOTZhIiwiYXVkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJldmVudF9pZCI6IjUwM2Y3ZDMzLTFhYzYtNGFjMy1hMjhiLThiYTVkYTk2MjAyYiIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQyMzUxNDU2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJjb2duaXRvOnVzZXJuYW1lIjoieW5mdmt2bnFlci5uZWFyIiwiZXhwIjoxNjQyNDM3ODU2LCJpYXQiOjE2NDIzNTE0NTYsImp0aSI6ImIyNzQ3Y2U5LTUzOWMtNDk1NC05YjFiLTkzYjJiNGExZjM1MiJ9.t_ynVN-O5BUadreoT-dvlVJbZfwWGJfiMKfcEJnSIuY_8fRRc7ULXqebBpVclJqtOOVxEecdr59TJY-AY0f2_J2U6DJzomkRzjHrgX3zwZ7jklJ7LIgN_aW4igswHPwRr7Vv1MXQhHTnyFNLSRF-YOLvxe-qOme-ILeYU9iStVGV7TJnuBN8I_yD1fu3bFwsa7lDC1FFJ4MeGHtHnUSx4c-VrzZEZ6FNMCt3smjSiG3fgenD9PRjXxk8VM-Gd4FFZ7NyUIdedno-KWxhap8T4bCneP-dXe9kuiWlEbJz4zDxUwS3DSDZLDy2LW39AI8juI1yF7Z-86Qv11fVkK-bdA&quot;,
+    &quot;jwt_refresh_token&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.Dk3rGukaTGJ5Prk8di9LV720yvIYjbuHps_Pjx2GH2D08-x9o8I3Jcjz6L6e1GZ_B8_N66tB5L7IYJfXSPeMHQc9sT4sKRRCpF6eDdMuonKN5GBEicLGGfbj7edy1z3ONmV-3qvAH1I2tSV8vIn7TK_1fceFWsvam2b18-jUdwK64CL7pGOw7Ux5qLBq6iXYDXrqTm8CsVkajjtBV-_I6MlTZXvtA5hi4MI7Xj3q0SlNvWKWRiljDobPjv4dKT2HNekqn86SpLlgezwGepWSyVcqdOROpn-iDF1V7Xrw5BEYDxjqnZZApu25lZDknw7YeNSHuGH4_knsVy4rJXlRNw.OAwkTLv7pJ3oBEGu.FD38K_7Qnw4-OgYPlTP6X9pt_wRqMG6OEEOoFB9w30_UnRYDoSJus3qfWptKIbhbB3diBxlCUGoXhLMqlucfetpC_0IbiQ8719fxUEGjob3uU5nyDqUeR4VBInu6qfSAMDeOhDW6HjjYWluKEldqMtaotJs0jjQp1bJ0y_WMyANecelOVliPycSJUfDVCvI7Vf_lGIpjDm7OQH6OhAAIVQ2lkIopD7V37nIM_9IBzXehmvngbml8ApBpZARCvOG_L7tRJubgMpaWpR6SryQrCSo4ZL_IO30SYxY7dGw7D6XrYUq-1kpgPj_Scvfuqq_EmakBVsTHoUIHcD8rk8qXnKw18OF3sRBieYSvK0euyW6-Vnbqb3acmhbJPiRuxZzVHQN-_quAuzgq-GqxanKN8c7oW0q-oSoOYdyDJ2VAjQ5lI9AAXXajbjkc0HpGGuVUMZ7qVnKtV4RgcUy5JpjaOwolq8k_6OAYdJO6Nl7WHABCxjhWdOezkfeaXkZ_XYw7LBBO535GYQEnBwULsPiYO5d3ggVC2u7Uc8brXkEoQB2NSQ5eUMHHC4G0dO5Vq9pi9jXR8r5z5GGlh55IqxUevifRzY_dT3ay1zfSbuR6-cy4hI2SdyG8f1a35cTBQu6-8XLymyJqVaPSwcCxNE1ZXNVUGQmAgnXYH3VFUg9xwZJ-brBkN7_AXxfU7Vto3L-n6dZUXGPfFpLgq6zUGWl9pJXh9wPfvSelenq_mrffykTftdOhLLE3h2JxvDciok2o5SXjtchL3Ci0RR41M29EpkwzUxpefDe4TWTQ3GIUxwhbVvgJrvSacWguo8WPgWJR8lWpTYMgmO90xo7nTypG04jTVk8IoHLnufE0_dELt6HlQZgQPb68HB5pOfvK-oO6pQp2TKC8eEgkL80t6-y8aifH-O0CJ5-vQwsnOUOG2LE11U2jcxh8ftVOuleoBk0Z-fFhc65j0iRM7meOkf82gOqkw5LFcbUckvBx5HsjZpVz6bZwG1HEV7K_448B5ekuGUPa0BRgcuvaAT_GZa7wGfnbpX7cUY3VEG9ghwokK1Pc6CIeA8NYb3YKztjw_vB2ktEPR1ZYqMikAhYvrkFSxIoSW9wMZjAs7qcsCxi-Y8iEZk9uLuvpa5ov0HZ2A1hngKq0DDN4LMHXMpSWLLaS8ccLOpBQ-fFaJMUjJ4qz0uAu3Z5Y4PDGc1WZC__5dfNiLFu7Zf2u-peVbHjbFt0qhzqVtsHqdeuCqu-l2ruMg-yLbzj21enCEmvG2I1QzRL4albO9MuSYqeMw0WFBPhn.FV4-a2v8Aq1zwLgaQwfzAQ&quot;,
+    &quot;user_info&quot;: {
+        &quot;user_id&quot;: &quot;YZ6_enmt6LB4qsEV7YhNO&quot;,
+        &quot;wallet_status&quot;: &quot;pending&quot;,
+        &quot;status&quot;: &quot;active&quot;,
+        &quot;created&quot;: 1642351455435,
+        &quot;full_name&quot;: &quot;&quot;,
+        &quot;email&quot;: &quot;drtstkrlcy@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;ynfvkvnqer.near&quot;,
+        &quot;phone&quot;: &quot;0017474029&quot;,
+        &quot;verified&quot;: false
+    }
+}
+Request method:	GET
+Request URI:	https://api.nearlogin.io/users/YZ6_enmt6LB4qsEV7YhNO
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiZWYxMDZlOWUtNDdiZi00Mzc1LWFhOWQtYjFiZTBmY2U5ZDI5Iiwic3ViIjoiOThlZWEyYzktYzVhNi00MTM3LTlkMWUtNDI4MTMyNjVjOTZhIiwiZXZlbnRfaWQiOiI1MDNmN2QzMy0xYWM2LTRhYzMtYTI4Yi04YmE1ZGE5NjIwMmIiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzUxNDU2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI0Mzc4NTYsImlhdCI6MTY0MjM1MTQ1NiwianRpIjoiYmI4N2U1YjMtYTBhMS00MGUzLTk0NzgtNDQxOTMzYjdiZjAwIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InluZnZrdm5xZXIubmVhciJ9.vzA1ST_SW7MOiEc_PLQNUtt9qetra0_h56uas12xd0F8ViQbnhfo2iahYnB-d25RSFwL4jMHAcpWDR42cMdpyW9Pw0jo_HBjsQzlvVupwo3Eopf58JXBLueqYzy5bVRdTlrjz0XWmjWI56Dhh8dH8XkhDsvHGedyVMe--nbkh7i4jmqXJo4ji9kzCp--SaQnoHNliMCOFI_fKzJVIC2PAHfmUW0-naOntSIHxt16y6gOiunx_Wksz7yUyrzkKhsJKkVjQBJ2f9_vnWCYCZ2iWbn2OMEiuuFse0TdvAV40ozwyMr-VJesd2a0w8tIeuiaR6H9BAE7hhV9TBJCtDITig
+				Accept=*/*
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+{
+    &quot;message&quot;: &quot;User retrieved successfully!&quot;,
+    &quot;data&quot;: {
+        &quot;user_id&quot;: &quot;YZ6_enmt6LB4qsEV7YhNO&quot;,
+        &quot;wallet_status&quot;: &quot;pending&quot;,
+        &quot;status&quot;: &quot;active&quot;,
+        &quot;created&quot;: 1642351455435,
+        &quot;full_name&quot;: &quot;&quot;,
+        &quot;wallet_id&quot;: &quot;ynfvkvnqer.near&quot;,
+        &quot;email&quot;: &quot;drtstkrlcy@test.com&quot;,
+        &quot;phone&quot;: &quot;0017474029&quot;,
+        &quot;verified&quot;: false
+    }
+}
+</system-out>
+  </testcase>
+  <testcase classname="tests.nftsTests.TestNfts" name="testGetAllNfts" time="1.866">
     <failure message="1 expectation failed.
 Expected status code &lt;200&gt; but was &lt;500&gt;.
 " type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
@@ -131,8 +334,6 @@ Expected status code &lt;200&gt; but was &lt;500&gt;.
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
 	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
 	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:105)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
@@ -159,11 +360,130 @@ Expected status code &lt;200&gt; but was &lt;500&gt;.
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
 	at helpers.NftServiceHelper.getAllNftDetails(NftServiceHelper.java:43)
-	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:43)
+	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:41)
 </failure>
+    <system-out>{
+    &quot;message&quot;: &quot;User deleted successfully!&quot;,
+    &quot;data&quot;: {
+        
+    }
+}
+Request method:	GET
+Request URI:	https://api.nearlogin.io/users/YZ6_enmt6LB4qsEV7YhNO
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiZWYxMDZlOWUtNDdiZi00Mzc1LWFhOWQtYjFiZTBmY2U5ZDI5Iiwic3ViIjoiOThlZWEyYzktYzVhNi00MTM3LTlkMWUtNDI4MTMyNjVjOTZhIiwiZXZlbnRfaWQiOiI1MDNmN2QzMy0xYWM2LTRhYzMtYTI4Yi04YmE1ZGE5NjIwMmIiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzUxNDU2LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI0Mzc4NTYsImlhdCI6MTY0MjM1MTQ1NiwianRpIjoiYmI4N2U1YjMtYTBhMS00MGUzLTk0NzgtNDQxOTMzYjdiZjAwIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InluZnZrdm5xZXIubmVhciJ9.vzA1ST_SW7MOiEc_PLQNUtt9qetra0_h56uas12xd0F8ViQbnhfo2iahYnB-d25RSFwL4jMHAcpWDR42cMdpyW9Pw0jo_HBjsQzlvVupwo3Eopf58JXBLueqYzy5bVRdTlrjz0XWmjWI56Dhh8dH8XkhDsvHGedyVMe--nbkh7i4jmqXJo4ji9kzCp--SaQnoHNliMCOFI_fKzJVIC2PAHfmUW0-naOntSIHxt16y6gOiunx_Wksz7yUyrzkKhsJKkVjQBJ2f9_vnWCYCZ2iWbn2OMEiuuFse0TdvAV40ozwyMr-VJesd2a0w8tIeuiaR6H9BAE7hhV9TBJCtDITig
+				Accept=*/*
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+{
+    &quot;message&quot;: &quot;User retrieved successfully!&quot;,
+    &quot;data&quot;: {
+        &quot;updated&quot;: 1642351457725,
+        &quot;user_id&quot;: &quot;YZ6_enmt6LB4qsEV7YhNO&quot;,
+        &quot;wallet_status&quot;: &quot;pending&quot;,
+        &quot;status&quot;: &quot;deleted&quot;,
+        &quot;created&quot;: 1642351455435,
+        &quot;full_name&quot;: &quot;&quot;,
+        &quot;email&quot;: &quot;drtstkrlcy@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;ynfvkvnqer.near&quot;,
+        &quot;phone&quot;: &quot;0017474029&quot;,
+        &quot;verified&quot;: false
+    }
+}
+Request method:	POST
+Request URI:	https://api.nearlogin.io/user/create
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;full_name&quot;: &quot;Abdo uaqicxxefv&quot;,
+    &quot;walletName&quot;: &quot;iswjebbhqr.near&quot;,
+    &quot;email&quot;: &quot;behmyakxnb@test.com&quot;,
+    &quot;phone&quot;: &quot;0010195139&quot;
+}
+{
+    &quot;jwt_access_token&quot;: &quot;eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYWM1M2FlNTktYzA1Mi00NjIxLTlmNzAtMzc0ZjIyNGQ3YWE0Iiwic3ViIjoiMjk0YzcyZTgtMTg0Yy00OTFlLWE0ZTYtODQ3MTEwNzE5YWJlIiwiZXZlbnRfaWQiOiJkZjYyZDZkOC01MWE4LTRlZDktOGQyOS1jMmJlMmJmMGJmNWYiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzUxNDYwLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI0Mzc4NjAsImlhdCI6MTY0MjM1MTQ2MCwianRpIjoiYzg0M2VkMDktOTBjMC00M2FhLWIzNDgtYWQ1ODkwYTE4NmRlIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Imlzd2plYmJocXIubmVhciJ9.zdeLCe7EZBZ4YjlM0haqJEOsGSur_gvdVI8I_pw8c2nzG-BGujmhgbB_eWi8_jMpD18-j8VP32D7SwWIAus6u_E1TEpur7NwARWAjkIyp03hH04h73MoAgcN2NmlZUPPsq7uB2Jfp73FUT9VCN911Ps6QfW_P_H4wd6x7m8WjaBJzQot10Q7VE7x8io2E3ZY1EruyztiDuYVxvC7MFDNrKXLfea39UZ5oBh1Z7hehNUgeR7XVZEY4elcA1tEtgfPOtVojisFh2QqSpPvXcwshB6GkVNy8a7lVJmyznVCrg3qHDPq_mkVgt4mObG8WVa4bzyik8WeWJ5hbhgAuHu0ow&quot;,
+    &quot;jwt_id_token&quot;: &quot;eyJraWQiOiJScTVVUXU5UUZoRnlzVGQyZTBXb3BnYlBrcWRcL0pzMWprV1Y2RGtRNGdjND0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYWM1M2FlNTktYzA1Mi00NjIxLTlmNzAtMzc0ZjIyNGQ3YWE0Iiwic3ViIjoiMjk0YzcyZTgtMTg0Yy00OTFlLWE0ZTYtODQ3MTEwNzE5YWJlIiwiYXVkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJldmVudF9pZCI6ImRmNjJkNmQ4LTUxYTgtNGVkOS04ZDI5LWMyYmUyYmYwYmY1ZiIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQyMzUxNDYwLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJjb2duaXRvOnVzZXJuYW1lIjoiaXN3amViYmhxci5uZWFyIiwiZXhwIjoxNjQyNDM3ODYwLCJpYXQiOjE2NDIzNTE0NjAsImp0aSI6ImQ1ODNlMmE5LWZlODItNGFjMC05NWNlLWNhYjlkZWM3MTNhYiJ9.kIkXHxbpl1JUts9tbEmEhmFpn-V2VP4BjgI3YqbyRM2XCxvpGRBO9TdxMH0nuqsxvyShvRtP8ogTeBAVnatvql17cvBvq86DHrE4LLTp3NLj8trDK4VyiGbB2WCkAKnhI5w2ZdG8QlWZyD250QHRZ4iBaZqF8hrXjv00RE-T5X5Z2m8LbKIQAJwR4gDprkgWbpFsKhdxnvaosOKdjrINDitacHY9zWBCfo_mTdrVtVrY4B0DQujvEr0qagw3zMTSkEVidvLWRiw5_olM-sb92v6IGfl6mycnv_9nSTf2GehxYgwPL_IiDhHTO3ZXDk_KfM4jIyiI_ftjdtgnXZJqOg&quot;,
+    &quot;jwt_refresh_token&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.YM-RKFqqmL8_PicqtcQqRRRawMsPYURb2ppad8geScAXmkyu2FLwxf9D44zbQuPm2yHZpFIJxcYVySenMUcpqKIijCbLpnIt6MizV7bcXN1HhRFaSw4HuG7DcrVGu9rKeh_LIStVxNw5ivGo9b-tJ0qy679HFtow8yIiZRgsXnIZGy3rI07BBsifBixo1vPh6S91KkUwl8xDv2muQkArTr-yrLcnWvUgW_tev5iQofwsAq-xdxcPC8VyRbVL7Yse8i7EOIPTsSKKyz7cFkb62V_fCRmG0vovspQ05LNpNJ19bdxwnyIui5DcumN-YmI2sOnfM48GoWZhsAsC-XEMnw.2_Sh9rOkpvXZS3BP.uzUNqg_MdTqo6oT6dFsNcn0MaLp8yUcig1L9vPCZL0bsBFgpE2_VEg5_SJ0Vd-QSAWQYy3roDNoZUpevwanYyfDmbPYzxbqg9Tjb6EMf0UK7zrIz5zmpnAWZoLLJPBQ-bXE-gJDOoqfdiZUUuZHZqlAOBRiW_kyqrROwAsjrIx9nHH0FBwFfwdfKFlcmim9kS1tnZYD_DWatDskPcmtlZKWUsQd3ekj2g0IhldooBYiW6nO_jzifnlfoWFi5DVjmMA5hc7910057OxvMYXSTYK0zSomU3W9nuGrYAi1-9WhB6a96Hi0f5v9VVHRy2nFvf-Nept3rNI2PG2XDjiJ13n2eErs5wWbmHiibbY5GT2FfDKYd387qlTFVH1uzeS6QLk-dmgiq6QBDrcVrBjuP7H67fuMBBE_x5_Vv9dCxzraWGeJ0E8lxnzjZpFA8VZUHe1yYWiC-LGrOvhf4L5sd018BFnNrby9hoQ8XFKLnAVlohGJzLWXgEo5LvnHlRj1UZAzjlRRMy6IExJhhVe-t13NCprsgGrl9X4fYAcmqzLKHCWbecrxVHyXZOaX8pkXwIMKkkwAAgW1CbcXNbfMRJQZozj6oMMJEPWvhpXiPWxWBTdIfAv2PFEo4KrpKnknznFqb3ZTSZLDNootuHbfN3CXyukCs7a0Jl2h_u0laNGcA1oOfSFUvzSH0gOKow2V63ni5FcchiiOpv35iOTjqw4ojrp8gq30xqM5BHxUHaAaSNJnsIv3nmmVvAXKoNKrpdoPnU225FpLBUXX5UnTeNqqWHz2Z5tVfwumGrJ615XoGL_HwE7EuT1TzMa_JDzuL7Yeng86tRfcOgWkladydGk6u_q4_u-fdYXxBareH6yXKP9_iajDXZctZWWQhUUEii7SXiFnbXqSV-tR5HwY31ri_mbZlvE_tkyaNcOAbHToye_qyVJ8AYS6ESk7ovz50TEOz0prE8S-R08BBuWyxXwb86LUmu8pX3TCcBfbmeLKPEHbK8p6Yfqs-uD5fxkqmatlraMNQ8QUApX5oLS_Vn0x7bUnN2jurmA_pNmS1jPl1TXZi2GcrbJTZl41vlgztyd5R8fDtdmt9kGd1SP3h3MyoWqLwkgoA7qPMkvy8Ednkrq1ndf4p1UH1yBlYg88DQJZQE8Ww-TMiQGif_FZDgRy1iw_fG3DGpBEdMNHkCOrIR8Uu95OtKEeM4VOvn5YejRK1B5azyl7IqV0AzTtZr9dx-c4ysq_4NjxSj2r8wW6JwjULQqunoCPgI_WC8IvNIRLodK4DDaRYYuERlseb.Mtrowc6y7tt3XWKUM6x1KQ&quot;,
+    &quot;user_info&quot;: {
+        &quot;user_id&quot;: &quot;CvRWgc2cFC1fYdMDnWKZZ&quot;,
+        &quot;wallet_status&quot;: &quot;pending&quot;,
+        &quot;status&quot;: &quot;active&quot;,
+        &quot;created&quot;: 1642351459600,
+        &quot;full_name&quot;: &quot;&quot;,
+        &quot;email&quot;: &quot;behmyakxnb@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;iswjebbhqr.near&quot;,
+        &quot;phone&quot;: &quot;0010195139&quot;,
+        &quot;verified&quot;: false
+    }
+}
+Request method:	POST
+Request URI:	https://api.nearlogin.io/user/create
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;full_name&quot;: &quot;Abdo askiervmey&quot;,
+    &quot;walletName&quot;: &quot;jubdkblsje.near&quot;,
+    &quot;email&quot;: &quot;lvtftlqvan@test.com&quot;,
+    &quot;phone&quot;: &quot;0015521550&quot;
+}
+{
+    &quot;jwt_access_token&quot;: &quot;eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYmY0YTlmNjctZDQ4Yy00OWFjLTg0YTUtZWNhODlmODdjMDU0Iiwic3ViIjoiMGU4MzNlMmEtYWNiNC00Mzg2LTk5MGUtYjQwODY1OWM4YWM4IiwiZXZlbnRfaWQiOiJhZjYyMDI1NC1mYzkyLTQyNDktOTFmOS1mOGJlOGY5NmUyM2UiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzUxNDYxLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI0Mzc4NjEsImlhdCI6MTY0MjM1MTQ2MSwianRpIjoiMDg1OTIwMGUtNWI2My00Y2QzLWFiNmYtODdjN2VhZWRkYTFlIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Imp1YmRrYmxzamUubmVhciJ9.utg4vaQeI5CV4kQoMeLuApfGtPZA31uqYM8KLjoxfbu2Zu_5RDgq0wKRu1x-iEvW5dsk0XlAymfx1xJ2RgAAhIDs806DSKOdZFuU3eMAxd_JGCeLhRGpE0No1HT6PxTujV0tIpGX4xqUVmWtOTgTCnsjRjDvCO3CkuTdnJKUzM4Gdz3UbsiR1D-yCD-zuU-vxuVbHPsQTjIsu1OHtenFVUjInT6DfXisVqsW9ZkncQ-mpj52hm94SgKDczHB_d8If5ncN59ybat0QcqN5NBrCLHcmE4vHQOkuy0C9jz9hqBw8Lto9ayEffhOh7za1Ky_Svz-SnH1-3tKqOPSANym7g&quot;,
+    &quot;jwt_id_token&quot;: &quot;eyJraWQiOiJScTVVUXU5UUZoRnlzVGQyZTBXb3BnYlBrcWRcL0pzMWprV1Y2RGtRNGdjND0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYmY0YTlmNjctZDQ4Yy00OWFjLTg0YTUtZWNhODlmODdjMDU0Iiwic3ViIjoiMGU4MzNlMmEtYWNiNC00Mzg2LTk5MGUtYjQwODY1OWM4YWM4IiwiYXVkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJldmVudF9pZCI6ImFmNjIwMjU0LWZjOTItNDI0OS05MWY5LWY4YmU4Zjk2ZTIzZSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQyMzUxNDYxLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJjb2duaXRvOnVzZXJuYW1lIjoianViZGtibHNqZS5uZWFyIiwiZXhwIjoxNjQyNDM3ODYxLCJpYXQiOjE2NDIzNTE0NjEsImp0aSI6ImQ1MjAyNzA2LThlMWQtNDFhYy1hMDEwLTExYTQzZWRhYjhlOCJ9.J9My8aWWWc8EEaMvKteR_2iNOrQPydn9otuWM-3oUIz_KMfqZX9sZkZKMIvoNKCEIhanhJ-jpHRO31a1Y_3WaaRmtw4UhE5V_9otIGagwS2tG_xokLnQhg8RsE_DlodSQm3-mpswf-aE6EniAV3JrBQEwDPrpA0J_zyRr6KnQDkvwcT1lYlXruenII03JU9Cp93WExur-1g35j2gs-0EBvh1olcG7QE7ztatHexNqqaIKyVyAP0zoB-IKPER0QjUVuIx-0JcOihjuZ2EDZIzl55o4CHnVmohjOurwY23dpEy9sC0_BlnOYwvJ3H2D3HFbElsFPpN4wU780OuzbvUug&quot;,
+    &quot;jwt_refresh_token&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.kfsRrAgfQ_OtziTIw4qTGKhyd9Ynv8Q3J9eyLXU20B1E-Av_XUnGoJSBnO-fOD_GEcAtO-K-SH1OBrZoBI195HXQ-mQNlkgNLMdA-w0oqA2YwSnKDDbU2aNAjnTLMqG9OPGywLmVM2ptycmXA6yyMGFJgo_uvAmu9VaxPO_IXJn_WjVua9FKsQOHFWTUkE7oZIhSCigG49niv4hyApiQk-GaVUL8hCtMFgB4tKpyBXbxjvFB4UyDJ9j-gpbMc5NVGX2XujjeRKXT8WSOEHf23tFmkTVQZoyKBqimhn-QWa8XIfdQ-zutGQ24xXV_-9Zs9kiMq3mmoSYhEK-6jKwS0w.2BYggt4wqR1XB2RL.lJZn93KaF65uPY3YnnGBd39zxJL92gn-5j0UKgWmmQPLRM9ojhbvD5Ij-oWw2hXDOQr2yWs6N88FKgLHSQqVPZSd6a2Ef_bbmJznaCX3TOgBZ1O8LlcuwgVudk9Y4h6EtsmMVPbm4ix8hjoEKaZdefzz-5LwYDxgxjd7-Jold3E_PTrj8v-xnM81dDkCYf6_xpEXB6AfTS4VCC_72Pqn1djBQ9k-mecBz-LRoLMk-LZPICNTKB-wwOUCZkv5RxF7H-zafojKRNQleC8Hu1t9gMBhaQnJS_C10Ar6V7VLBdJPF-_df_yaOBykD5G482Vqf3p1rX_7C_Eu5u8IO01Hdjarhiq-H5ZB2cqt-dJGQtvLrj2HwOXm6wfKqZXW5JRnjtA-eCyxtQ2uiUrXB9JECn2oyjSaQxYuVlk2R17rOyXRnGt5acvGR-lmzVv1PXQdezSCvZ3TjXqedBeDY2uyAyyzZpQkSjRspsThtXbGZsPoCK8ccrFzOVpMq373q_fHUwvRXqTRNpCPdT-RjO91cKglnIfFMv3CM5JMKwSAMSw7HsRaB44-9opJHVALOvBDEMdr6nSsNkuwYW7oVsYzhO2kO0wgFAdMPb_1oZOmY3U8tB8hqWaON4SyLJe5EOOyfEApzFJDJW8rx77MrvGHUaUf0eC0m4uk0E5qnOx7FOVWd8RFDNg6InnMvxEvQzFvUVMVPEZv5ajeY2LLJthCOwX_kzYh1T5-TLnM2mHrBSjpQzAfHhUn4V2rf9dM8_V_9GoSF196Dv5xW6qhoJJQ6FrmF0xhdgK3HVZN_LLGTlODwkNk2paQxNcq3aZjWNT_Toj1acp0iuVezIciObus9YP-ZvhfAJrFM74iGJ7jepZnxHZUFwax4xy-s0nkUReschFwXIDv-wB88nyNyANjQRIKTDEG0c-VntzaSVtTL8elFjm66huS8t_PdhRkZwefOmfZru9iakan5J_hZQ6FRyC-WDWiT-tjsFrSft4Lq17wjIPgLjJLMR_tVH6VgZrxFDcqH35SZVqfZQUGshT3q8c53F-KVMZ0JaUFZPLbblt0vgIV8MXva_elbfiAWG1lGVCNZV1esXVomDn3lGWGH4mVWSVP3h5O0GvTIqt4yYTlgmwxFFDjaFLmN7hh7SqV1td5QjYn1658Zni9l9j2tnBm-ZoObCFITCcJGVmvW4v3iAFIBzjNs6TT8d7P1XDqsVMK_dJJaJgyb00lhRyiWlWgOABllECsPahemm3pPUv6W0TGDLFjoCCa88f8QrLyIQE8kgUsJ01ApqSfIBds._rraI0FVRq8M1YBBEaGw2g&quot;,
+    &quot;user_info&quot;: {
+        &quot;user_id&quot;: &quot;k9hlktP7GPU14GdL8QRWw&quot;,
+        &quot;wallet_status&quot;: &quot;pending&quot;,
+        &quot;status&quot;: &quot;active&quot;,
+        &quot;created&quot;: 1642351461290,
+        &quot;full_name&quot;: &quot;&quot;,
+        &quot;email&quot;: &quot;lvtftlqvan@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;jubdkblsje.near&quot;,
+        &quot;phone&quot;: &quot;0015521550&quot;,
+        &quot;verified&quot;: false
+    }
+}
+{
+    &quot;message&quot;: &quot;NFT creation successful!&quot;,
+    &quot;data&quot;: {
+        &quot;nft_id&quot;: &quot;TXN79aYA3uaQiF4FsVoXB&quot;,
+        &quot;updated&quot;: 1642351463039,
+        &quot;status&quot;: &quot;active&quot;,
+        &quot;created&quot;: 1642351463039,
+        &quot;description&quot;: &quot;This is my automation framework!&quot;,
+        &quot;owner_id&quot;: &quot;k9hlktP7GPU14GdL8QRWw&quot;,
+        &quot;file_url&quot;: &quot;https://near-lambda-nft-files.s3.us-west-1.amazonaws.com/TXN79aYA3uaQiF4FsVoXB_original_test-2.jpg&quot;,
+        &quot;title&quot;: &quot;Hello from automation!&quot;
+    },
+    &quot;debug&quot;: {
+        &quot;result&quot;: {
+            
+        },
+        &quot;transaction_result&quot;: null
+    }
+}
+</system-out>
   </testcase>
-  <testcase classname="tests.nftsTests.TestNfts" name="testGetSingleNft" time="0.903"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testUpdateNft" time="1.055"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testDeleteNft" time="0.853"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="verifyTheNftStatusAfterDeleting" time="0.909"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testGetSingleNft" time="0.844"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testUpdateNft" time="1.746"/>
 </testsuite>
