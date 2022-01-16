@@ -8,6 +8,7 @@ import io.restassured.response.Response;
 import model.users.UserData;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.json.JSONObject;
+import static org.testng.Assert.assertEquals;
 
 public class UserServiceHelper {
 
@@ -26,10 +27,10 @@ public class UserServiceHelper {
                 .contentType(ContentType.JSON)
                 .log().all()
                 .post(EndPoints.CREATE_USER)
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
+        assertEquals(response.statusCode(),200);
         return response;
     }
 
@@ -38,10 +39,10 @@ public class UserServiceHelper {
                 .given().header("Authorization", "Bearer " + userToken)
                 .log().all()
                 .get(EndPoints.GET_USER.replace("{userId}", userId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
+        assertEquals(response.statusCode(),200);
         return response;
     }
 
@@ -51,10 +52,10 @@ public class UserServiceHelper {
                 .body(userData)
                 .contentType(ContentType.JSON)
                 .put(EndPoints.UPDATE_USER.replace("{userId}",userId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
+        assertEquals(response.statusCode(),200);
         return response;
     }
 
@@ -63,8 +64,38 @@ public class UserServiceHelper {
                 .given().header("Authorization", "Bearer " + userToken)
                 .when()
                 .delete(EndPoints.DELETE_USER.replace("{userId}",userId))
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
+
+        response.prettyPrint();
+        assertEquals(response.statusCode(),200);
+        return response;
+    }
+
+    public Response getWrongUser(String userId, String userToken) {
+        response = RestAssured
+                .given().header("Authorization", "Bearer " + userToken)
+                .log().all()
+                .get(EndPoints.GET_USER.replace("{userId}", userId))
+                .andReturn();
+
+        response.prettyPrint();
+        return response;
+    }
+
+    public Response createWrongUser(String flag) {
+        createUserData();
+        if(flag.equalsIgnoreCase("wallet")) {
+            userData.setWalletName(null);
+        } else {
+            userData.setEmail(null);
+            userData.setPhone(null);
+        }
+        response = RestAssured
+                .given().body(userData)
+                .contentType(ContentType.JSON)
+                .log().all()
+                .post(EndPoints.CREATE_USER)
+                .andReturn();
 
         response.prettyPrint();
         return response;

@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">26 methods, 2 failed,   24 passed</span>
+                    <span class="method-stats">32 methods, 2 failed,   30 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -109,7 +109,7 @@
                       <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testGetUser">testGetUser</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testUserAttributes">testUserAttributes</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Command_line_suite -->
@@ -144,6 +144,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testCreateUser">testCreateUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testCreateUserWithoutEmailOrPhone">testCreateUserWithoutEmailOrPhone</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testCreateUserWithoutWalletName">testCreateUserWithoutWalletName</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -188,7 +198,27 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testGetUnauthorizedUser">testGetUnauthorizedUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testGetUser">testGetUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Command_line_suite" title="tests.transactionsTests.TestUserTransactionsIntegration" class="method navigator-link" hash-for-method="testGetUserTransactions">testGetUserTransactions</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testGetUserWithProvidingEmptyUserId">testGetUserWithProvidingEmptyUserId</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testGetWrongUser">testGetWrongUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -305,13 +335,13 @@ Expected status code &lt;200&gt; but was &lt;500&gt;.
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testGetUser">
-                  </a> <!-- testGetUser -->
-                  <span class="method-name">testGetUser</span>
-                  <div class="stack-trace">java.lang.AssertionError: The Full Name is empty did not expect [] but found []
-	at tests.usersTests.TestUserIntegration.testGetUser(TestUserIntegration.java:40)
+                  <a name="testUserAttributes">
+                  </a> <!-- testUserAttributes -->
+                  <span class="method-name">testUserAttributes</span>
+                  <div class="stack-trace">java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
+	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:51)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 41 stack frames
+... Removed 40 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -413,6 +443,84 @@ Expected status code &lt;200&gt; but was &lt;500&gt;.
           <div class="suite-Command_line_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
+              <span class="class-name">tests.usersTests.TestUserIntegration</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateUser">
+                  </a> <!-- testCreateUser -->
+                  <span class="method-name">testCreateUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateUserWithoutEmailOrPhone">
+                  </a> <!-- testCreateUserWithoutEmailOrPhone -->
+                  <span class="method-name">testCreateUserWithoutEmailOrPhone</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateUserWithoutWalletName">
+                  </a> <!-- testCreateUserWithoutWalletName -->
+                  <span class="method-name">testCreateUserWithoutWalletName</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testDeleteUser">
+                  </a> <!-- testDeleteUser -->
+                  <span class="method-name">testDeleteUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetUnauthorizedUser">
+                  </a> <!-- testGetUnauthorizedUser -->
+                  <span class="method-name">testGetUnauthorizedUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetUser">
+                  </a> <!-- testGetUser -->
+                  <span class="method-name">testGetUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetUserWithProvidingEmptyUserId">
+                  </a> <!-- testGetUserWithProvidingEmptyUserId -->
+                  <span class="method-name">testGetUserWithProvidingEmptyUserId</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetWrongUser">
+                  </a> <!-- testGetWrongUser -->
+                  <span class="method-name">testGetWrongUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateUser">
+                  </a> <!-- testUpdateUser -->
+                  <span class="method-name">testUpdateUser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyTheUserStatusAfterDeleting">
+                  </a> <!-- verifyTheUserStatusAfterDeleting -->
+                  <span class="method-name">verifyTheUserStatusAfterDeleting</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-passed -->
+          <div class="suite-Command_line_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
               <span class="class-name">tests.contactsTests.TestContacts</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -463,42 +571,6 @@ Expected status code &lt;200&gt; but was &lt;500&gt;.
                   <a name="verifyTheContactStatusAfterDeleting">
                   </a> <!-- verifyTheContactStatusAfterDeleting -->
                   <span class="method-name">verifyTheContactStatusAfterDeleting</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Command_line_suite-class-passed -->
-          <div class="suite-Command_line_suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.usersTests.TestUserIntegration</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCreateUser">
-                  </a> <!-- testCreateUser -->
-                  <span class="method-name">testCreateUser</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testDeleteUser">
-                  </a> <!-- testDeleteUser -->
-                  <span class="method-name">testDeleteUser</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testUpdateUser">
-                  </a> <!-- testUpdateUser -->
-                  <span class="method-name">testUpdateUser</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyTheUserStatusAfterDeleting">
-                  </a> <!-- verifyTheUserStatusAfterDeleting -->
-                  <span class="method-name">verifyTheUserStatusAfterDeleting</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -583,116 +655,140 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(26);
+data.addRows(32);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testGetContactsOfAnUser')
 data.setCell(0, 2, 'tests.contactsTests.TestContacts')
-data.setCell(0, 3, 6997);
+data.setCell(0, 3, 7302);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'testCreateLoginOtp')
 data.setCell(1, 2, 'tests.TestLogin')
-data.setCell(1, 3, 6031);
+data.setCell(1, 3, 5339);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testVerifyLoginOtp')
 data.setCell(2, 2, 'tests.TestLogin')
-data.setCell(2, 3, 2583);
+data.setCell(2, 3, 2128);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testUpdateUser')
-data.setCell(3, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(3, 3, 2361);
+data.setCell(3, 1, 'testGetAllNfts')
+data.setCell(3, 2, 'tests.nftsTests.TestNfts')
+data.setCell(3, 3, 1893);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testGetNftTransactions')
-data.setCell(4, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(4, 3, 2066);
+data.setCell(4, 1, 'testUpdateUser')
+data.setCell(4, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(4, 3, 1842);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testGetAllNfts')
-data.setCell(5, 2, 'tests.nftsTests.TestNfts')
-data.setCell(5, 3, 2043);
+data.setCell(5, 1, 'testCreateUser')
+data.setCell(5, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(5, 3, 1756);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testCreateUser')
-data.setCell(6, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(6, 3, 1864);
+data.setCell(6, 1, 'testCreateNft')
+data.setCell(6, 2, 'tests.nftsTests.TestNfts')
+data.setCell(6, 3, 1659);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testUpdateNft')
-data.setCell(7, 2, 'tests.nftsTests.TestNfts')
-data.setCell(7, 3, 1646);
+data.setCell(7, 1, 'testCreateTransaction')
+data.setCell(7, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(7, 3, 1546);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testCreateContact')
-data.setCell(8, 2, 'tests.contactsTests.TestContacts')
-data.setCell(8, 3, 1645);
+data.setCell(8, 1, 'testGetUserTransactions')
+data.setCell(8, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(8, 3, 1067);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'testUpdateTransaction')
-data.setCell(9, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(9, 3, 1555);
+data.setCell(9, 1, 'testUpdateNft')
+data.setCell(9, 2, 'tests.nftsTests.TestNfts')
+data.setCell(9, 3, 1056);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testDeleteTransaction')
-data.setCell(10, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(10, 3, 1549);
+data.setCell(10, 1, 'testGetUser')
+data.setCell(10, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(10, 3, 1034);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testUpdateContact')
-data.setCell(11, 2, 'tests.contactsTests.TestContacts')
-data.setCell(11, 3, 1521);
+data.setCell(11, 1, 'testGetNftTransactions')
+data.setCell(11, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(11, 3, 1016);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testCreateTransaction')
-data.setCell(12, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(12, 3, 1518);
+data.setCell(12, 1, 'testUserAttributes')
+data.setCell(12, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(12, 3, 959);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testGetUser')
+data.setCell(13, 1, 'testGetWrongUser')
 data.setCell(13, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(13, 3, 1478);
+data.setCell(13, 3, 949);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'verifyTheTransactionStatusAfterDeleting')
+data.setCell(14, 1, 'testDeleteTransaction')
 data.setCell(14, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(14, 3, 1456);
+data.setCell(14, 3, 917);
 data.setCell(15, 0, 15)
-data.setCell(15, 1, 'testCreateNft')
+data.setCell(15, 1, 'verifyTheNftStatusAfterDeleting')
 data.setCell(15, 2, 'tests.nftsTests.TestNfts')
-data.setCell(15, 3, 1223);
+data.setCell(15, 3, 911);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'testGetUserTransactions')
-data.setCell(16, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(16, 3, 1069);
+data.setCell(16, 1, 'testCreateContact')
+data.setCell(16, 2, 'tests.contactsTests.TestContacts')
+data.setCell(16, 3, 908);
 data.setCell(17, 0, 17)
 data.setCell(17, 1, 'testGetSingleNft')
 data.setCell(17, 2, 'tests.nftsTests.TestNfts')
-data.setCell(17, 3, 888);
+data.setCell(17, 3, 901);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'testImportOneOrMoreContacts')
+data.setCell(18, 1, 'testUpdateContact')
 data.setCell(18, 2, 'tests.contactsTests.TestContacts')
-data.setCell(18, 3, 871);
+data.setCell(18, 3, 890);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'testGetContact')
-data.setCell(19, 2, 'tests.contactsTests.TestContacts')
-data.setCell(19, 3, 860);
+data.setCell(19, 1, 'testUpdateTransaction')
+data.setCell(19, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(19, 3, 882);
 data.setCell(20, 0, 20)
-data.setCell(20, 1, 'testDeleteContact')
-data.setCell(20, 2, 'tests.contactsTests.TestContacts')
-data.setCell(20, 3, 858);
+data.setCell(20, 1, 'verifyTheTransactionStatusAfterDeleting')
+data.setCell(20, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(20, 3, 879);
 data.setCell(21, 0, 21)
-data.setCell(21, 1, 'verifyTheContactStatusAfterDeleting')
+data.setCell(21, 1, 'testGetContact')
 data.setCell(21, 2, 'tests.contactsTests.TestContacts')
-data.setCell(21, 3, 839);
+data.setCell(21, 3, 861);
 data.setCell(22, 0, 22)
-data.setCell(22, 1, 'verifyTheUserStatusAfterDeleting')
+data.setCell(22, 1, 'testGetUserWithProvidingEmptyUserId')
 data.setCell(22, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(22, 3, 827);
+data.setCell(22, 3, 860);
 data.setCell(23, 0, 23)
-data.setCell(23, 1, 'verifyTheNftStatusAfterDeleting')
-data.setCell(23, 2, 'tests.nftsTests.TestNfts')
-data.setCell(23, 3, 826);
+data.setCell(23, 1, 'verifyTheUserStatusAfterDeleting')
+data.setCell(23, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(23, 3, 860);
 data.setCell(24, 0, 24)
-data.setCell(24, 1, 'testDeleteNft')
-data.setCell(24, 2, 'tests.nftsTests.TestNfts')
-data.setCell(24, 3, 823);
+data.setCell(24, 1, 'testDeleteUser')
+data.setCell(24, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(24, 3, 852);
 data.setCell(25, 0, 25)
-data.setCell(25, 1, 'testDeleteUser')
-data.setCell(25, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(25, 3, 817);
+data.setCell(25, 1, 'testDeleteNft')
+data.setCell(25, 2, 'tests.nftsTests.TestNfts')
+data.setCell(25, 3, 848);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'testDeleteContact')
+data.setCell(26, 2, 'tests.contactsTests.TestContacts')
+data.setCell(26, 3, 844);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'verifyTheContactStatusAfterDeleting')
+data.setCell(27, 2, 'tests.contactsTests.TestContacts')
+data.setCell(27, 3, 844);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'testImportOneOrMoreContacts')
+data.setCell(28, 2, 'tests.contactsTests.TestContacts')
+data.setCell(28, 3, 826);
+data.setCell(29, 0, 29)
+data.setCell(29, 1, 'testCreateUserWithoutWalletName')
+data.setCell(29, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(29, 3, 800);
+data.setCell(30, 0, 30)
+data.setCell(30, 1, 'testCreateUserWithoutEmailOrPhone')
+data.setCell(30, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(30, 3, 782);
+data.setCell(31, 0, 31)
+data.setCell(31, 1, 'testGetUnauthorizedUser')
+data.setCell(31, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(31, 3, 763);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 46 seconds</span>
+              <span class="suite-total-time">Total running time: 44 seconds</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -725,151 +821,175 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testCreateLoginOtp</span>
-                <span class="method-start">1803 ms</span>
+                <span class="method-start">1220 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testVerifyLoginOtp</span>
-                <span class="method-start">8027 ms</span>
+                <span class="method-start">6779 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.transactionsTests.TestUserTransactionsIntegration</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">init</span>
-                <span class="method-start">10613 ms</span>
+                <span class="method-start">8914 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testCreateTransaction</span>
-                <span class="method-start">16514 ms</span>
+                <span class="method-start">15173 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetUserTransactions</span>
-                <span class="method-start">18034 ms</span>
+                <span class="method-start">16731 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetNftTransactions</span>
-                <span class="method-start">19105 ms</span>
+                <span class="method-start">17801 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testUpdateTransaction</span>
-                <span class="method-start">21174 ms</span>
+                <span class="method-start">18819 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testDeleteTransaction</span>
-                <span class="method-start">22732 ms</span>
+                <span class="method-start">19704 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyTheTransactionStatusAfterDeleting</span>
-                <span class="method-start">24283 ms</span>
+                <span class="method-start">20624 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">25741 ms</span>
+                <span class="method-start">21505 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.contactsTests.TestContacts</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">init</span>
-                <span class="method-start">29081 ms</span>
+                <span class="method-start">24017 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testCreateContact</span>
-                <span class="method-start">30733 ms</span>
+                <span class="method-start">25689 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetContactsOfAnUser</span>
-                <span class="method-start">32379 ms</span>
+                <span class="method-start">26599 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testImportOneOrMoreContacts</span>
-                <span class="method-start">39378 ms</span>
+                <span class="method-start">33903 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetContact</span>
-                <span class="method-start">40251 ms</span>
+                <span class="method-start">34732 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testUpdateContact</span>
-                <span class="method-start">41113 ms</span>
+                <span class="method-start">35596 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testDeleteContact</span>
-                <span class="method-start">42636 ms</span>
+                <span class="method-start">36494 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyTheContactStatusAfterDeleting</span>
-                <span class="method-start">43495 ms</span>
+                <span class="method-start">37340 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">44335 ms</span>
+                <span class="method-start">38185 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.usersTests.TestUserIntegration</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">init</span>
-                <span class="method-start">45162 ms</span>
+                <span class="method-start">38977 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testCreateUser</span>
-                <span class="method-start">45163 ms</span>
+                <span class="method-start">38977 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateUserWithoutEmailOrPhone</span>
+                <span class="method-start">40741 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateUserWithoutWalletName</span>
+                <span class="method-start">41525 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGetUnauthorizedUser</span>
+                <span class="method-start">42327 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGetUserWithProvidingEmptyUserId</span>
+                <span class="method-start">43092 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGetWrongUser</span>
+                <span class="method-start">43954 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testGetUser</span>
+                <span class="method-start">44905 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testGetUser</span>
-                <span class="method-start">47038 ms</span>
+                <span class="method-name">testUserAttributes</span>
+                <span class="method-start">45944 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testUpdateUser</span>
-                <span class="method-start">48524 ms</span>
+                <span class="method-start">46939 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testDeleteUser</span>
-                <span class="method-start">50887 ms</span>
+                <span class="method-start">48845 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyTheUserStatusAfterDeleting</span>
-                <span class="method-start">51707 ms</span>
+                <span class="method-start">49701 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.nftsTests.TestNfts</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">init</span>
-                <span class="method-start">52536 ms</span>
+                <span class="method-start">50565 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">testCreateNft</span>
-                <span class="method-start">54204 ms</span>
+                <span class="method-start">52634 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testGetAllNfts</span>
-                <span class="method-start">55429 ms</span>
+                <span class="method-start">54319 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetSingleNft</span>
-                <span class="method-start">57475 ms</span>
+                <span class="method-start">56217 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testUpdateNft</span>
-                <span class="method-start">58364 ms</span>
+                <span class="method-start">57128 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testDeleteNft</span>
-                <span class="method-start">60012 ms</span>
+                <span class="method-start">58185 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyTheNftStatusAfterDeleting</span>
-                <span class="method-start">60836 ms</span>
+                <span class="method-start">59036 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">61664 ms</span>
+                <span class="method-start">59950 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

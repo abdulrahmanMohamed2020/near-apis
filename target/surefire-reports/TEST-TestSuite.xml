@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="26" failures="2" name="TestSuite" time="46.227" errors="0" skipped="0">
+<testsuite tests="32" failures="2" name="TestSuite" time="45.02" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="16.0.2+0"/>
@@ -58,38 +58,43 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="tests.TestLogin" name="testCreateLoginOtp" time="6.033"/>
-  <testcase classname="tests.TestLogin" name="testVerifyLoginOtp" time="2.584"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testCreateTransaction" time="1.518"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetUserTransactions" time="1.07"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="2.066"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="1.555"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testDeleteTransaction" time="1.548"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="verifyTheTransactionStatusAfterDeleting" time="1.456"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testCreateContact" time="1.645"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testGetContactsOfAnUser" time="6.996"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testImportOneOrMoreContacts" time="0.872"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testGetContact" time="0.859"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testUpdateContact" time="1.521"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testDeleteContact" time="0.858"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="verifyTheContactStatusAfterDeleting" time="0.838"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testCreateUser" time="1.867"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUser" time="1.485">
-    <failure message="The Full Name is empty did not expect [] but found []" type="java.lang.AssertionError">java.lang.AssertionError: The Full Name is empty did not expect [] but found []
+  <testcase classname="tests.TestLogin" name="testCreateLoginOtp" time="5.342"/>
+  <testcase classname="tests.TestLogin" name="testVerifyLoginOtp" time="2.129"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testCreateTransaction" time="1.546"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetUserTransactions" time="1.067"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="1.018"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="0.879"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testDeleteTransaction" time="0.919"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="verifyTheTransactionStatusAfterDeleting" time="0.879"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testCreateContact" time="0.907"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testGetContactsOfAnUser" time="7.302"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testImportOneOrMoreContacts" time="0.827"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testGetContact" time="0.862"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testUpdateContact" time="0.888"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testDeleteContact" time="0.845"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="verifyTheContactStatusAfterDeleting" time="0.844"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testCreateUser" time="1.757"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testCreateUserWithoutEmailOrPhone" time="0.783"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testCreateUserWithoutWalletName" time="0.8"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUnauthorizedUser" time="0.764"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUserWithProvidingEmptyUserId" time="0.873"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetWrongUser" time="0.942"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUser" time="1.032"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testUserAttributes" time="0.991">
+    <failure message="The Full Name is empty expected [false] but found [true]" type="java.lang.AssertionError">java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failEquals(Assert.java:1041)
-	at org.testng.Assert.assertNotEqualsImpl(Assert.java:147)
-	at org.testng.Assert.assertNotEquals(Assert.java:1531)
-	at tests.usersTests.TestUserIntegration.testGetUser(TestUserIntegration.java:40)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertFalse(Assert.java:67)
+	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:51)
 </failure>
     <system-out>Request method:	GET
-Request URI:	https://api.nearlogin.io/users/OD4qeTdTVJGIrCaYvHGKJ
+Request URI:	https://api.nearlogin.io/users/ui4Umawlf2M8Zp3H6SZOP
 Proxy:			&lt;none&gt;
 Request params:	&lt;none&gt;
 Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiZTVkYmM0NDYtMzNlYy00M2EwLWI1MDAtNjQ5MjFjOTM3ZDQ1Iiwic3ViIjoiMjlmZmI4YzUtYzk4MS00MmQyLWFjY2ItYjExYWMyOThhNzUwIiwiZXZlbnRfaWQiOiI5ODgwZTJkMi05M2Q1LTRjNGQtOGE5YS1lYzYzODhhYzE5ZTkiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMjkwMDc5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDIzNzY0NzksImlhdCI6MTY0MjI5MDA3OSwianRpIjoiNGJhYjBmOWMtYzA0Zi00YWI3LWFjOTMtZWY2MGEwZTM2MWZmIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6ImFidGl3ZHBnYnIubmVhciJ9.ZLlOh0e-JDAe6vtU512D4JowD4uT4LrM2INeRdnWFKj7kwX1Aj7yplcerZbEJEmRc4NPuHHBPTiF9U-VKjM0hQjAeyIGCPGtT370sbi2wSF5ApMjvWQVUwdtbo5_WwfxbXmBa4PNEeSsmj6aT4R-2ZoImg1U1pWYRJUFBOLwJe2HtK2l0CU4TNEkJYjydeBPYfa-JAA_h_GxqEA6fH5hEcgI81C_jJ7VJoWfRs8nqNY3S_ZChEaTLu9Bp1h7HdvfmDOqANzuK9O6xXmXpP8khgWhUFLf-NsKLgnJEvdeAN5xkb1ceG7JsLGMiGm5fEHtqnEeMIkWCNekFqX9d6wgVg
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYjhjNWJmMjgtMGUxZi00MjBkLWI3NDctNjljYWJmOTE0Yzk1Iiwic3ViIjoiMDU0Mzc1YjQtNDg1Mi00ZDg0LWI3ODgtNjQxNTY4NTA3NjdhIiwiZXZlbnRfaWQiOiI1OWM5ZjViYS0zNjZjLTQyMDUtYThjOS1hMzFmNzQ2OTAyOGQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyMzA0NDY5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDIzOTA4NjksImlhdCI6MTY0MjMwNDQ2OSwianRpIjoiN2VkY2I2ZmUtY2MxMS00ZjBiLWI3NDktMGIwMmJlZmUxZTExIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Ind5bHB4eWlndXkubmVhciJ9.dSV0-HCMTZUWkwo8L1GUvCbFkKMjp2oEIb82CXsb0_BsI7_F9FpmWXR7Ma9JKiFbS5Xs0rfRXVRdwF9NkhTcMl2kJQUPGG6gmXwyQNTQ94bwLT7Nr2rgQOSFdFz-17g_eMwk4dp7RRaF_y7pnvW_WRgH9mXfVcTH-jF7UNazgBPavGqoZxr8_3lylMRqZrU-o2J2w8KaN7vCGtsN6oDL17xyKT5WE50W5_G7Jxf9F-NacSMBR9TRL6dCtvQA3uSYjZunM6Ueo9leCyTD-cNbARZZcwe9EeTsOQUlx3zkMoclpuJ9uQ0pYkDzNYH490uotxjHHfH2yAjj5xymeUM79A
 				Accept=*/*
 Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
@@ -97,24 +102,24 @@ Body:			&lt;none&gt;
 {
     &quot;message&quot;: &quot;User retrieved successfully!&quot;,
     &quot;data&quot;: {
-        &quot;user_id&quot;: &quot;OD4qeTdTVJGIrCaYvHGKJ&quot;,
-        &quot;wallet_status&quot;: &quot;pending&quot;,
+        &quot;user_id&quot;: &quot;ui4Umawlf2M8Zp3H6SZOP&quot;,
+        &quot;wallet_status&quot;: &quot;created&quot;,
         &quot;status&quot;: &quot;active&quot;,
-        &quot;created&quot;: 1642290079342,
+        &quot;created&quot;: 1642304469002,
         &quot;full_name&quot;: &quot;&quot;,
-        &quot;wallet_id&quot;: &quot;abtiwdpgbr.near&quot;,
-        &quot;email&quot;: &quot;vbsfruexir@test.com&quot;,
-        &quot;phone&quot;: &quot;0015019377&quot;,
+        &quot;email&quot;: &quot;tebqwfjqlt@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;wylpxyiguy.near&quot;,
+        &quot;phone&quot;: &quot;0011228524&quot;,
         &quot;verified&quot;: false
     }
 }
 </system-out>
   </testcase>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testUpdateUser" time="2.361"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testDeleteUser" time="0.819"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="verifyTheUserStatusAfterDeleting" time="0.827"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testCreateNft" time="1.22"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testGetAllNfts" time="2.047">
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testUpdateUser" time="1.851"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testDeleteUser" time="0.852"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="verifyTheUserStatusAfterDeleting" time="0.86"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testCreateNft" time="1.658"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testGetAllNfts" time="1.883">
     <failure message="1 expectation failed.
 Expected status code &lt;200&gt; but was &lt;500&gt;.
 " type="java.lang.AssertionError">java.lang.AssertionError: 1 expectation failed.
@@ -132,7 +137,7 @@ Expected status code &lt;200&gt; but was &lt;500&gt;.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at jdk.internal.reflect.GeneratedMethodAccessor135.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor138.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -144,7 +149,7 @@ Expected status code &lt;200&gt; but was &lt;500&gt;.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor134.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor137.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
@@ -157,8 +162,8 @@ Expected status code &lt;200&gt; but was &lt;500&gt;.
 	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:43)
 </failure>
   </testcase>
-  <testcase classname="tests.nftsTests.TestNfts" name="testGetSingleNft" time="0.887"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testUpdateNft" time="1.645"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testDeleteNft" time="0.823"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="verifyTheNftStatusAfterDeleting" time="0.827"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testGetSingleNft" time="0.903"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testUpdateNft" time="1.055"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testDeleteNft" time="0.853"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="verifyTheNftStatusAfterDeleting" time="0.909"/>
 </testsuite>
