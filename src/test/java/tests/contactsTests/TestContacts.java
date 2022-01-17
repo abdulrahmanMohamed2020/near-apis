@@ -1,5 +1,6 @@
 package tests.contactsTests;
 
+import generatingData.GenerateUserData;
 import helpers.ContactsServiceHelper;
 import helpers.UserServiceHelper;
 import io.restassured.response.Response;
@@ -13,6 +14,7 @@ public class TestContacts {
 
     private ContactsServiceHelper contactsServiceHelper = new ContactsServiceHelper();
     private UserServiceHelper userServiceHelper = new UserServiceHelper();
+    private GenerateUserData generateUserData= new GenerateUserData();
     private Response response;
     private User user;
     private Contacts contacts;
@@ -22,7 +24,7 @@ public class TestContacts {
 
     @BeforeMethod
     public void setUp() {
-        user = userServiceHelper.createUser().as(User.class);
+        user = userServiceHelper.createUser(generateUserData.createFullUserData()).as(User.class);
         userToken = user.getJwtAccessToken();
         ownerId = user.getUserData().getUserId();
 

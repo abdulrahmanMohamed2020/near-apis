@@ -1,5 +1,6 @@
 package tests.usersTests;
 
+import generatingData.GenerateUserData;
 import helpers.UserServiceHelper;
 import io.restassured.response.Response;
 import model.users.User;
@@ -13,6 +14,7 @@ public class TestUserIntegration {
 
     private UserData userData = new UserData();
     private UserServiceHelper userServiceHelper = new UserServiceHelper();
+    private GenerateUserData generateUserData= new GenerateUserData();
     private Response response;
     private User actualUser;
     private String userToken;
@@ -20,7 +22,7 @@ public class TestUserIntegration {
 
     @BeforeMethod()
     public void setUpCreateUser() {
-        response = userServiceHelper.createUser();
+        response = userServiceHelper.createUser(generateUserData.createFullUserData());
         actualUser = response.as(User.class);
 
         userToken = actualUser.getJwtAccessToken();
@@ -73,32 +75,6 @@ public class TestUserIntegration {
         assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(user.getUserData().getFullName(),updatedFullName,
                 "The full name doesn't get updated");
-    }
-
-    @Test()
-    public void testGetUnauthorizedUser() {
-        response = userServiceHelper.getWrongUser("userId", "");
-
-        assertEquals(response.statusCode(),401);
-        assertEquals(response.jsonPath().get("message"), "Unauthorized");
-    }
-
-    @Test()
-    public void testGetWrongUser() {
-        response = userServiceHelper.getWrongUser("aabcd123zxzx12", userToken);
-
-        assertEquals(response.statusCode(),200);
-        assertEquals(response.jsonPath().get("message"), "User not found!");
-    }
-
-    @Test()
-    public void testGetUserWithProvidingEmptyUserId() {
-        response = userServiceHelper.getWrongUser("", userToken);
-
-        assertEquals(response.statusCode(),500);
-        assertEquals(response.jsonPath().get("message"), "Unable to get user details!");
-        assertTrue(response.jsonPath().get("data").toString()
-                .contains("The AttributeValue for a key attribute cannot contain an empty string value"));
     }
 
     @AfterMethod()

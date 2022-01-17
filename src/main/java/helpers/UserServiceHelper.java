@@ -21,8 +21,7 @@ public class UserServiceHelper {
         RestAssured.registerParser("text/plain", Parser.JSON);
     }
 
-    public Response createUser() {
-        createUserData();
+    public Response createUser(UserData userData) {
         response = RestAssured
                 .given().body(userData)
                 .filter(new AllureRestAssured())
@@ -85,14 +84,7 @@ public class UserServiceHelper {
         return response;
     }
 
-    public Response createWrongUser(String flag) {
-        createUserData();
-        if(flag.equalsIgnoreCase("wallet")) {
-            userData.setWalletName(null);
-        } else {
-            userData.setEmail(null);
-            userData.setPhone(null);
-        }
+    public Response createWrongUser(UserData userData) {
         response = RestAssured
                 .given().filter(new AllureRestAssured())
                 .body(userData)
@@ -103,14 +95,6 @@ public class UserServiceHelper {
 
         response.prettyPrint();
         return response;
-    }
-
-    public void createUserData() {
-        String phone = RandomStringUtils.random(7,false,true);
-        userData.setFullName("Abdo "+generateRandomStrings());
-        userData.setWalletName(generateRandomStrings()+".near");
-        userData.setEmail(generateRandomStrings()+"@test.com");
-        userData.setPhone("001"+phone);
     }
 
     public String generateRandomStrings() {

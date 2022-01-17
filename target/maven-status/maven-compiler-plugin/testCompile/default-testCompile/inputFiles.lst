@@ -1,8 +1,6 @@
-/Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/usersTests/TestPOSTUser.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/transactionsTests/TestUserTransactionsIntegration.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/TestLogin.java
-/Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/usersTests/TestPATCHUser.java
-/Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/usersTests/TestDELETEUser.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/usersTests/TestUserIntegration.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/nftsTests/TestNfts.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/contactsTests/TestContacts.java
+/Users/abdelrahmanmohammed/Desktop/up/near-apis/src/test/java/tests/usersTests/TestUserInvalidScenarios.java

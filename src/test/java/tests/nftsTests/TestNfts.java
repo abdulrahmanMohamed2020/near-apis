@@ -1,5 +1,6 @@
 package tests.nftsTests;
 
+import generatingData.GenerateUserData;
 import helpers.NftServiceHelper;
 import helpers.UserServiceHelper;
 import io.restassured.response.Response;
@@ -15,6 +16,7 @@ import static org.testng.Assert.*;
 public class TestNfts {
     private NftServiceHelper nftServiceHelper = new NftServiceHelper();
     private UserServiceHelper userServiceHelper = new UserServiceHelper();
+    private GenerateUserData generateUserData= new GenerateUserData();
     private Response response;
     private User user;
     private NftData nftData = new NftData();
@@ -25,7 +27,7 @@ public class TestNfts {
 
     @BeforeMethod
     public void setUp() {
-        user = userServiceHelper.createUser().as(User.class);
+        user = userServiceHelper.createUser(generateUserData.createFullUserData()).as(User.class);
         userToken = user.getJwtAccessToken();
         userId = user.getUserData().getUserId();
 

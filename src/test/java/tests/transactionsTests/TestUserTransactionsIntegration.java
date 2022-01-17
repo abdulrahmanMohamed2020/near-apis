@@ -1,5 +1,6 @@
 package tests.transactionsTests;
 
+import generatingData.GenerateUserData;
 import helpers.NftServiceHelper;
 import helpers.TransactionsServiceHelper;
 import helpers.UserServiceHelper;
@@ -20,6 +21,7 @@ public class TestUserTransactionsIntegration {
     private User sender;
     private User recipient;
     private NftServiceHelper nftServiceHelper = new NftServiceHelper();
+    GenerateUserData generateUserData= new GenerateUserData();
     private Nft nft;
     private Transactions transaction;
     private TransactionsData transactionsData;
@@ -31,13 +33,13 @@ public class TestUserTransactionsIntegration {
 
     @BeforeMethod
     public void setUp() {
-        response = userServiceHelper.createUser();
+        response = userServiceHelper.createUser(generateUserData.createFullUserData());
         sender = response.as(User.class);
         userToken = sender.getJwtAccessToken();
         senderId = sender.getUserData().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
 
-        response = userServiceHelper.createUser();
+        response = userServiceHelper.createUser(generateUserData.createFullUserData());
         recipient = response.as(User.class);
         recipientId = recipient.getUserData().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");

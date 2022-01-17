@@ -3,9 +3,11 @@
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/model/contacts/Email.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/model/transactions/Transactions.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/model/transactions/TransactionsData.java
+/Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/model/users/UserException.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/model/contacts/Phone.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/apiuitls/ConfigManager.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/model/users/UserData.java
+/Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/generatingData/GenerateUserData.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/model/nfts/Tracker.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/model/users/User.java
 /Users/abdelrahmanmohammed/Desktop/up/near-apis/src/main/java/model/nfts/Attribute.java
