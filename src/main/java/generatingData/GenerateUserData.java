@@ -33,5 +33,19 @@ public class GenerateUserData {
         return userData;
     }
 
+    public String createFullName() {
+        return faker.name().fullName();
+    }
+
+    public UserData createUserEmail() {
+        userData.setEmail(faker.bothify("?????##@test.com"));
+        return userData;
+    }
+
+    public UserData createUserPhone() {
+        userData.setPhone(faker.phoneNumber().cellPhone());
+        return userData;
+    }
+
 
 }

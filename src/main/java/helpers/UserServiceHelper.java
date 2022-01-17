@@ -96,8 +96,4 @@ public class UserServiceHelper {
         response.prettyPrint();
         return response;
     }
-
-    public String generateRandomStrings() {
-        return RandomStringUtils.random(10,97,122,true,true);
-    }
 }

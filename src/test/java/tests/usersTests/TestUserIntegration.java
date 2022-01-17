@@ -65,7 +65,7 @@ public class TestUserIntegration {
 
     @Test()
     public void testUpdateUser() {
-        String updatedFullName = userServiceHelper.generateRandomStrings();
+        String updatedFullName = generateUserData.createFullName();
         userData.setFullName(updatedFullName);
 
         response = userServiceHelper.updateUser(userData,userId,userToken);
