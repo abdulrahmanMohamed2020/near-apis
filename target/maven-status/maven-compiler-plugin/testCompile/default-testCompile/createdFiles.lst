@@ -1,6 +1,0 @@
-tests/contactsTests/TestContacts.class
-tests/usersTests/TestUserIntegration.class
-tests/loginTests/TestLogin.class
-tests/usersTests/TestUserInvalidScenarios.class
-tests/nftsTests/TestNfts.class
-tests/transactionsTests/TestUserTransactionsIntegration.class
