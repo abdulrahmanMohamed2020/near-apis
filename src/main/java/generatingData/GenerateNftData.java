@@ -13,9 +13,6 @@ public class GenerateNftData {
         nftData.setDescription(faker.howIMetYourMother().quote());
         nftData.setOwnerId(userId);
 
-        System.out.println();
-        System.out.println();
-
         return nftData;
     }
 

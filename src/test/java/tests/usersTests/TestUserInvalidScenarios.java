@@ -41,9 +41,9 @@ public class TestUserInvalidScenarios {
     }
 
     @Test()
-    public void testGetWrongUser() {
+    public void testGetUserWithWrongUserID() {
         setUpCreateUser();
-        response = userServiceHelper.getWrongUser("aabcd123zxzx12", userToken);
+        response = userServiceHelper.getWrongUser("aabcd123", userToken);
         userException = response.as(UserException.class);
 
         assertEquals(response.statusCode(),200);

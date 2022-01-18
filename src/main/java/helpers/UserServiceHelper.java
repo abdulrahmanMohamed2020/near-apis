@@ -8,7 +8,6 @@ import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import model.users.UserData;
-import org.apache.commons.lang3.RandomStringUtils;
 
 public class UserServiceHelper {
 
@@ -39,7 +38,6 @@ public class UserServiceHelper {
         response = RestAssured
                 .given().filter(new AllureRestAssured())
                 .header("Authorization", "Bearer " + userToken)
-                .log().all()
                 .get(EndPoints.GET_USER.replace("{userId}", userId))
                 .andReturn();
 
@@ -52,6 +50,7 @@ public class UserServiceHelper {
                 .given().filter(new AllureRestAssured())
                 .header("Authorization", "Bearer " + userToken)
                 .body(userData)
+                .log().all()
                 .contentType(ContentType.JSON)
                 .put(EndPoints.UPDATE_USER.replace("{userId}",userId))
                 .andReturn();
@@ -76,7 +75,6 @@ public class UserServiceHelper {
         response = RestAssured
                 .given().filter(new AllureRestAssured())
                 .header("Authorization", "Bearer " + userToken)
-                .log().all()
                 .get(EndPoints.GET_USER.replace("{userId}", userId))
                 .andReturn();
 

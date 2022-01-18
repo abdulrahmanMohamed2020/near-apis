@@ -33,7 +33,9 @@ public class TestNfts {
         userToken = user.getJwtAccessToken();
         userId = user.getUserData().getUserId();
 
-        response = nftServiceHelper.createNftOnUser(generateNftData.createNftData(userId),userToken);
+        nftData = generateNftData.createNftData(userId);
+
+        response = nftServiceHelper.createNftOnUser(nftData,userToken);
         nft = response.as(Nft.class);
         nftId = nft.getNftData().get(0).getNftId();
 

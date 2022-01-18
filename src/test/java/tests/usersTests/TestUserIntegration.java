@@ -21,13 +21,18 @@ public class TestUserIntegration {
     private String userId;
 
     @BeforeMethod()
-    public void setUpCreateUser() {
-        response = userServiceHelper.createUser(generateUserData.createFullUserData());
+    public void setUpAndCreateUser() {
+        userData = generateUserData.createFullUserData();
+        response = userServiceHelper.createUser(userData);
         actualUser = response.as(User.class);
 
         userToken = actualUser.getJwtAccessToken();
         userId = actualUser.getUserData().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
+        assertEquals(actualUser.getUserData().getFullName(),userData.getFullName(),"The full name added wrong");
+        assertEquals(actualUser.getUserData().getWalletName(),userData.getWalletName(),"The wallet name added wrong");
+        assertEquals(actualUser.getUserData().getEmail(),userData.getEmail(),"The email added wrong");
+        assertEquals(actualUser.getUserData().getPhone(),userData.getPhone(),"The phone added wrong");
     }
 
     @Test()
@@ -35,32 +40,20 @@ public class TestUserIntegration {
         response = userServiceHelper.getUser(userId, userToken);
         actualUser = response.as(User.class);
 
-        response.then().assertThat().body(matchesJsonSchemaInClasspath("schemas/user-schema.json"));
+        response.then().assertThat().body(matchesJsonSchemaInClasspath("schemas/getUser-schema.json"));
 
         assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(actualUser.getMessage(), "User retrieved successfully!");
         assertNotNull(actualUser, "The user data is empty");
+        assertFalse(actualUser.getUserData().getUserId().isEmpty(),"The User ID is empty");
+        assertEquals(actualUser.getUserData().getFullName(),userData.getFullName(),"The full name returned wrong");
+        assertEquals(actualUser.getUserData().getWalletName(),userData.getWalletName(),"The wallet name returned wrong");
+        assertEquals(actualUser.getUserData().getEmail(),userData.getEmail(),"The email returned wrong");
+        assertEquals(actualUser.getUserData().getPhone(),userData.getPhone(),"The phone returned wrong");
+        assertEquals(actualUser.getUserData().getStatus(),"active", "The user status should be Active");
         assertTrue(actualUser.getUserData().getWalletName().contains(".near"),
                 "The Wallet Name doesn't end with .near");
-    }
 
-    @Test()
-    public void testUserAttributes() {
-        response = userServiceHelper.getUser(userId, userToken);
-        actualUser = response.as(User.class);
-
-        response.then().assertThat().body(matchesJsonSchemaInClasspath("schemas/user-schema.json"));
-
-        assertEquals(response.statusCode(), 200, "The status code should be 200");
-        assertEquals(actualUser.getMessage(), "User retrieved successfully!");
-        assertNotNull(actualUser, "The user data is empty");
-        assertFalse(actualUser.getUserData().getUserId().isEmpty(),"The Full Name is empty");
-        assertFalse(actualUser.getUserData().getFullName().isEmpty(),"The Full Name is empty");
-        assertFalse(actualUser.getUserData().getUserId().isEmpty(),"The User ID is empty");
-        assertFalse(actualUser.getUserData().getWalletName().isEmpty(),"The Wallet Name is empty");
-        assertFalse(actualUser.getUserData().getStatus().isEmpty(),"The Status is empty");
-        assertFalse(actualUser.getUserData().getWalletStatus().isEmpty(),"The Wallet Status is empty");
-        assertEquals(actualUser.getUserData().getStatus(),"active", "The user status should be Active");
     }
 
     @Test()
