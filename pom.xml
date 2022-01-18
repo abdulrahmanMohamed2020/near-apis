@@ -76,7 +76,7 @@
     <build>
         <resources>
             <resource>
-                <directory>resources</directory>
+                <directory>src/test/resources</directory>
             </resource>
         </resources>
     </build>

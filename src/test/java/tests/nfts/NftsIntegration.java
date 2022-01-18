@@ -1,9 +1,9 @@
-package tests.nftsTests;
+package tests.nfts;
 
-import generatingData.GenerateNftData;
-import generatingData.GenerateUserData;
-import helpers.NftServiceHelper;
-import helpers.UserServiceHelper;
+import data_generation.NftDataGeneration;
+import data_generation.UserDataGeneration;
+import controllers.NftServiceControllers;
+import controllers.UserServiceControllers;
 import io.restassured.response.Response;
 import model.nfts.Nft;
 import model.nfts.NftData;
@@ -14,11 +14,11 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class TestNfts {
-    private NftServiceHelper nftServiceHelper = new NftServiceHelper();
-    private UserServiceHelper userServiceHelper = new UserServiceHelper();
-    private GenerateUserData generateUserData= new GenerateUserData();
-    private GenerateNftData generateNftData= new GenerateNftData();
+public class NftsIntegration {
+    private NftServiceControllers nftServiceControllers = new NftServiceControllers();
+    private UserServiceControllers userServiceControllers = new UserServiceControllers();
+    private UserDataGeneration userDataGeneration = new UserDataGeneration();
+    private NftDataGeneration nftDataGeneration = new NftDataGeneration();
     private Response response;
     private User user;
     private NftData nftData = new NftData();
@@ -29,13 +29,13 @@ public class TestNfts {
 
     @BeforeMethod
     public void setUp() {
-        user = userServiceHelper.createUser(generateUserData.createFullUserData()).as(User.class);
+        user = userServiceControllers.createUser(userDataGeneration.createFullUserData()).as(User.class);
         userToken = user.getJwtAccessToken();
         userId = user.getUserData().getUserId();
 
-        nftData = generateNftData.createNftData(userId);
+        nftData = nftDataGeneration.createNftData(userId);
 
-        response = nftServiceHelper.createNftOnUser(nftData,userToken);
+        response = nftServiceControllers.createNftOnUser(nftData,userToken);
         nft = response.as(Nft.class);
         nftId = nft.getNftData().get(0).getNftId();
 
@@ -49,7 +49,7 @@ public class TestNfts {
 
 //    @Test
 //    public void testGetAllNfts() {
-//        response = nftServiceHelper.getAllNftDetails(userToken);
+//        response = nftServiceControllers.getAllNftDetails(userToken);
 //        Nft allNft = response.as(Nft.class);
 //
 //        assertEquals(response.statusCode(), 200, "The status code should be 200");
@@ -58,7 +58,7 @@ public class TestNfts {
 
     @Test()
     public void testGetSingleNft() {
-        response = nftServiceHelper.getSingleNftDetails(nftId,userToken);
+        response = nftServiceControllers.getSingleNftDetails(nftId,userToken);
         nft = response.as(Nft.class);
 
         assertEquals(response.statusCode(), 200, "The status code should be 200");
@@ -75,9 +75,9 @@ public class TestNfts {
         nftData.setTitle("Hello from automation after passing CRUD endpoints!!");
         nftData.setDescription("This is my automation framework from creation to tear down!");
 
-        response = nftServiceHelper.updateNft(nftData,nftId,userToken);
+        response = nftServiceControllers.updateNft(nftData,nftId,userToken);
 
-        Nft nft = nftServiceHelper.getSingleNftDetails(nftId,userToken).as(Nft.class);
+        Nft nft = nftServiceControllers.getSingleNftDetails(nftId,userToken).as(Nft.class);
 
         assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(nft.getNftData().get(0).getTitle(),
@@ -88,9 +88,9 @@ public class TestNfts {
 
     @AfterMethod
     public void tearDown() {
-        userServiceHelper.deleteUser(userId,userToken);
-        response = nftServiceHelper.deleteNftDetails(nftId,userToken);
-        nft = nftServiceHelper.getSingleNftDetails(nftId,userToken).as(Nft.class);
+        userServiceControllers.deleteUser(userId,userToken);
+        response = nftServiceControllers.deleteNftDetails(nftId,userToken);
+        nft = nftServiceControllers.getSingleNftDetails(nftId,userToken).as(Nft.class);
 
         assertEquals(response.statusCode(), 200, "The status code should be 200");
         assertEquals(nft.getNftData().get(0).getStatus(), "deleted");

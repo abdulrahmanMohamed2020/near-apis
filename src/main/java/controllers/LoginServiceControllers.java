@@ -1,4 +1,4 @@
-package helpers;
+package controllers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
@@ -8,11 +8,11 @@ import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 
-public class LoginServiceHelper {
+public class LoginServiceControllers {
     private static final String BASE_URL = ConfigManager.getInstance().getString("baseUrl").replace("\"","");
     private Response response;
 
-    public LoginServiceHelper() {
+    public LoginServiceControllers() {
         RestAssured.baseURI = BASE_URL;
         RestAssured.registerParser("text/plain", Parser.JSON);
     }

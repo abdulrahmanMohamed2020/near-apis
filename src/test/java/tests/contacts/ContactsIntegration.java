@@ -1,8 +1,8 @@
-package tests.contactsTests;
+package tests.contacts;
 
-import generatingData.GenerateUserData;
-import helpers.ContactsServiceHelper;
-import helpers.UserServiceHelper;
+import data_generation.UserDataGeneration;
+import controllers.ContactsServiceControllers;
+import controllers.UserServiceControllers;
 import io.restassured.response.Response;
 import model.contacts.Contacts;
 import model.users.User;
@@ -10,11 +10,11 @@ import org.testng.annotations.*;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestContacts {
+public class ContactsIntegration {
 
-    private ContactsServiceHelper contactsServiceHelper = new ContactsServiceHelper();
-    private UserServiceHelper userServiceHelper = new UserServiceHelper();
-    private GenerateUserData generateUserData= new GenerateUserData();
+    private ContactsServiceControllers contactsServiceControllers = new ContactsServiceControllers();
+    private UserServiceControllers userServiceControllers = new UserServiceControllers();
+    private UserDataGeneration userDataGeneration = new UserDataGeneration();
     private Response response;
     private User user;
     private Contacts contacts;
@@ -24,11 +24,11 @@ public class TestContacts {
 
     @BeforeMethod
     public void setUp() {
-        user = userServiceHelper.createUser(generateUserData.createFullUserData()).as(User.class);
+        user = userServiceControllers.createUser(userDataGeneration.createFullUserData()).as(User.class);
         userToken = user.getJwtAccessToken();
         ownerId = user.getUserData().getUserId();
 
-        response = contactsServiceHelper.createContact(ownerId,userToken);
+        response = contactsServiceControllers.createContact(ownerId,userToken);
         contacts = response.as(Contacts.class);
 
         contactId=contacts.getData().get(0).getContactId();
@@ -39,7 +39,7 @@ public class TestContacts {
 
     @Test()
     public void testGetContact() {
-        response = contactsServiceHelper.getContact(contactId,userToken);
+        response = contactsServiceControllers.getContact(contactId,userToken);
         contacts = response.as(Contacts.class);
 
         assertEquals(response.statusCode(), 200, "The status code should be 200");
@@ -48,7 +48,7 @@ public class TestContacts {
 
     @Test()
     public void testUpdateContact() {
-        response = contactsServiceHelper
+        response = contactsServiceControllers
                 .updateContact(contactId, userToken);
         contacts = response.as(Contacts.class);
 
@@ -58,7 +58,7 @@ public class TestContacts {
 
     @Test()
     public void testGetContactsOfAnUser() {
-        response = contactsServiceHelper
+        response = contactsServiceControllers
                 .getContactsOfAnUser(ownerId, userToken);
         contacts = response.as(Contacts.class);
 
@@ -69,7 +69,7 @@ public class TestContacts {
 
     @Test()
     public void testImportOneOrMoreContacts() {
-        response = contactsServiceHelper.importOneOrMoreContacts(ownerId,userToken);
+        response = contactsServiceControllers.importOneOrMoreContacts(ownerId,userToken);
         contacts = response.as(Contacts.class);
 
         assertEquals(response.statusCode(), 200, "The status code should be 200");
@@ -78,9 +78,9 @@ public class TestContacts {
 
     @AfterMethod
     public void tearDown() {
-        userServiceHelper.deleteUser(ownerId,userToken);
+        userServiceControllers.deleteUser(ownerId,userToken);
 
-        response = contactsServiceHelper
+        response = contactsServiceControllers
                 .deleteContact(contactId,userToken);
         contacts =response.as(Contacts.class);
 
@@ -88,7 +88,7 @@ public class TestContacts {
         assertEquals(contacts.getMessage(), "Contact deleted successfully!");
 
         contacts =
-                contactsServiceHelper
+                contactsServiceControllers
                         .getContact(contactId,userToken).as(Contacts.class);
         assertEquals(contacts.getData().get(0).getStatus(),"archived");
     }

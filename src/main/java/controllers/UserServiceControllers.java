@@ -1,4 +1,4 @@
-package helpers;
+package controllers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
@@ -9,13 +9,13 @@ import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 import model.users.UserData;
 
-public class UserServiceHelper {
+public class UserServiceControllers {
 
     private static final String BASE_URL = ConfigManager.getInstance().getString("baseUrl").replace("\"", "");
     private Response response;
     private UserData userData = new UserData();
 
-    public UserServiceHelper() {
+    public UserServiceControllers() {
         RestAssured.baseURI = BASE_URL;
         RestAssured.registerParser("text/plain", Parser.JSON);
     }

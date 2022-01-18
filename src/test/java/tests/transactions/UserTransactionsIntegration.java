@@ -1,10 +1,10 @@
-package tests.transactionsTests;
+package tests.transactions;
 
-import generatingData.GenerateNftData;
-import generatingData.GenerateUserData;
-import helpers.NftServiceHelper;
-import helpers.TransactionsServiceHelper;
-import helpers.UserServiceHelper;
+import data_generation.NftDataGeneration;
+import data_generation.UserDataGeneration;
+import controllers.NftServiceControllers;
+import controllers.TransactionsServiceControllers;
+import controllers.UserServiceControllers;
 import io.restassured.response.Response;
 import model.nfts.Nft;
 import model.transactions.Transactions;
@@ -14,16 +14,16 @@ import org.testng.annotations.*;
 
 import static org.testng.Assert.*;
 
-public class TestUserTransactionsIntegration {
+public class UserTransactionsIntegration {
 
-    private TransactionsServiceHelper transactionsServiceHelper = new TransactionsServiceHelper();
+    private TransactionsServiceControllers transactionsServiceControllers = new TransactionsServiceControllers();
     private Response response;
-    private UserServiceHelper userServiceHelper = new UserServiceHelper();
+    private UserServiceControllers userServiceControllers = new UserServiceControllers();
     private User sender;
     private User recipient;
-    private NftServiceHelper nftServiceHelper = new NftServiceHelper();
-    private GenerateUserData generateUserData= new GenerateUserData();
-    private GenerateNftData generateNftData= new GenerateNftData();
+    private NftServiceControllers nftServiceControllers = new NftServiceControllers();
+    private UserDataGeneration userDataGeneration = new UserDataGeneration();
+    private NftDataGeneration nftDataGeneration = new NftDataGeneration();
     private Nft nft;
     private Transactions transaction;
     private TransactionsData transactionsData;
@@ -36,26 +36,26 @@ public class TestUserTransactionsIntegration {
     @BeforeMethod
     public void setUp() {
         // create sender
-        response = userServiceHelper.createUser(generateUserData.createFullUserData());
+        response = userServiceControllers.createUser(userDataGeneration.createFullUserData());
         sender = response.as(User.class);
         userToken = sender.getJwtAccessToken();
         senderId = sender.getUserData().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
 
         // create recipient
-        response = userServiceHelper.createUser(generateUserData.createFullUserData());
+        response = userServiceControllers.createUser(userDataGeneration.createFullUserData());
         recipient = response.as(User.class);
         recipientId = recipient.getUserData().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
 
         // create Nft on sender
-        response = nftServiceHelper.createNftOnUser(generateNftData.createNftData(senderId), userToken);
+        response = nftServiceControllers.createNftOnUser(nftDataGeneration.createNftData(senderId), userToken);
         nft = response.as(Nft.class);
         nftId = nft.getNftData().get(0).getNftId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
 
         // create transaction
-        response = transactionsServiceHelper
+        response = transactionsServiceControllers
                 .createTransaction(senderId, userToken, nftId , recipientId);
         transaction =response.as(Transactions.class);
 
@@ -64,7 +64,7 @@ public class TestUserTransactionsIntegration {
         assertNotNull(transaction, "The user transactions are empty");
 
         // this because the transaction id doesn't return in the create response
-        response = transactionsServiceHelper
+        response = transactionsServiceControllers
                 .getUserTransactions(senderId, userToken);
         transaction =response.as(Transactions.class);
         transactionId = transaction.getData().get(0).getTransactionId();
@@ -76,7 +76,7 @@ public class TestUserTransactionsIntegration {
 
     @Test()
     public void testGetUserTransactions() {
-        response = transactionsServiceHelper
+        response = transactionsServiceControllers
                 .getUserTransactions(senderId, userToken);
         transaction =response.as(Transactions.class);
 
@@ -89,7 +89,7 @@ public class TestUserTransactionsIntegration {
 
     @Test()
     public void testGetNftTransactions() {
-        response = transactionsServiceHelper
+        response = transactionsServiceControllers
                 .getNftTransactions(nftId, userToken);
         transaction = response.as(Transactions.class);
 
@@ -105,19 +105,19 @@ public class TestUserTransactionsIntegration {
         transactionsData.setTransactionValue("15 USD");
         transactionsData.setType("regular");
 
-        response = transactionsServiceHelper.updateTransaction(transactionsData, userToken, transactionId);
+        response = transactionsServiceControllers.updateTransaction(transactionsData, userToken, transactionId);
 
         assertEquals(response.statusCode(), 200, "The status code should be 200");
     }
 
     @AfterMethod
     public void tearDown() {
-        userServiceHelper.deleteUser(senderId,userToken);
-        userServiceHelper.deleteUser(recipientId,userToken);
-        nftServiceHelper.deleteNftDetails(nftId,userToken);
+        userServiceControllers.deleteUser(senderId,userToken);
+        userServiceControllers.deleteUser(recipientId,userToken);
+        nftServiceControllers.deleteNftDetails(nftId,userToken);
         System.out.println("Users and Nft are Deleted Successfully!!");
 
-        response = transactionsServiceHelper
+        response = transactionsServiceControllers
                 .deleteTransaction(userToken, transactionId);
         transaction = response.as(Transactions.class);
 
@@ -125,7 +125,7 @@ public class TestUserTransactionsIntegration {
         assertEquals(transaction.getMessage(), "Transaction deleted successfully!");
 
         transaction =
-                transactionsServiceHelper
+                transactionsServiceControllers
                         .getTransaction(userToken, transactionId).as(Transactions.class);
 
         assertEquals(transaction.getData().get(0).getStatus(), "cancelled");

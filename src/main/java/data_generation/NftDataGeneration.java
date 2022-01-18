@@ -1,9 +1,9 @@
-package generatingData;
+package data_generation;
 
 import com.github.javafaker.Faker;
 import model.nfts.NftData;
 
-public class GenerateNftData {
+public class NftDataGeneration {
 
     Faker faker = new Faker();
     NftData nftData = new NftData();

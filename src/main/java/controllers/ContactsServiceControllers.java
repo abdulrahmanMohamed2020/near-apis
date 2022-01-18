@@ -1,4 +1,4 @@
-package helpers;
+package controllers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
@@ -10,11 +10,11 @@ import model.contacts.ContactsData;
 
 import java.util.Collections;
 
-public class ContactsServiceHelper {
+public class ContactsServiceControllers {
     private static final String BASE_URL = ConfigManager.getInstance().getString("baseUrl").replace("\"","");
     private Response response;
 
-    public ContactsServiceHelper() {
+    public ContactsServiceControllers() {
         RestAssured.baseURI = BASE_URL;
     }
 

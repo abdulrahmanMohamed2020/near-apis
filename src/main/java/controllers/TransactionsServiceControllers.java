@@ -1,4 +1,4 @@
-package helpers;
+package controllers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
@@ -9,13 +9,13 @@ import io.restassured.response.Response;
 import model.transactions.TransactionsData;
 import java.util.Collections;
 
-public class TransactionsServiceHelper {
+public class TransactionsServiceControllers {
 
     private static final String BASE_URL = ConfigManager.getInstance().getString("baseUrl").replace("\"", "");
     private Response response;
     private TransactionsData transactionsData = new TransactionsData();
 
-    public TransactionsServiceHelper() {
+    public TransactionsServiceControllers() {
         RestAssured.baseURI = BASE_URL;
     }
 

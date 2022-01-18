@@ -1,9 +1,9 @@
-package generatingData;
+package data_generation;
 
 import com.github.javafaker.Faker;
 import model.users.UserData;
 
-public class GenerateUserData {
+public class UserDataGeneration {
     Faker faker = new Faker();
     private UserData userData = new UserData();
 

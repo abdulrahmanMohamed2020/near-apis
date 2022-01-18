@@ -1,6 +1,6 @@
-package tests.loginTests;
+package tests.login;
 
-import helpers.LoginServiceHelper;
+import controllers.LoginServiceControllers;
 import io.restassured.response.Response;
 import model.users.User;
 import model.users.UserException;
@@ -9,21 +9,21 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class TestLogin {
+public class Login {
     // This is test class for permanent user
     // Just to check the login endpoints
 
-    private LoginServiceHelper loginServiceHelper;
+    private LoginServiceControllers loginServiceControllers;
     Response response;
 
     @BeforeClass
     public void init() {
-        loginServiceHelper = new LoginServiceHelper();
+        loginServiceControllers = new LoginServiceControllers();
     }
 
     @Test()
     public void testCreateLoginOtp() {
-        response = loginServiceHelper.createLoginOtp();
+        response = loginServiceControllers.createLoginOtp();
         UserException user = response.as(UserException.class);
 
         assertEquals(user.getMessage(),"Code sent on email!");
@@ -31,7 +31,7 @@ public class TestLogin {
 
     @Test()
     public void testVerifyLoginOtp() {
-        response = loginServiceHelper.verifyLoginOtp();
+        response = loginServiceControllers.verifyLoginOtp();
         User user = response.as(User.class);
 
         assertNotNull(user.getJwtAccessToken());

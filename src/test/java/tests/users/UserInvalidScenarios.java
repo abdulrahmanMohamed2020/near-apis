@@ -1,7 +1,7 @@
-package tests.usersTests;
+package tests.users;
 
-import generatingData.GenerateUserData;
-import helpers.UserServiceHelper;
+import data_generation.UserDataGeneration;
+import controllers.UserServiceControllers;
 import io.restassured.response.Response;
 import model.users.User;
 import model.users.UserException;
@@ -10,10 +10,10 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class TestUserInvalidScenarios {
+public class UserInvalidScenarios {
 
-    private UserServiceHelper userServiceHelper = new UserServiceHelper();
-    private GenerateUserData generateUserData= new GenerateUserData();
+    private UserServiceControllers userServiceControllers = new UserServiceControllers();
+    private UserDataGeneration userDataGeneration = new UserDataGeneration();
     private Response response;
     private User actualUser;
     private UserException userException = new UserException();
@@ -21,7 +21,7 @@ public class TestUserInvalidScenarios {
     private String userId;
 
     public void setUpCreateUser() {
-        response = userServiceHelper.createUser(generateUserData.createFullUserData());
+        response = userServiceControllers.createUser(userDataGeneration.createFullUserData());
         actualUser = response.as(User.class);
 
         userToken = actualUser.getJwtAccessToken();
@@ -32,7 +32,7 @@ public class TestUserInvalidScenarios {
     @Test()
     public void testGetUnauthorizedUser() {
         setUpCreateUser();
-        response = userServiceHelper.getWrongUser(userId, "");
+        response = userServiceControllers.getWrongUser(userId, "");
         userException = response.as(UserException.class);
 
         assertEquals(response.statusCode(),401);
@@ -43,7 +43,7 @@ public class TestUserInvalidScenarios {
     @Test()
     public void testGetUserWithWrongUserID() {
         setUpCreateUser();
-        response = userServiceHelper.getWrongUser("aabcd123", userToken);
+        response = userServiceControllers.getWrongUser("aabcd123", userToken);
         userException = response.as(UserException.class);
 
         assertEquals(response.statusCode(),200);
@@ -54,7 +54,7 @@ public class TestUserInvalidScenarios {
     @Test()
     public void testGetUserWithProvidingEmptyUserId() {
         setUpCreateUser();
-        response = userServiceHelper.getWrongUser("", userToken);
+        response = userServiceControllers.getWrongUser("", userToken);
         userException = response.as(UserException.class);
 
         assertEquals(response.statusCode(),500);
@@ -65,8 +65,8 @@ public class TestUserInvalidScenarios {
     @Test()
     public void testCreateUserWithoutEmailOrPhone() {
         response =
-                userServiceHelper
-                        .createWrongUser(generateUserData.createUserDataWithoutEmailAndPhone());
+                userServiceControllers
+                        .createWrongUser(userDataGeneration.createUserDataWithoutEmailAndPhone());
         userException = response.as(UserException.class);
 
         assertEquals(response.statusCode(),400);
@@ -76,8 +76,8 @@ public class TestUserInvalidScenarios {
     @Test()
     public void testCreateUserWithoutWalletName() {
         response =
-                userServiceHelper
-                        .createWrongUser(generateUserData.createUserDataWithoutWalletName());
+                userServiceControllers
+                        .createWrongUser(userDataGeneration.createUserDataWithoutWalletName());
         userException = response.as(UserException.class);
 
         assertEquals(response.statusCode(),400);
@@ -85,10 +85,10 @@ public class TestUserInvalidScenarios {
     }
 
     public void tearDownAndDeleteUser() {
-        response = userServiceHelper.deleteUser(userId,userToken);
+        response = userServiceControllers.deleteUser(userId,userToken);
 
         assertEquals(response.getStatusCode(), 200, "The status code should be 200");
-        actualUser = userServiceHelper.getUser(userId, userToken).as(User.class);
+        actualUser = userServiceControllers.getUser(userId, userToken).as(User.class);
         assertEquals(actualUser.getUserData().getStatus(),
                 "deleted",
                 "The user status should be deleted");

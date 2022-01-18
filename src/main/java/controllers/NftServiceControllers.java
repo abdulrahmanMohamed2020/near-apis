@@ -1,4 +1,4 @@
-package helpers;
+package controllers;
 
 import apiuitls.ConfigManager;
 import constants.EndPoints;
@@ -10,16 +10,16 @@ import model.nfts.NftData;
 
 import java.io.File;
 
-public class NftServiceHelper {
+public class NftServiceControllers {
     private static final String BASE_URL = ConfigManager.getInstance().getString("baseUrl").replace("\"","");
     private Response response;
 
-    public NftServiceHelper() {
+    public NftServiceControllers() {
         RestAssured.baseURI = BASE_URL;
     }
 
     public Response createNftOnUser(NftData nftData,String userToken) {
-        File file = new File("resources/test-2.jpg");
+        File file = new File("src/test/resources/sunrise.jpg");
 
         response = RestAssured
                 .given().filter(new AllureRestAssured())
