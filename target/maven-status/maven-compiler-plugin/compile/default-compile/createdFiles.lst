@@ -1,5 +1,6 @@
 model/nfts/NftData.class
 model/transactions/Transactions.class
+generatingData/GenerateNftData.class
 apiuitls/ConfigManager.class
 model/contacts/Phone.class
 helpers/UserServiceHelper.class

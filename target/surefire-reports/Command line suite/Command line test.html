@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Command line test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>17/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>18/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jan 18 00:15:19 EET 2022</td>
+<td>Started on:</td><td>Tue Jan 18 18:15:28 EET 2022</td>
 </tr>
-<tr><td>Total time:</td><td>158 seconds (158248 ms)</td>
+<tr><td>Total time:</td><td>125 seconds (125319 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,120 +75,12 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.nftsTests.TestNfts.testGetAllNfts()'><b>testGetAllNfts</b><br>Test class: tests.nftsTests.TestNfts</td>
-<td><div><pre>java.lang.AssertionError: The status code should be 200 expected [200] but found [500]
-	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:51)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 42 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace713565341", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace713565341'><pre>java.lang.AssertionError: The status code should be 200 expected [200] but found [500]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:907)
-	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:51)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:764)
-	at org.testng.TestRunner.run(TestRunner.java:585)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.runSuites(TestNG.java:1069)
-	at org.testng.TestNG.run(TestNG.java:1037)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>2</td>
-<td>tests.nftsTests.TestNfts@4044fb95</td></tr>
-<tr>
-<td title='tests.contactsTests.TestContacts.testImportOneOrMoreContacts()'><b>testImportOneOrMoreContacts</b><br>Test class: tests.contactsTests.TestContacts</td>
-<td><div><pre>java.lang.AssertionError: The status code should be 200 expected [200] but found [400]
-	at tests.contactsTests.TestContacts.testImportOneOrMoreContacts(TestContacts.java:75)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 42 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1172028311", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1172028311'><pre>java.lang.AssertionError: The status code should be 200 expected [200] but found [400]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:907)
-	at tests.contactsTests.TestContacts.testImportOneOrMoreContacts(TestContacts.java:75)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:764)
-	at org.testng.TestRunner.run(TestRunner.java:585)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.runSuites(TestNG.java:1069)
-	at org.testng.TestNG.run(TestNG.java:1037)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
-	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
-</pre></div></td>
-<td>0</td>
-<td>tests.contactsTests.TestContacts@686449f9</td></tr>
-<tr>
 <td title='tests.usersTests.TestUserIntegration.testUserAttributes()'><b>testUserAttributes</b><br>Test class: tests.usersTests.TestUserIntegration</td>
 <td><div><pre>java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
 	at tests.usersTests.TestUserIntegration.testUserAttributes(TestUserIntegration.java:58)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2122454169", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2122454169'><pre>java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
+... Removed 40 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace478302472", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace478302472'><pre>java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertFalse(Assert.java:67)
@@ -243,10 +135,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.TestLogin.testCreateLoginOtp()'><b>testCreateLoginOtp</b><br>Test class: tests.TestLogin</td>
+<td title='tests.loginTests.TestLogin.testCreateLoginOtp()'><b>testCreateLoginOtp</b><br>Test class: tests.loginTests.TestLogin</td>
 <td></td>
-<td>9</td>
-<td>tests.TestLogin@2974f221</td></tr>
+<td>1</td>
+<td>tests.loginTests.TestLogin@58fe0499</td></tr>
 <tr>
 <td title='tests.usersTests.TestUserInvalidScenarios.testCreateUserWithoutEmailOrPhone()'><b>testCreateUserWithoutEmailOrPhone</b><br>Test class: tests.usersTests.TestUserInvalidScenarios</td>
 <td></td>
@@ -265,13 +157,13 @@ function toggleAllBoxes() {
 <tr>
 <td title='tests.contactsTests.TestContacts.testGetContactsOfAnUser()'><b>testGetContactsOfAnUser</b><br>Test class: tests.contactsTests.TestContacts</td>
 <td></td>
-<td>2</td>
+<td>0</td>
 <td>tests.contactsTests.TestContacts@686449f9</td></tr>
 <tr>
 <td title='tests.transactionsTests.TestUserTransactionsIntegration.testGetNftTransactions()'><b>testGetNftTransactions</b><br>Test class: tests.transactionsTests.TestUserTransactionsIntegration</td>
 <td></td>
-<td>1</td>
-<td>tests.transactionsTests.TestUserTransactionsIntegration@58fe0499</td></tr>
+<td>2</td>
+<td>tests.transactionsTests.TestUserTransactionsIntegration@2974f221</td></tr>
 <tr>
 <td title='tests.nftsTests.TestNfts.testGetSingleNft()'><b>testGetSingleNft</b><br>Test class: tests.nftsTests.TestNfts</td>
 <td></td>
@@ -291,17 +183,22 @@ function toggleAllBoxes() {
 <td title='tests.transactionsTests.TestUserTransactionsIntegration.testGetUserTransactions()'><b>testGetUserTransactions</b><br>Test class: tests.transactionsTests.TestUserTransactionsIntegration</td>
 <td></td>
 <td>0</td>
-<td>tests.transactionsTests.TestUserTransactionsIntegration@58fe0499</td></tr>
+<td>tests.transactionsTests.TestUserTransactionsIntegration@2974f221</td></tr>
 <tr>
 <td title='tests.usersTests.TestUserInvalidScenarios.testGetUserWithProvidingEmptyUserId()'><b>testGetUserWithProvidingEmptyUserId</b><br>Test class: tests.usersTests.TestUserInvalidScenarios</td>
 <td></td>
-<td>7</td>
+<td>4</td>
 <td>tests.usersTests.TestUserInvalidScenarios@665df3c6</td></tr>
 <tr>
 <td title='tests.usersTests.TestUserInvalidScenarios.testGetWrongUser()'><b>testGetWrongUser</b><br>Test class: tests.usersTests.TestUserInvalidScenarios</td>
 <td></td>
-<td>12</td>
+<td>4</td>
 <td>tests.usersTests.TestUserInvalidScenarios@665df3c6</td></tr>
+<tr>
+<td title='tests.contactsTests.TestContacts.testImportOneOrMoreContacts()'><b>testImportOneOrMoreContacts</b><br>Test class: tests.contactsTests.TestContacts</td>
+<td></td>
+<td>0</td>
+<td>tests.contactsTests.TestContacts@686449f9</td></tr>
 <tr>
 <td title='tests.contactsTests.TestContacts.testUpdateContact()'><b>testUpdateContact</b><br>Test class: tests.contactsTests.TestContacts</td>
 <td></td>
@@ -316,17 +213,17 @@ function toggleAllBoxes() {
 <td title='tests.transactionsTests.TestUserTransactionsIntegration.testUpdateTransaction()'><b>testUpdateTransaction</b><br>Test class: tests.transactionsTests.TestUserTransactionsIntegration</td>
 <td></td>
 <td>1</td>
-<td>tests.transactionsTests.TestUserTransactionsIntegration@58fe0499</td></tr>
+<td>tests.transactionsTests.TestUserTransactionsIntegration@2974f221</td></tr>
 <tr>
 <td title='tests.usersTests.TestUserIntegration.testUpdateUser()'><b>testUpdateUser</b><br>Test class: tests.usersTests.TestUserIntegration</td>
 <td></td>
-<td>1</td>
+<td>2</td>
 <td>tests.usersTests.TestUserIntegration@68b6f0d6</td></tr>
 <tr>
-<td title='tests.TestLogin.testVerifyLoginOtp()'><b>testVerifyLoginOtp</b><br>Test class: tests.TestLogin</td>
+<td title='tests.loginTests.TestLogin.testVerifyLoginOtp()'><b>testVerifyLoginOtp</b><br>Test class: tests.loginTests.TestLogin</td>
 <td></td>
 <td>1</td>
-<td>tests.TestLogin@2974f221</td></tr>
+<td>tests.loginTests.TestLogin@58fe0499</td></tr>
 </table><p>
 </body>
 </html>

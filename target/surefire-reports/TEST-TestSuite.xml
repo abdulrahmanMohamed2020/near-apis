@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="20" failures="3" name="TestSuite" time="58.761" errors="0" skipped="0">
+<testsuite tests="19" failures="1" name="TestSuite" time="36.868" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="16.0.2+0"/>
@@ -58,165 +58,23 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="tests.TestLogin" name="testCreateLoginOtp" time="9.281"/>
-  <testcase classname="tests.TestLogin" name="testVerifyLoginOtp" time="1.952"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="1.612"/>
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetNftTransactions" time="2.144"/>
   <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testGetUserTransactions" time="0.957"/>
-  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="1.471"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testGetContact" time="1.819"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testGetContactsOfAnUser" time="2.752"/>
-  <testcase classname="tests.contactsTests.TestContacts" name="testImportOneOrMoreContacts" time="0.907">
-    <failure message="The status code should be 200 expected [200] but found [400]" type="java.lang.AssertionError">java.lang.AssertionError: The status code should be 200 expected [200] but found [400]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:907)
-	at tests.contactsTests.TestContacts.testImportOneOrMoreContacts(TestContacts.java:75)
-</failure>
-    <system-out>{
-    &quot;message&quot;: &quot;User deleted successfully!&quot;,
-    &quot;data&quot;: {
-        
-    }
-}
-Request method:	GET
-Request URI:	https://api.nearlogin.io/contacts/HoGlGxnQStYl0WbD1YzLQ
-Proxy:			&lt;none&gt;
-Request params:	&lt;none&gt;
-Query params:	&lt;none&gt;
-Form params:	&lt;none&gt;
-Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiMzQxMGYwZGUtZGRmNy00ODYwLWI4NzctZGE3YTExNGY3ZTA5Iiwic3ViIjoiNmY2MzZmMWUtNzJlNS00MmRlLTk2YTctZTA0NGVmODI4YjczIiwiZXZlbnRfaWQiOiJmNTQyZGQ5YS1jYjUzLTQ4ZTgtOTdlOS1kODBjZDE3YjQwZDAiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNDU3Nzg3LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI1NDQxODcsImlhdCI6MTY0MjQ1Nzc4NywianRpIjoiNjkzMDkzOGQtMjY4My00NjMwLWFmMmEtNjY5NTJjYWEyMDg4IiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InFkbjF6Ym4xMC5uZWFyIn0.XRRyzAMSratOu8dxIRWcS1yS6OiJA6RTK4PcjCZl6cxuPvj4GJ6-2UHAJFYmGER6hpk2G8aMZareNFPItDwx9fRQ13XdQsLw_4SC7J-zdJdlFfCErQWUoVweRhDcLf7I7Tpd100UNRGpjjxMZ0hN-KJfKvB1eWMCt52ygNdQIOGPMFL9W-8CMOxo2iYE61AXMy9K741o-kvHMY-m1_BWrE0uTmhjNpKoiTzGfDcejVfr_X01BsXQQkDSgCvmfr0_azYhqwi9W1nfN9jVzvL3xKGVMv344vSCzzI-hXMJietZI2tjUIv5uaKFBIQeURx9qi4TsD9hLm-0nnwy5MZA7w
-				Accept=*/*
-Cookies:		&lt;none&gt;
-Multiparts:		&lt;none&gt;
-Body:			&lt;none&gt;
-{
-    &quot;message&quot;: &quot;Contact retrieved successfully!&quot;,
-    &quot;data&quot;: {
-        &quot;contact_id&quot;: &quot;HoGlGxnQStYl0WbD1YzLQ&quot;,
-        &quot;updated&quot;: 1642457788702,
-        &quot;last_name&quot;: &quot;Test&quot;,
-        &quot;dob&quot;: &quot;1997-01-14&quot;,
-        &quot;first_name&quot;: &quot;Automation&quot;,
-        &quot;status&quot;: &quot;archived&quot;,
-        &quot;created&quot;: 1642457788702,
-        &quot;modified&quot;: 1642457788702,
-        &quot;owner_id&quot;: &quot;ILZsw3djWIB_xrdmz5CZI&quot;,
-        &quot;archived_date&quot;: 1642457794522
-    }
-}
-Request method:	POST
-Request URI:	https://api.nearlogin.io/user/create
-Proxy:			&lt;none&gt;
-Request params:	&lt;none&gt;
-Query params:	&lt;none&gt;
-Form params:	&lt;none&gt;
-Path params:	&lt;none&gt;
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		&lt;none&gt;
-Multiparts:		&lt;none&gt;
-Body:
-{
-    &quot;full_name&quot;: &quot;Milly Medhurst&quot;,
-    &quot;wallet_id&quot;: &quot;hyp6pey63.near&quot;,
-    &quot;email&quot;: &quot;pktrh82@test.com&quot;,
-    &quot;phone&quot;: &quot;(270) 052-9972&quot;,
-    &quot;walletName&quot;: &quot;hyp6pey63.near&quot;
-}
-{
-    &quot;jwt_access_token&quot;: &quot;eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiMjNjODc2NDMtNjVkZi00YWJkLWI4ZDYtZGFiYmRjZGQ5MDYxIiwic3ViIjoiNjNlYjljZDYtMzg0OS00ZDljLWI2MWMtNzg0MTk2ZDg4NmRmIiwiZXZlbnRfaWQiOiI4NTUxZjQ0NS1iOGNjLTRlM2ItYWQxNC02YzM1MGNmMDg3NTIiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNDU3Nzk4LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI1NDQxOTgsImlhdCI6MTY0MjQ1Nzc5OCwianRpIjoiZjAxYjI3M2ItOGRjMS00ZmI3LWJiYzMtMzhiMmQzYmE5M2YxIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Imh5cDZwZXk2My5uZWFyIn0.GYjUJ4a81xVWl-9soVM5cVN4lkiASWY6cDXzZc5jgVsmH18NgSFMpQVPM6J3Xo4TM5CfR5e_cXTkHHh0YIcogh0s99V9yGdutxrF8Ca_u3u2-pA8ZA6AD0re8zGD7rdAVzsmLB0l91S80ODZ6rl6qSh0YMe3pcQ3HMW4pxC3YSJddjI88Dd1--TOsoSObJUD8d9zvdoknaO-6CZwspxhi6p5jvXgr2B1RKXPBGcy3HD8n-xLUfSzVR6vv_RNsQ7KeHkxN8UBXY-LfxMYRjosPd6vOHtucd53HtZZIJcDqwaDS1XJyfA3oQa2L6llTOuMntbebceg6EU6I7oGWfduEw&quot;,
-    &quot;jwt_id_token&quot;: &quot;eyJraWQiOiJScTVVUXU5UUZoRnlzVGQyZTBXb3BnYlBrcWRcL0pzMWprV1Y2RGtRNGdjND0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiMjNjODc2NDMtNjVkZi00YWJkLWI4ZDYtZGFiYmRjZGQ5MDYxIiwic3ViIjoiNjNlYjljZDYtMzg0OS00ZDljLWI2MWMtNzg0MTk2ZDg4NmRmIiwiYXVkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJldmVudF9pZCI6Ijg1NTFmNDQ1LWI4Y2MtNGUzYi1hZDE0LTZjMzUwY2YwODc1MiIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQyNDU3Nzk4LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJjb2duaXRvOnVzZXJuYW1lIjoiaHlwNnBleTYzLm5lYXIiLCJleHAiOjE2NDI1NDQxOTgsImlhdCI6MTY0MjQ1Nzc5OCwianRpIjoiMzM2NTE5Y2ItZmU2MC00ZWQ2LThhNDgtZWM2NjIwYTU3YWExIn0.T5Zqut2Xh6lVshyOE_htOlpaGMYmeNinOQoNCHzkNBh06q1NF9TqhnFGYm5Cp9Oj20MHZOcGW8GA4KWPbUp7_RHUR9MMBGjf5CjprD6QgLv1X_be2yknFir6_hZZbZe63YGEcpPwO-sUfnEhmtr1cAgvQT02kpCdjlr-QhTVdEM2fFHY2iosQTLfLVmmftROP3OSuTM3r2_lqqedn-xCMchKmU7ep3MdvC1BkcmT2cWaXNFkc3ChrtYilPQhZ4EfqQTG9wNAA_luNh33_LHJdujFDKRVh46C19baC3ZJtG79vA1U70oNHjOgs5kFTNrxMW6G9N1aHhbLYYLWu4PmFg&quot;,
-    &quot;jwt_refresh_token&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.AKKgTNj4OitF04xvs6t4WRk0bPUPMMTtG1BBXxecbFQCqlUvU6f1zYtd6nXmtt6WBUYm9fmI11MdqkmLYTEwVZCChStJB1K-dPhjTr-DQZZYMqQinboYLs56M44ZE6_jiG2DUEwH-QmHbL9C2pqk5jP8N_KCeJ0ATttdCtOoYPLhWJVHpUkxyQxgGHKSnPbHAolzuIEZuPSrCBZhFljDOjYralmEMWiuBu6oMnaE0cvwCkNDzvA7dKvS_DSmpramrFOgXNoQKhO0QGeGmWQimMKSruMSk2GHJ5vIOGhG668xSaSvT50ZVs6dYFJv7GKqEZ1oQo3Ys7sn0_eCtOoYjA.x7xEMlhIRrbDsf9M.LdAMKfuZ0yc-xA0TaUrBQmuUtgX0YRHidK0b3HK8ABle3j9Fg5pj0Sf6x9ApbtLnxP18crIpMhdCsco5vJM91NXKOPrWufzIr_Nltz2CtdRX8VWCugQa_T4sJB6xOkCtF8i9N8MVNUjL9xFK4KO1jbQNwJ6Jo81IyydF2lOwJBwcc1RHyWKhfs0vn4jrlNnKCgRcQzcmp5nqsKcoOFKrdr21Emm_yxvIALSNbnHYt5VvxsLIvB0oY0YLwg5CzCk-oFeIhFEbfvzxZ1KIgXDnkyvNJmG-k9pAWzF0TK-ypfHQJfLXY6B1shz2-7lr7eBR8tANywAnr3eGtSWYVF2qW5cxuFZVWuNlJ4nyAKbgDAQr18eiWY3wQ9FSTifTHlThSviEsgqLI-jPUmvCusNKUi5N4YvJGYClrnOJc3zePiVcaVrsvBF3Gtg4ejqyvy0y7w3w26c3ZePCdEotDaKUDNQxU4y6XpGMANFke5WbU43I1b01k9RQUoA5GAGh0_voD6E6_xU7in_KJFj_QmHpnGTNi4-AyL2oN0O7GtkywFja0Wj-iYS0ALdDAyhOJLPlOAAJEUzIPrUs9S8xoVg40cfI9gWU6dH2hkEM90v5wu3yyF0gSVYql5FTHRSArODTxxTHxJ7hiTFha4KwFsWAqKawFesTEtmMROpOWAQuWQ6PGM2dPqOSnS_G5ukZfk92WtAGh1S-H6niI9vM2KNl94q0uZkI0Fh97mrw5eWZOddO1nyUyIwrVoaZJ8k95hjQl0tvj4tCJ7VOFO2NLGQTMlUdKq1fvl2G_0p8jWG1d_CscMzCumogwvoLV40dV3TIojYJ-CmeiIfx75bnhcQWqZUWg7d1zj39U1jlt97ucnBBGJUDfuZJjYYmrr5EHtsVo-5T6WsfQMs_9QytJ62GbbbnvkijVumGNaI0dsA_EX8huXIoSLgnVaElhld2pkdEAqXONNUmXMz_9uMbIdLHmMD8ZTtUUsF497dqRpIgN9LrT_OEJrWI2B0aWYp2nmpm1ZMQjzJga8DtUcahUL3BCNCcchvU7rIsBn0nYUMXMtXRcO7L5Cyt-95wK8vrY9tpUVWFM2z2VB2dLindVJdqWIHcdVLzZzyE0eQUqOYd1t92SiteBJjq9lLOxMXHN182Q9LYuQokvoJtbioy5O-oZUlFmfDSKKJgQ3CWEWQg4w6_jwnL7LX3BTkdr-qSkdmeVUdvdGl5PTjgNMwSK4uJcc4OeSy7Vrn8jM6i1QpUamvDW5tKFLl47fRqlkhbxJqaocIX40Ca9epYFcdAFxw.ndrC4V_IRdlS-Wk76mpSvw&quot;,
-    &quot;user_info&quot;: {
-        &quot;user_id&quot;: &quot;Pmx_sOs_l0GFPs9P24-57&quot;,
-        &quot;wallet_status&quot;: &quot;pending&quot;,
-        &quot;status&quot;: &quot;active&quot;,
-        &quot;created&quot;: 1642457797634,
-        &quot;full_name&quot;: &quot;&quot;,
-        &quot;email&quot;: &quot;pktrh82@test.com&quot;,
-        &quot;wallet_id&quot;: &quot;hyp6pey63.near&quot;,
-        &quot;phone&quot;: &quot;(270) 052-9972&quot;,
-        &quot;verified&quot;: false
-    }
-}
-Request method:	POST
-Request URI:	https://api.nearlogin.io/contacts
-Proxy:			&lt;none&gt;
-Request params:	&lt;none&gt;
-Query params:	&lt;none&gt;
-Form params:	&lt;none&gt;
-Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiMjNjODc2NDMtNjVkZi00YWJkLWI4ZDYtZGFiYmRjZGQ5MDYxIiwic3ViIjoiNjNlYjljZDYtMzg0OS00ZDljLWI2MWMtNzg0MTk2ZDg4NmRmIiwiZXZlbnRfaWQiOiI4NTUxZjQ0NS1iOGNjLTRlM2ItYWQxNC02YzM1MGNmMDg3NTIiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNDU3Nzk4LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI1NDQxOTgsImlhdCI6MTY0MjQ1Nzc5OCwianRpIjoiZjAxYjI3M2ItOGRjMS00ZmI3LWJiYzMtMzhiMmQzYmE5M2YxIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Imh5cDZwZXk2My5uZWFyIn0.GYjUJ4a81xVWl-9soVM5cVN4lkiASWY6cDXzZc5jgVsmH18NgSFMpQVPM6J3Xo4TM5CfR5e_cXTkHHh0YIcogh0s99V9yGdutxrF8Ca_u3u2-pA8ZA6AD0re8zGD7rdAVzsmLB0l91S80ODZ6rl6qSh0YMe3pcQ3HMW4pxC3YSJddjI88Dd1--TOsoSObJUD8d9zvdoknaO-6CZwspxhi6p5jvXgr2B1RKXPBGcy3HD8n-xLUfSzVR6vv_RNsQ7KeHkxN8UBXY-LfxMYRjosPd6vOHtucd53HtZZIJcDqwaDS1XJyfA3oQa2L6llTOuMntbebceg6EU6I7oGWfduEw
-				Accept=*/*
-				Content-Type=application/json
-Cookies:		&lt;none&gt;
-Multiparts:		&lt;none&gt;
-Body:
-{
-    &quot;owner_id&quot;: &quot;Pmx_sOs_l0GFPs9P24-57&quot;,
-    &quot;last_name&quot;: &quot;Test&quot;,
-    &quot;dob&quot;: &quot;1997-01-14&quot;,
-    &quot;first_name&quot;: &quot;Automation&quot;
-}
-{
-    &quot;message&quot;: &quot;Contact added successfully!&quot;,
-    &quot;data&quot;: {
-        &quot;contact_id&quot;: &quot;RU4C5yhCVMj_FGSvh4RiM&quot;
-    },
-    &quot;debug&quot;: {
-        
-    }
-}
-Request method:	POST
-Request URI:	https://api.nearlogin.io/contacts/import
-Proxy:			&lt;none&gt;
-Request params:	&lt;none&gt;
-Query params:	&lt;none&gt;
-Form params:	&lt;none&gt;
-Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiMjNjODc2NDMtNjVkZi00YWJkLWI4ZDYtZGFiYmRjZGQ5MDYxIiwic3ViIjoiNjNlYjljZDYtMzg0OS00ZDljLWI2MWMtNzg0MTk2ZDg4NmRmIiwiZXZlbnRfaWQiOiI4NTUxZjQ0NS1iOGNjLTRlM2ItYWQxNC02YzM1MGNmMDg3NTIiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNDU3Nzk4LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI1NDQxOTgsImlhdCI6MTY0MjQ1Nzc5OCwianRpIjoiZjAxYjI3M2ItOGRjMS00ZmI3LWJiYzMtMzhiMmQzYmE5M2YxIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Imh5cDZwZXk2My5uZWFyIn0.GYjUJ4a81xVWl-9soVM5cVN4lkiASWY6cDXzZc5jgVsmH18NgSFMpQVPM6J3Xo4TM5CfR5e_cXTkHHh0YIcogh0s99V9yGdutxrF8Ca_u3u2-pA8ZA6AD0re8zGD7rdAVzsmLB0l91S80ODZ6rl6qSh0YMe3pcQ3HMW4pxC3YSJddjI88Dd1--TOsoSObJUD8d9zvdoknaO-6CZwspxhi6p5jvXgr2B1RKXPBGcy3HD8n-xLUfSzVR6vv_RNsQ7KeHkxN8UBXY-LfxMYRjosPd6vOHtucd53HtZZIJcDqwaDS1XJyfA3oQa2L6llTOuMntbebceg6EU6I7oGWfduEw
-				Accept=*/*
-				Content-Type=application/json
-Cookies:		&lt;none&gt;
-Multiparts:		&lt;none&gt;
-Body:
-[
-    {
-        &quot;owner_id&quot;: &quot;Pmx_sOs_l0GFPs9P24-57&quot;,
-        &quot;last_name&quot;: &quot;Automation&quot;,
-        &quot;dob&quot;: &quot;1997-01-14&quot;,
-        &quot;first_name&quot;: &quot;Test import contacts&quot;
-    }
-]
-{
-    &quot;message&quot;: &quot;One or more contact(s) already exists.&quot;,
-    &quot;body&quot;: [
-        {
-            &quot;contact_id&quot;: &quot;lA6fGrzOoyZI62eRsbwIa&quot;,
-            &quot;last_name&quot;: &quot;Automation&quot;,
-            &quot;dob&quot;: &quot;1997-01-14&quot;,
-            &quot;first_name&quot;: &quot;Test import contacts&quot;,
-            &quot;status&quot;: &quot;active&quot;,
-            &quot;created&quot;: 1642450106565,
-            &quot;owner_id&quot;: &quot;U9SawJ2LSuPAggP402CRg&quot;,
-            &quot;modified&quot;: 1642450106565
-        }
-    ]
-}
-</system-out>
-  </testcase>
-  <testcase classname="tests.contactsTests.TestContacts" name="testUpdateContact" time="1.47"/>
-  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testCreateUserWithoutEmailOrPhone" time="0.872"/>
-  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testCreateUserWithoutWalletName" time="0.81"/>
-  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testGetUnauthorizedUser" time="4.16"/>
-  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testGetUserWithProvidingEmptyUserId" time="7.607"/>
-  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testGetWrongUser" time="12.18"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUser" time="2.537"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testUpdateUser" time="1.741"/>
-  <testcase classname="tests.usersTests.TestUserIntegration" name="testUserAttributes" time="0.917">
+  <testcase classname="tests.transactionsTests.TestUserTransactionsIntegration" name="testUpdateTransaction" time="1.66"/>
+  <testcase classname="tests.loginTests.TestLogin" name="testCreateLoginOtp" time="1.207"/>
+  <testcase classname="tests.loginTests.TestLogin" name="testVerifyLoginOtp" time="1.958"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testGetContact" time="1.771"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testGetContactsOfAnUser" time="0.816"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testImportOneOrMoreContacts" time="0.856"/>
+  <testcase classname="tests.contactsTests.TestContacts" name="testUpdateContact" time="1.783"/>
+  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testCreateUserWithoutEmailOrPhone" time="0.967"/>
+  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testCreateUserWithoutWalletName" time="0.808"/>
+  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testGetUnauthorizedUser" time="4.188"/>
+  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testGetUserWithProvidingEmptyUserId" time="4.385"/>
+  <testcase classname="tests.usersTests.TestUserInvalidScenarios" name="testGetWrongUser" time="4.551"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testGetUser" time="2.161"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testUpdateUser" time="2.406"/>
+  <testcase classname="tests.usersTests.TestUserIntegration" name="testUserAttributes" time="0.886">
     <failure message="The Full Name is empty expected [false] but found [true]" type="java.lang.AssertionError">java.lang.AssertionError: The Full Name is empty expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
@@ -230,13 +88,13 @@ Body:
     }
 }
 Request method:	GET
-Request URI:	https://api.nearlogin.io/users/4ExxA6X4YNY4YgQe_9SQt
+Request URI:	https://api.nearlogin.io/users/68Fna_L7kZYll6MGXj3yQ
 Proxy:			&lt;none&gt;
 Request params:	&lt;none&gt;
 Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYTc0OTlmMzUtMDljNS00OGU3LWEyNjItOGZlYjUxODA1NzUzIiwic3ViIjoiYzRjMzc4ZmUtMmMyZC00OTI0LWEwOGItNTEzNDUxYmUwZTcxIiwiZXZlbnRfaWQiOiJkODZmZWYwZC00ZTk5LTQyMDMtYTEzNy04NzM0NmQxZmU3NjYiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNDU3ODQ1LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI1NDQyNDUsImlhdCI6MTY0MjQ1Nzg0NSwianRpIjoiN2Q1ZTg0NmMtZjFjNi00NDU1LTllZjYtODU4MGJlMTI2MzJlIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6ImhxYzZud2Q3Ni5uZWFyIn0.-AL3xUXapTth8ZhVMaPZl9zOJiuWiByaZhFjC-M3W6dy9wzqqN_LBY_RgTjc0vasKLAQvwYBJduIXS_76YJQYLZf_lPW4PeEo2XgseAW7_keUSPNcfb3QfN3YFXFWB4YHJ_nAjvIE8zwXBtAQ7ZjlYHpq7FvTxiW8PDYRfeNLUYDRpKb0IFNehMkRq-5qzPDRpm-rf1JZjKskezhe5OnVOvKs7LWticMZPIP6ud7t1q_YWbSup0Yrt4nl7dtTiW3MDlqd9RH461B4CIZGCMXR47dFS_9cU3VYyzfuZjADwijOnQHkaT87sewfBD6Ff74z3DESwYP4qapzyzgFdXuLA
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiNjYyMjM5MDctNDY2OS00NWQzLThjMWUtMDU5NWNmZDJkYTEzIiwic3ViIjoiODI5YThiYzYtYjNiNS00YTA4LWJjZjAtZGQwMWZkNmYxODU2IiwiZXZlbnRfaWQiOiJlYmFmZTMxYi1hZGYyLTRiYjktOWE1Zi1iY2VhODhjNWQ3MmMiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNTIyNjMxLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI2MDkwMzEsImlhdCI6MTY0MjUyMjYzMSwianRpIjoiZjRjNTE2MzYtZjBkMS00ZDM4LTllOTYtOWFlMDk5OGI5OTY0IiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Im5pZWlxczYxNy5uZWFyIn0.dGcUpAjNQVdjXaKZqmaFE5TbPTjYKxld90yx3yMbDr664JRnXQRcs6uT29aRHvUE_Vt6kV_Sg5gYBJ0nFLZe4SL8nTc5uGT7UsfbeNWA5OEhSRW8DbrmTkjyBigCDF2fpHN-QQIpBzSu4QouA5ioNLBQMEWWkBhds1m7PF7UPtv1Doqn7q9QACtT4JgEWZ2m999bXGoJwKaej2uylgaoPZad_xe4Cnrzusj-KldB7QeAmP_yk2vkNm2zJP4uQLdxM5dgOqjcLLDkkosJwiUs7u12EWsMppTFkFlsiCvTmRyf52ON28X-c0ttsDLvoS3P67aE5B8rKA8g8-VdAechgQ
 				Accept=*/*
 Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
@@ -244,15 +102,15 @@ Body:			&lt;none&gt;
 {
     &quot;message&quot;: &quot;User retrieved successfully!&quot;,
     &quot;data&quot;: {
-        &quot;updated&quot;: 1642457847902,
-        &quot;user_id&quot;: &quot;4ExxA6X4YNY4YgQe_9SQt&quot;,
+        &quot;updated&quot;: 1642522635153,
+        &quot;user_id&quot;: &quot;68Fna_L7kZYll6MGXj3yQ&quot;,
         &quot;wallet_status&quot;: &quot;pending&quot;,
         &quot;status&quot;: &quot;deleted&quot;,
-        &quot;created&quot;: 1642457844637,
-        &quot;full_name&quot;: &quot;gaiwxfwqcr&quot;,
-        &quot;email&quot;: &quot;woscr18@test.com&quot;,
-        &quot;wallet_id&quot;: &quot;hqc6nwd76.near&quot;,
-        &quot;phone&quot;: &quot;401.664.1275&quot;,
+        &quot;created&quot;: 1642522631245,
+        &quot;full_name&quot;: &quot;Lonny Paucek&quot;,
+        &quot;email&quot;: &quot;igyvg60@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;nieiqs617.near&quot;,
+        &quot;phone&quot;: &quot;(843) 958-7103&quot;,
         &quot;verified&quot;: false
     }
 }
@@ -269,36 +127,36 @@ Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
 Body:
 {
-    &quot;full_name&quot;: &quot;Delbert Abbott&quot;,
-    &quot;wallet_id&quot;: &quot;vqc0jhp37.near&quot;,
-    &quot;email&quot;: &quot;dkvgd01@test.com&quot;,
-    &quot;phone&quot;: &quot;1-053-421-6405&quot;,
-    &quot;walletName&quot;: &quot;vqc0jhp37.near&quot;
+    &quot;full_name&quot;: &quot;Stacee Little&quot;,
+    &quot;wallet_id&quot;: &quot;ygyagt826.near&quot;,
+    &quot;email&quot;: &quot;kjazj10@test.com&quot;,
+    &quot;phone&quot;: &quot;466-958-9924&quot;,
+    &quot;walletName&quot;: &quot;ygyagt826.near&quot;
 }
 {
-    &quot;jwt_access_token&quot;: &quot;eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYWIxMWQ2MTQtM2I5NC00NmQyLTg2MWMtZmRjYjVhMzVjZGIyIiwic3ViIjoiNWUwN2UyZWYtYjA1Zi00MmMyLTgxMmEtMjc0ZjExZTJjMTkyIiwiZXZlbnRfaWQiOiI1ZjYyMTc1Zi05M2IwLTRkYjUtYmQ1NS00ZWU1YzQyMDQwZmEiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNDU3ODUwLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI1NDQyNTAsImlhdCI6MTY0MjQ1Nzg1MCwianRpIjoiYmE0NmZkYmItODFmNC00MjZlLTkyNzEtMDQ5MWMxNTJhMDY0IiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InZxYzBqaHAzNy5uZWFyIn0.U_wI4xHVa3awmVjmmGclG5XQqykY04SBgIrwLxFYnNyvsy5EGG1v9ErXDdIeeThxunl8TE_XMO6i77IAAuM9CJLi1rfqJxbQ6k-wnNat9Gq_VNKyJ_57Ubn0RFqKOAI7DcgKTp_34G77-DpyT00a18hcELiBf5kNk64jebzuUhdIN0KUUlomhw78CSBSkkriyvNNMVRKfSQ5B1-21KSSSKId_hG3ZQ9nYhQX-5cacSJLGdbYy2pJnlXm6Arn3v4kaxkGUdUJStvEtwLivKMVBx2sPL0FigI8Wd55s3r6u-WXyc1raR1fCBIXqCPO86QrQzPuvF3FDfTTeq1h6VwWmA&quot;,
-    &quot;jwt_id_token&quot;: &quot;eyJraWQiOiJScTVVUXU5UUZoRnlzVGQyZTBXb3BnYlBrcWRcL0pzMWprV1Y2RGtRNGdjND0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYWIxMWQ2MTQtM2I5NC00NmQyLTg2MWMtZmRjYjVhMzVjZGIyIiwic3ViIjoiNWUwN2UyZWYtYjA1Zi00MmMyLTgxMmEtMjc0ZjExZTJjMTkyIiwiYXVkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJldmVudF9pZCI6IjVmNjIxNzVmLTkzYjAtNGRiNS1iZDU1LTRlZTVjNDIwNDBmYSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQyNDU3ODUwLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJjb2duaXRvOnVzZXJuYW1lIjoidnFjMGpocDM3Lm5lYXIiLCJleHAiOjE2NDI1NDQyNTAsImlhdCI6MTY0MjQ1Nzg1MCwianRpIjoiYTAzYmY1YjUtMjJhZC00OTkyLWFjMDItNmZhZDAyMTZhZjI2In0.E9pxHCAPxmIYowgZYsXqOUlEJGPBqdPCcDGe_cYlW2UaZhqM8tcBNaO2t-lc-pr0OGdSyBYvfGQjrD70mgYvkmjxGAR5GbCmVdHOFdKC3WibqKggX2wj2OqlW1Kco-mkA4gwiGmffeBoLeudOwxP2QACJPQkGZMQW_1LlIbVvy3a_EsxHZuWKcd6tleyg3XxOuoLSnp0xKAc9bmaN3MFEnyxEqq1n4qZOh8BuffeY39YMBnfKZgDj31HxP2Wy-zBEE-18V19VN6_vd7EuQU-qmKCpbSyBtQvD6qrmIPiWlY561ByUEyYRTXBY9hAdCAjAxgcRen7_fOZkRbYJCeSuw&quot;,
-    &quot;jwt_refresh_token&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.aPZeuI1vbQEgF5hLfxYphqVyM-gZuZLtPdB_5Mf4-oRfWxHzZN-Y8SUKeUcT99VLSeNU_3lXPyBfeMijAYLJqvL5Hff2Sxrxv_NOgCDci2eARAsmBuqsgzuSUjN2DupHYPecnkpqw0yWDrE3pjjQaMCaJnxTyWeSk1biPDZaEPXbqWjWBBZH10xmiTjdsDTRHdbRPviuLr1gqnk_LS0DhRvRyeyfRA6jPj7JsW8W8FjhZWuwbYs2dUID9RViKIBFP76CRp6NbhJVKeKDCqBPPQ4vt8ESNn_QDU_HpnUZjmxnN4t2NYN9geXRuN_0EcXQDkPT-A6u5CuuJGTc6cmitQ.ELezfzCAzOrgVy9P.EYGSrur8OFM42eU5DKAIppbrYJt2e_B535JtH7lxbOM5UJ5L0X_wN_RTlDSERlN4KSqcUcDzJzJouTiTlRly1XKqPVODFwLN2Dsoz1Bl8nxk_LE3fZ6R1iILTe6p_fq4bA_zsPkeRraChuolZN7EJ59nB23865Ko-AGHYvnpwU78tUkYNi56ORyxFfjjMQvvmIFIpbCb5ajiVpxgDTCRmrW82UO7FWnxOlSUpyJQokiZYC_er6-draHhI3Z9NL40zlNzRsSuyP18c35bUDEgcoNyeB8tAwZxZdDQ2zFSuZg3GQX0e5gmiH9ooD0E-IywlP4hRHxhCElrJ_uzOeP4tHIHsYV5ylMBYS9ix7zf_NPaWr4kN8KlfjKhpspznB-TqGBtcWKp5U2Ys_b4wgRrYZqL5LbXeOisHhhndfQWPx89CYLqjbixgRT35R9zCIxXPSOoPVKhry9PQxLIoTkFLElS7Y0rhmP6X9evKWPxsgALPJ1X25UYF_Yc0DUfMp-Xa4Xh3gpNlx3mb8qCXdJjhJqxvFj_B763j0oCF-UsjyBxUzok-uca9xh_q4ByhLQOvNQ0kH_TrBR4oO2-ZYS7AokM6qEKS42A8siFNCvEsJ-RRUTsxkUl4a0hdsFbr8hlS-vODq-GTj-lKFn6MyLtGpU453sQmUo1u2D8NwciAaawHVzydPHQBuCdobFYTIOlIulN411UZ0lJa-3CqGFsWgDmiWdIZP9uEmIXV1UOsbmbGx9wJ--ti9qlUGqFmmY-hhB19Kw1MMDWrnwgJOnFxLr0syVbNRrvpzWOW3FotqXC2KuALdjfL4baCwrTL6ocWChq_EExVN-OaR68yknvWb5cyNeSrzx2__SIQGonuDUojb7w6qz-swAEvURUgF_0dFFDhWhR2x5aYSdOrzWA2NV2IyblTs7qeJ0vfauOSy7oGHU93VjpJOjOWTF-wx9IG8-SnE0BFJooMdp23hlH2KvKqI6AvxDzUk_k0Pup0IpPXaoZepdM3MdyxhyUm9oxG6-b1zx_2J_VuBqz_9MaPFeix00sC5fKgWZQWiyTH5bOJ5zePUopPAQ0cUQGm8xLQLoUf47VzfvJB_dS16zbm5dVv2ghXtozDtJNaOMWRTBVPOfjPqo57BcSlr_gZw_Bhn3Nrpz_jZ5mPfbwwDYku5uKSa1Ai1q_vB0JuweyedgUEJleYNSPKfYV61TmyW1jrHrJ9QKiO2fBC5sUbpIHqpxZebT1q3q607qHFETdnYnOwb83FGMi09SJEs1dz2I6DjZGEnmL1pQgSab3aww.cyTtAJ7bn6kBmEZQdKzy1g&quot;,
+    &quot;jwt_access_token&quot;: &quot;eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiODU2N2NkOTQtOTFkNC00ODc0LWI1MjQtMThiZjdiZjBlMzYyIiwic3ViIjoiNzkzZDkzZTQtNjEwMS00ZWMxLWIyZWItNjQ2ZTAwMDZiMzZkIiwiZXZlbnRfaWQiOiJhNDEwZGRlYS0zNjIzLTRiYjUtYjNmNy1hYzczNzQ2MDU3MTUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNTIyNjM3LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI2MDkwMzcsImlhdCI6MTY0MjUyMjYzNywianRpIjoiY2I2ZWE0MGItMWU4ZS00NTc2LTk2NGQtYTI2ODIyNDIzNGFhIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InlneWFndDgyNi5uZWFyIn0.d8lEfjeCZXnJB0TxaMiu8z76TK0rupejn-Krj7BBX94ZR3SE_gUsqDfyZj3SgM9haXvSiTkfempCi--RbnpFikqZM1EWUKEtRLu2k5e-nID6HXI_cJUZf2fdibRcYsMJ6NnVSFd6frgRDI_xe6OtoYBSBQcn2PkvxmGnlrSW-yqkaXv38DV7p0O9IFYlYue5kgVbHTu5OL4h4Xr2OoXoRRAsZwK68-Xs8IEbIzObNcGASd34itArGeTsTNl1RRc2_d-4xAz1MPKCY8TdOArardO-n5inyiEHyIYhK9l9FwYj6J5-qzcb5QRSNTRxaaqHv5FQUCDbkTBkLOZWQrOSWQ&quot;,
+    &quot;jwt_id_token&quot;: &quot;eyJraWQiOiJScTVVUXU5UUZoRnlzVGQyZTBXb3BnYlBrcWRcL0pzMWprV1Y2RGtRNGdjND0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiODU2N2NkOTQtOTFkNC00ODc0LWI1MjQtMThiZjdiZjBlMzYyIiwic3ViIjoiNzkzZDkzZTQtNjEwMS00ZWMxLWIyZWItNjQ2ZTAwMDZiMzZkIiwiYXVkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJldmVudF9pZCI6ImE0MTBkZGVhLTM2MjMtNGJiNS1iM2Y3LWFjNzM3NDYwNTcxNSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQyNTIyNjM3LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJjb2duaXRvOnVzZXJuYW1lIjoieWd5YWd0ODI2Lm5lYXIiLCJleHAiOjE2NDI2MDkwMzcsImlhdCI6MTY0MjUyMjYzNywianRpIjoiYzlkMDJlNWQtMzVhMS00MWViLWJlOTctMzMwZGQ2NjE0ZDlmIn0.tRQpGIqxuu9Vdy48rdOSQgsOi2Lb8ULJXMhncKtvrtG6AvNO16BH2Gazpi6wE4b5FYWTDMtSTD3hPbVL3sy7cD-OrJOsE-9ccE96BcR49W4JACmH4tnF6MTq2s6GUafDlqoErcooSregJAyBDVV-QcT64EiLue2gx4viJL8HHMLljEycesFqne4npVjIPyZswGEuBewJ3L1Nb-k7eFywtKNQLJzSQd1ylbhkrA3J4G-7ca_8nhlkmgCqvgxahnx6XM3YjOPIsboeJaAIa0ExQdOA4QFhNpQ5vTLLLobPLtXBcqzpPIf47CRlEzTvyxVFANEU0BDp9iBz2iOno0imPw&quot;,
+    &quot;jwt_refresh_token&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.bbezgsgloTByuM9wvwM1Gi4pCyh53Kc3tkdvCFo9asln4Sok3iOIlC2DQ2MftFYeBuh9m8hrsesMChAvO_JFkWWqFGwMaN9siBpu-dwncDpZP8E-VTRH13lP3pcF7toV30m_eSA6ISPf5END1TQfzWthgJ1KkS0OO7lf8fjl5Xsi0b15CKBaxxAv9xdWl_GduwroYn4TRmyo88yzS7BefVHuB1ignxDWUnHwJGy9dnoVPMshTwbPAtqWiDm5f9dIy7LGIRhKRvxKONiLBR_uxEnynkp0kG3-thO1OmvdodsuvhzamVJ6DnESrTEIMlYiebApVePxEVtm-eVLaZf_6w.M_STnZAtX7CmPd87.Bjq2WCqeWB4YRe0yvevvCrGQ56MPZIgpxXXaHRoITfz5zlviBFkDipo_TLxghpYqa4ImZZlXjfhWkaw_G_A6y5Nl8jaqzBaTkIJb-gxWhi9jzA-iNB3kgPUH61tNFJ7VWbHiB7cd4JmqpMPCpKz2b_hO8BUOWTA6jlLIqqFJjzu5RB1TZlZVK66N9wPQyVXLxyz-X7YQsnTVDVic9E5RsAGBWZ7wRh7mNpsOi9vUfG3mqZn3pyL5BiuQefiq-S-xBzJP7gg-gSKwrq7AKpLAlmPp2LgEHThzQuUYKzh8yZmb6odraIlCNYFq6ovrRIvLeVn9eZvLOjwrNKH27mTtNC7dSvnTc80HF6wYPKJaSWjE7___hl4R1VLz-tX778CVKlXwDw5wsDPX18nXFnZg-gW6Q_gTso4Kjl1ccJWTZI7LL4O2byLQINWiWCv9cple6MJtbca3zYq3DB9cGCFEPkfaOxmzMV7NRLmefLyhWjd1Aly8jHXc52aBbF1PTpYKRfhjPHMPvtOZzbVgq2SJ5M1fKrv1yKUGjXV217L7AoUunRn_ylhnNN5f-7clRaSbZGXNsma-O-jBu4H6LlmdU1D2NOUm_YYCSYDUPMNuXk5p2IivEQznv3oYlD_JC6HCrCFYhwuSyoJ2cM-NaCHsOSMkoA2O_zWImCvST24Sc4CR-3aS7VmH4yHWT9GqhwfdatiF-qAqI5TExdmNKUXP9I_zar-GQeNqxwrunDCXs-m3SNaaU0cLFwBf4KAC5wH99H2gGUd7cWxkAjCnGbsXrsWyN-asJA25KJhBcsDPot9OGB-qOubvPJJeStrGp-N73WSnS7OlWCdVRl0N9fn34ldjPP8FpC0ucgAKAb8w2lXthFn6oq3l5RI75PatgwOqT0fM325G1VIdmpWxxf02g1N5zgXcjGA95c8n-toglflL3fpK6VXG7yGFt8guNLP8TIboGaBjZ1h447bTqKYvFJBuBngZqKPCSRR6AcTidB_26Cx7HLDEFEGABADEzlI22tBd4igVL2x2RY9spabxt6nl-k7sLIGOImNGb5ilfH0dk--RqjglVea4_pahJOWNBK_vrKy2Haz7WruoKOpsuPdz2SsdZP2OuRUKnP3FBTJ_Ko9VNyZC6tW-0FGVYzadc02PmGx6TDPl4QylUSGnEpKscnNJMHVdg16Qo15APAYasInkIhh77ke6EoJYhgl2awY19WeB18hj7u2GuCFrJ0EDAbmWwjGhEPcKy4DCJ7QFnCvByilYNPR85OeqHRYr79W6rHErPOy1ca4mQQY.9F_Hb7vCqKTjl1UYNmixKw&quot;,
     &quot;user_info&quot;: {
-        &quot;user_id&quot;: &quot;bwSn9Bvqsp-UYXZcx8Rfy&quot;,
+        &quot;user_id&quot;: &quot;h4jOnoELzdWTwOE7BZMnq&quot;,
         &quot;wallet_status&quot;: &quot;pending&quot;,
         &quot;status&quot;: &quot;active&quot;,
-        &quot;created&quot;: 1642457849952,
+        &quot;created&quot;: 1642522637074,
         &quot;full_name&quot;: &quot;&quot;,
-        &quot;email&quot;: &quot;dkvgd01@test.com&quot;,
-        &quot;wallet_id&quot;: &quot;vqc0jhp37.near&quot;,
-        &quot;phone&quot;: &quot;1-053-421-6405&quot;,
+        &quot;email&quot;: &quot;kjazj10@test.com&quot;,
+        &quot;wallet_id&quot;: &quot;ygyagt826.near&quot;,
+        &quot;phone&quot;: &quot;466-958-9924&quot;,
         &quot;verified&quot;: false
     }
 }
 Request method:	GET
-Request URI:	https://api.nearlogin.io/users/bwSn9Bvqsp-UYXZcx8Rfy
+Request URI:	https://api.nearlogin.io/users/h4jOnoELzdWTwOE7BZMnq
 Proxy:			&lt;none&gt;
 Request params:	&lt;none&gt;
 Query params:	&lt;none&gt;
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYWIxMWQ2MTQtM2I5NC00NmQyLTg2MWMtZmRjYjVhMzVjZGIyIiwic3ViIjoiNWUwN2UyZWYtYjA1Zi00MmMyLTgxMmEtMjc0ZjExZTJjMTkyIiwiZXZlbnRfaWQiOiI1ZjYyMTc1Zi05M2IwLTRkYjUtYmQ1NS00ZWU1YzQyMDQwZmEiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNDU3ODUwLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI1NDQyNTAsImlhdCI6MTY0MjQ1Nzg1MCwianRpIjoiYmE0NmZkYmItODFmNC00MjZlLTkyNzEtMDQ5MWMxNTJhMDY0IiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InZxYzBqaHAzNy5uZWFyIn0.U_wI4xHVa3awmVjmmGclG5XQqykY04SBgIrwLxFYnNyvsy5EGG1v9ErXDdIeeThxunl8TE_XMO6i77IAAuM9CJLi1rfqJxbQ6k-wnNat9Gq_VNKyJ_57Ubn0RFqKOAI7DcgKTp_34G77-DpyT00a18hcELiBf5kNk64jebzuUhdIN0KUUlomhw78CSBSkkriyvNNMVRKfSQ5B1-21KSSSKId_hG3ZQ9nYhQX-5cacSJLGdbYy2pJnlXm6Arn3v4kaxkGUdUJStvEtwLivKMVBx2sPL0FigI8Wd55s3r6u-WXyc1raR1fCBIXqCPO86QrQzPuvF3FDfTTeq1h6VwWmA
+Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiODU2N2NkOTQtOTFkNC00ODc0LWI1MjQtMThiZjdiZjBlMzYyIiwic3ViIjoiNzkzZDkzZTQtNjEwMS00ZWMxLWIyZWItNjQ2ZTAwMDZiMzZkIiwiZXZlbnRfaWQiOiJhNDEwZGRlYS0zNjIzLTRiYjUtYjNmNy1hYzczNzQ2MDU3MTUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNTIyNjM3LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI2MDkwMzcsImlhdCI6MTY0MjUyMjYzNywianRpIjoiY2I2ZWE0MGItMWU4ZS00NTc2LTk2NGQtYTI2ODIyNDIzNGFhIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InlneWFndDgyNi5uZWFyIn0.d8lEfjeCZXnJB0TxaMiu8z76TK0rupejn-Krj7BBX94ZR3SE_gUsqDfyZj3SgM9haXvSiTkfempCi--RbnpFikqZM1EWUKEtRLu2k5e-nID6HXI_cJUZf2fdibRcYsMJ6NnVSFd6frgRDI_xe6OtoYBSBQcn2PkvxmGnlrSW-yqkaXv38DV7p0O9IFYlYue5kgVbHTu5OL4h4Xr2OoXoRRAsZwK68-Xs8IEbIzObNcGASd34itArGeTsTNl1RRc2_d-4xAz1MPKCY8TdOArardO-n5inyiEHyIYhK9l9FwYj6J5-qzcb5QRSNTRxaaqHv5FQUCDbkTBkLOZWQrOSWQ
 				Accept=*/*
 Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
@@ -306,117 +164,19 @@ Body:			&lt;none&gt;
 {
     &quot;message&quot;: &quot;User retrieved successfully!&quot;,
     &quot;data&quot;: {
-        &quot;user_id&quot;: &quot;bwSn9Bvqsp-UYXZcx8Rfy&quot;,
+        &quot;user_id&quot;: &quot;h4jOnoELzdWTwOE7BZMnq&quot;,
         &quot;wallet_status&quot;: &quot;pending&quot;,
         &quot;status&quot;: &quot;active&quot;,
-        &quot;created&quot;: 1642457849952,
+        &quot;created&quot;: 1642522637074,
         &quot;full_name&quot;: &quot;&quot;,
-        &quot;wallet_id&quot;: &quot;vqc0jhp37.near&quot;,
-        &quot;email&quot;: &quot;dkvgd01@test.com&quot;,
-        &quot;phone&quot;: &quot;1-053-421-6405&quot;,
+        &quot;wallet_id&quot;: &quot;ygyagt826.near&quot;,
+        &quot;email&quot;: &quot;kjazj10@test.com&quot;,
+        &quot;phone&quot;: &quot;466-958-9924&quot;,
         &quot;verified&quot;: false
     }
 }
 </system-out>
   </testcase>
-  <testcase classname="tests.nftsTests.TestNfts" name="testGetAllNfts" time="2.298">
-    <failure message="The status code should be 200 expected [200] but found [500]" type="java.lang.AssertionError">java.lang.AssertionError: The status code should be 200 expected [200] but found [500]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:907)
-	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:51)
-</failure>
-    <system-out>{
-    &quot;message&quot;: &quot;User deleted successfully!&quot;,
-    &quot;data&quot;: {
-        
-    }
-}
-Request method:	GET
-Request URI:	https://api.nearlogin.io/users/bwSn9Bvqsp-UYXZcx8Rfy
-Proxy:			&lt;none&gt;
-Request params:	&lt;none&gt;
-Query params:	&lt;none&gt;
-Form params:	&lt;none&gt;
-Path params:	&lt;none&gt;
-Headers:		Authorization=Bearer eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiYWIxMWQ2MTQtM2I5NC00NmQyLTg2MWMtZmRjYjVhMzVjZGIyIiwic3ViIjoiNWUwN2UyZWYtYjA1Zi00MmMyLTgxMmEtMjc0ZjExZTJjMTkyIiwiZXZlbnRfaWQiOiI1ZjYyMTc1Zi05M2IwLTRkYjUtYmQ1NS00ZWU1YzQyMDQwZmEiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNDU3ODUwLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI1NDQyNTAsImlhdCI6MTY0MjQ1Nzg1MCwianRpIjoiYmE0NmZkYmItODFmNC00MjZlLTkyNzEtMDQ5MWMxNTJhMDY0IiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6InZxYzBqaHAzNy5uZWFyIn0.U_wI4xHVa3awmVjmmGclG5XQqykY04SBgIrwLxFYnNyvsy5EGG1v9ErXDdIeeThxunl8TE_XMO6i77IAAuM9CJLi1rfqJxbQ6k-wnNat9Gq_VNKyJ_57Ubn0RFqKOAI7DcgKTp_34G77-DpyT00a18hcELiBf5kNk64jebzuUhdIN0KUUlomhw78CSBSkkriyvNNMVRKfSQ5B1-21KSSSKId_hG3ZQ9nYhQX-5cacSJLGdbYy2pJnlXm6Arn3v4kaxkGUdUJStvEtwLivKMVBx2sPL0FigI8Wd55s3r6u-WXyc1raR1fCBIXqCPO86QrQzPuvF3FDfTTeq1h6VwWmA
-				Accept=*/*
-Cookies:		&lt;none&gt;
-Multiparts:		&lt;none&gt;
-Body:			&lt;none&gt;
-{
-    &quot;message&quot;: &quot;User retrieved successfully!&quot;,
-    &quot;data&quot;: {
-        &quot;updated&quot;: 1642457852531,
-        &quot;user_id&quot;: &quot;bwSn9Bvqsp-UYXZcx8Rfy&quot;,
-        &quot;wallet_status&quot;: &quot;pending&quot;,
-        &quot;status&quot;: &quot;deleted&quot;,
-        &quot;created&quot;: 1642457849952,
-        &quot;full_name&quot;: &quot;&quot;,
-        &quot;email&quot;: &quot;dkvgd01@test.com&quot;,
-        &quot;wallet_id&quot;: &quot;vqc0jhp37.near&quot;,
-        &quot;phone&quot;: &quot;1-053-421-6405&quot;,
-        &quot;verified&quot;: false
-    }
-}
-Request method:	POST
-Request URI:	https://api.nearlogin.io/user/create
-Proxy:			&lt;none&gt;
-Request params:	&lt;none&gt;
-Query params:	&lt;none&gt;
-Form params:	&lt;none&gt;
-Path params:	&lt;none&gt;
-Headers:		Accept=*/*
-				Content-Type=application/json
-Cookies:		&lt;none&gt;
-Multiparts:		&lt;none&gt;
-Body:
-{
-    &quot;full_name&quot;: &quot;Jenette Dooley&quot;,
-    &quot;wallet_id&quot;: &quot;obm3lgr85.near&quot;,
-    &quot;email&quot;: &quot;joetd65@test.com&quot;,
-    &quot;phone&quot;: &quot;1-441-155-9631&quot;,
-    &quot;walletName&quot;: &quot;obm3lgr85.near&quot;
-}
-{
-    &quot;jwt_access_token&quot;: &quot;eyJraWQiOiJmdjZkSFwvQ05Bajk5bE10b2V2K2hrMFVBUWRZeGRyK2dlTGNJYWpqRTlCMD0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiMWQ4ZWRiZDctM2M0Yy00NzU2LWI3NjItZDc5YzNhNWZiNWUwIiwic3ViIjoiOWNjNGE0NzMtY2VkZC00NWU0LWEyY2YtZWM2NDExMDM1ZThhIiwiZXZlbnRfaWQiOiI2N2ZjZmJmYi0wNmIwLTQ2YzYtYWQxZS1mMmMwOGYzZThkYzIiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIiwiYXV0aF90aW1lIjoxNjQyNDU3ODU1LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJleHAiOjE2NDI1NDQyNTUsImlhdCI6MTY0MjQ1Nzg1NSwianRpIjoiN2NhODMwYjAtYzNmNC00OTBmLWJhMzgtMzdlNzVjMzM5ODBmIiwiY2xpZW50X2lkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJ1c2VybmFtZSI6Im9ibTNsZ3I4NS5uZWFyIn0.znbWC0XWIHYFf6S9ib7IvwAptPdnuy276T4KTIVLC3JiI8KC0LMl3CfkJv7fiqMMSRgqkIfH27RjGzc64NtkYBjmoWMI2y6PJ0kIAaXdUhvgf2Z4dE4QnL6ofEmujCrOPrXha0A8wHpZCbSvs2D0wYab9S5w8-2BXM_NIsxpB_LHEB8waiH_5JO1NCWB_HvBi1Ch5OgZ3bSMNEknWCPzqTmHcagubS3yk_mIqnQ4QZ9ARbjjyY_mNG4MTj74mCdTzjMJfbhDgB02Cv_V-A9TbPNuU79T0DuIG2h9wTP6tDrUnFHAJIylVBw8xmdhl7_MzDjny7N9ksokPBzw3Rw0uw&quot;,
-    &quot;jwt_id_token&quot;: &quot;eyJraWQiOiJScTVVUXU5UUZoRnlzVGQyZTBXb3BnYlBrcWRcL0pzMWprV1Y2RGtRNGdjND0iLCJhbGciOiJSUzI1NiJ9.eyJvcmlnaW5fanRpIjoiMWQ4ZWRiZDctM2M0Yy00NzU2LWI3NjItZDc5YzNhNWZiNWUwIiwic3ViIjoiOWNjNGE0NzMtY2VkZC00NWU0LWEyY2YtZWM2NDExMDM1ZThhIiwiYXVkIjoiMWg4ajM3ZW44ZXEwNGU0bnVsOGw3Z2U0YW4iLCJldmVudF9pZCI6IjY3ZmNmYmZiLTA2YjAtNDZjNi1hZDFlLWYyYzA4ZjNlOGRjMiIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNjQyNDU3ODU1LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9hSlUxRThUWVciLCJjb2duaXRvOnVzZXJuYW1lIjoib2JtM2xncjg1Lm5lYXIiLCJleHAiOjE2NDI1NDQyNTUsImlhdCI6MTY0MjQ1Nzg1NSwianRpIjoiMTJjODNhY2UtMWI1OS00OWNhLWE0YTItYTA4YzhkZjBjZmRkIn0.Kzye5X4_wtw-bGOX2OOUEohAhvt1aA2BOjydEdpAn1I3QMqpUqEkm9vdmNbqHtlaCF-SMP0Y2KfaeH-tElNRCqHPl684D0tWD0P86_cPPjnlgLPsUnb2BQH8e_1KKB46ZixkT6brdAJH005DpHYu4FXz18BLdyYVuXUUuIlK5BtVvTSa5TYlvuEcknA6KCAh10t0ckIvWtdot547WVEYEiO9AJVlAjNorScBLdGCcF158eVWfzZjkliXGfoQbtEMIyJfIatI5p1lwwBT8E8SgMMaGB5FwgC82QiYZBuKVtvRP1QfBJplnV1Pt2yp9GUoTcUW5J72oBSqEZ2FM1xjiw&quot;,
-    &quot;jwt_refresh_token&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.bWPIxOaofB3yEn_MXmbL3p1fIFDY7--fvpWgcXPnhgI8Y1-ci-Ne3h8ttsodWRASnFcDDA2ehn2Tb4cyVcoVce2XJBj-FCLY9sIIU9IjePmMAhEN3_sfWVaEBeW2YfZJPLMCp_9PekL80H-nKVJiS9gEHZlk9d4i76C5I5T_RrPFCNsLbDp5-oUVy2f-MqJJSJ0hmMN0tFDP0F1k3V_Q1WePGtdPf6v2FJVbbU18j2lPkauihrZ4hch6Rw3xZNbEssPqxTbORysAkkHG6VBtZtkw3mBz8gX7gDiTG6EYst7phXjyD6NH5QF91zWisGknRP9X6R4OQxi3T_dUiozeMQ.L6JBsfTMtIN7K99D.iUeKw3mNKXUf_6MfzizJkiWGgim_JcTykIySFCeSfO2f8zGkpDVMkGw6cJ6JC1qaAC0XMm8q2vtfBnnLPGnSPY8PdpznqoKBI6MgBVjv-Jcsnw6tKOGq-xu8s5wDYDkpM48QQ1PnsyEBNAQnZ1pcbhD_QQ8a06d9HX0XhRLaCXW1p0OirpcWlfk5L55kS7yX0_N-M8_FO6r1KVtlQ3gA6sT7Iv4yHZ0IGhb7B65meiXU5W5X3Ai5nMqWVXiuA5HVxnnzbfoiOOtjOxnSkJIKVdpHahUBGzbyz1GOtyKFHlHqj3RVIwbFdWCBwVjWEal292uiSUvvzMSKBmp0XPX5ttJk5nTYPfXaUkxbm916Z_uohgraVzx_cRmL2HRB9rh2d1Lnnn9g1upByra-BnQwoJdynJfYxpYVC93QjaJaC-317gsCbKVZBzTH3GFQByl0qnjxeUHt-o7GZZiyZiHVib4WxzpXpY9uOI7MrejQL9QHUnpBWI1cvrvfBQ8rxYvStLKiTI1i8S1I-MfeLbByMvPRDQLXl8oTUwVIV-XF1MiGOTmkjZe_WYEsodsjO37TnnwRGK3IwcnRK6_tePWFEdb7AZKi5BiWH-HPXR4liencfdjZSGwvIOi-tGlTXAnKmSUPhEWAofwm3zuw45yTrVGv66C8pDXiuajXjScB6ey2J70Kn4n_ln4lSEod7bd3gn5ouGYOP1nWWAQYwSDKjTTxVtYpWRdwRYXwIF-rmliy8b8v3XpuOqnTuCkiFABsYmwgtRf9X0ywIi55jb2M_Wbt2WUQwB10_jKwvkv2ad58oS69jwmM-cGA8NkkyJ6lMF7WpLdSZZVIuPiQa-kWMqVA0uo86zyTlMlbzl6Bd8KAO41KnffeX0kBrxjvUwFwaDvTnIuik2QLfKfd5tGSXjDAoGMXttTqECZFMz3Xtw1KEXx_Hqz-poXWgTNSsk3o4JZX9QTvMs2TejJZaeelRXgfK5IThnP9RWi2OmLUN3VnJedPlQNfhzmiOsD5oiXcUE8-DePjpawseil6FS52kcsQFRvi_G-N2a-GjLYSQsve-hVK0QYpZpjh_rD-HEYrjW8IcpPNcQtNgbdHShLiBoDMyipK1Rr23ZkDaftDscy0fZcP9m1jpyhEztMkkViteundBpHy4tKSeki0Luw8gmj9YlDh_WYhV4BL1qtCjpgz-QUYX57SutNhjpsEbQPmfeITXtnp5OX_Ca0_Nlw1vKLEHGb9gS_j38J7SuSihzRUptky6husH2zLlQ05NVZw1kQuc09aA6VIsqLdRU4.JoItOa5EjtXllfPBCcvkMw&quot;,
-    &quot;user_info&quot;: {
-        &quot;user_id&quot;: &quot;r_nX-dx8HfJtKeqLqrSR3&quot;,
-        &quot;wallet_status&quot;: &quot;pending&quot;,
-        &quot;status&quot;: &quot;active&quot;,
-        &quot;created&quot;: 1642457854672,
-        &quot;full_name&quot;: &quot;&quot;,
-        &quot;email&quot;: &quot;joetd65@test.com&quot;,
-        &quot;wallet_id&quot;: &quot;obm3lgr85.near&quot;,
-        &quot;phone&quot;: &quot;1-441-155-9631&quot;,
-        &quot;verified&quot;: false
-    }
-}
-{
-    &quot;message&quot;: &quot;NFT creation successful!&quot;,
-    &quot;data&quot;: {
-        &quot;nft_id&quot;: &quot;giVbnux9uLRLgIpQn8CTn&quot;,
-        &quot;updated&quot;: 1642457857817,
-        &quot;status&quot;: &quot;active&quot;,
-        &quot;created&quot;: 1642457857817,
-        &quot;description&quot;: &quot;This is my automation framework!&quot;,
-        &quot;owner_id&quot;: &quot;r_nX-dx8HfJtKeqLqrSR3&quot;,
-        &quot;file_url&quot;: &quot;https://near-lambda-nft-files.s3.us-west-1.amazonaws.com/giVbnux9uLRLgIpQn8CTn_original_test-2.jpg&quot;,
-        &quot;title&quot;: &quot;Hello from automation!&quot;
-    },
-    &quot;debug&quot;: {
-        &quot;result&quot;: {
-            
-        },
-        &quot;transaction_result&quot;: null
-    }
-}
-</system-out>
-  </testcase>
-  <testcase classname="tests.nftsTests.TestNfts" name="testGetSingleNft" time="0.892"/>
-  <testcase classname="tests.nftsTests.TestNfts" name="testUpdateNft" time="2.526"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testGetSingleNft" time="0.812"/>
+  <testcase classname="tests.nftsTests.TestNfts" name="testUpdateNft" time="2.552"/>
 </testsuite>

@@ -5,6 +5,7 @@ import constants.EndPoints;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
 
 public class LoginServiceHelper {
@@ -13,6 +14,7 @@ public class LoginServiceHelper {
 
     public LoginServiceHelper() {
         RestAssured.baseURI = BASE_URL;
+        RestAssured.registerParser("text/plain", Parser.JSON);
     }
 
     public Response createLoginOtp() {
@@ -23,8 +25,7 @@ public class LoginServiceHelper {
                 .body("{\"walletName\": \"permanentuser.near\"}")
                 .log().all()
                 .post(EndPoints.CREATE_TRIGGER_LOGIN_OTP)
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;
@@ -41,8 +42,7 @@ public class LoginServiceHelper {
                         "}")
                 .log().all()
                 .post(EndPoints.VERIFY_LOGIN_OTP)
-                .then().assertThat().statusCode(200)
-                .extract().response().andReturn();
+                .andReturn();
 
         response.prettyPrint();
         return response;

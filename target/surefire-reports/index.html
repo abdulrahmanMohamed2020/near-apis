@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">20 methods, 3 failed,   17 passed</span>
+                    <span class="method-stats">19 methods, 1 failed,   18 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,16 +102,6 @@
                       <a href="#" panel-name="suite-Command_line_suite" class="show-methods failed suite-Command_line_suite"> (show)</a> <!-- show-methods failed suite-Command_line_suite -->
                     </span>
                     <div class="method-list-content failed suite-Command_line_suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Command_line_suite" title="tests.nftsTests.TestNfts" class="method navigator-link" hash-for-method="testGetAllNfts">testGetAllNfts</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Command_line_suite" title="tests.contactsTests.TestContacts" class="method navigator-link" hash-for-method="testImportOneOrMoreContacts">testImportOneOrMoreContacts</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Command_line_suite" title="tests.usersTests.TestUserIntegration" class="method navigator-link" hash-for-method="testUserAttributes">testUserAttributes</a> <!-- method navigator-link -->
@@ -128,7 +118,7 @@
                     <div class="method-list-content passed suite-Command_line_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Command_line_suite" title="tests.TestLogin" class="method navigator-link" hash-for-method="testCreateLoginOtp">testCreateLoginOtp</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.loginTests.TestLogin" class="method navigator-link" hash-for-method="testCreateLoginOtp">testCreateLoginOtp</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -188,6 +178,11 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.contactsTests.TestContacts" class="method navigator-link" hash-for-method="testImportOneOrMoreContacts">testImportOneOrMoreContacts</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Command_line_suite" title="tests.contactsTests.TestContacts" class="method navigator-link" hash-for-method="testUpdateContact">testUpdateContact</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -208,7 +203,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Command_line_suite" title="tests.TestLogin" class="method navigator-link" hash-for-method="testVerifyLoginOtp">testVerifyLoginOtp</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Command_line_suite" title="tests.loginTests.TestLogin" class="method navigator-link" hash-for-method="testVerifyLoginOtp">testVerifyLoginOtp</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Command_line_suite -->
@@ -223,46 +218,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Command_line_suite" class="panel Command_line_suite">
-          <div class="suite-Command_line_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">tests.contactsTests.TestContacts</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testImportOneOrMoreContacts">
-                  </a> <!-- testImportOneOrMoreContacts -->
-                  <span class="method-name">testImportOneOrMoreContacts</span>
-                  <div class="stack-trace">java.lang.AssertionError: The status code should be 200 expected [200] but found [400]
-	at tests.contactsTests.TestContacts.testImportOneOrMoreContacts(TestContacts.java:75)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 42 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Command_line_suite-class-failed -->
-          <div class="suite-Command_line_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">tests.nftsTests.TestNfts</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testGetAllNfts">
-                  </a> <!-- testGetAllNfts -->
-                  <span class="method-name">testGetAllNfts</span>
-                  <div class="stack-trace">java.lang.AssertionError: The status code should be 200 expected [200] but found [500]
-	at tests.nftsTests.TestNfts.testGetAllNfts(TestNfts.java:51)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 42 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Command_line_suite-class-failed -->
           <div class="suite-Command_line_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
@@ -305,6 +260,13 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="testImportOneOrMoreContacts">
+                  </a> <!-- testImportOneOrMoreContacts -->
+                  <span class="method-name">testImportOneOrMoreContacts</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="testUpdateContact">
                   </a> <!-- testUpdateContact -->
                   <span class="method-name">testUpdateContact</span>
@@ -315,21 +277,28 @@
           <div class="suite-Command_line_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.TestLogin</span>
+              <span class="class-name">tests.transactionsTests.TestUserTransactionsIntegration</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testCreateLoginOtp">
-                  </a> <!-- testCreateLoginOtp -->
-                  <span class="method-name">testCreateLoginOtp</span>
+                  <a name="testGetNftTransactions">
+                  </a> <!-- testGetNftTransactions -->
+                  <span class="method-name">testGetNftTransactions</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testVerifyLoginOtp">
-                  </a> <!-- testVerifyLoginOtp -->
-                  <span class="method-name">testVerifyLoginOtp</span>
+                  <a name="testGetUserTransactions">
+                  </a> <!-- testGetUserTransactions -->
+                  <span class="method-name">testGetUserTransactions</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUpdateTransaction">
+                  </a> <!-- testUpdateTransaction -->
+                  <span class="method-name">testUpdateTransaction</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -402,28 +371,21 @@
           <div class="suite-Command_line_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.transactionsTests.TestUserTransactionsIntegration</span>
+              <span class="class-name">tests.loginTests.TestLogin</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testGetNftTransactions">
-                  </a> <!-- testGetNftTransactions -->
-                  <span class="method-name">testGetNftTransactions</span>
+                  <a name="testCreateLoginOtp">
+                  </a> <!-- testCreateLoginOtp -->
+                  <span class="method-name">testCreateLoginOtp</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="testGetUserTransactions">
-                  </a> <!-- testGetUserTransactions -->
-                  <span class="method-name">testGetUserTransactions</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testUpdateTransaction">
-                  </a> <!-- testUpdateTransaction -->
-                  <span class="method-name">testUpdateTransaction</span>
+                  <a name="testVerifyLoginOtp">
+                  </a> <!-- testVerifyLoginOtp -->
+                  <span class="method-name">testVerifyLoginOtp</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -461,8 +423,8 @@
 &lt;suite name=&quot;Command line suite&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Command line test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.TestLogin&quot;/&gt;
       &lt;class name=&quot;tests.transactionsTests.TestUserTransactionsIntegration&quot;/&gt;
+      &lt;class name=&quot;tests.loginTests.TestLogin&quot;/&gt;
       &lt;class name=&quot;tests.contactsTests.TestContacts&quot;/&gt;
       &lt;class name=&quot;tests.usersTests.TestUserInvalidScenarios&quot;/&gt;
       &lt;class name=&quot;tests.usersTests.TestUserIntegration&quot;/&gt;
@@ -506,92 +468,88 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(20);
+data.addRows(19);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testGetWrongUser')
 data.setCell(0, 2, 'tests.usersTests.TestUserInvalidScenarios')
-data.setCell(0, 3, 12180);
+data.setCell(0, 3, 4551);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testCreateLoginOtp')
-data.setCell(1, 2, 'tests.TestLogin')
-data.setCell(1, 3, 9267);
+data.setCell(1, 1, 'testGetUserWithProvidingEmptyUserId')
+data.setCell(1, 2, 'tests.usersTests.TestUserInvalidScenarios')
+data.setCell(1, 3, 4389);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testGetUserWithProvidingEmptyUserId')
+data.setCell(2, 1, 'testGetUnauthorizedUser')
 data.setCell(2, 2, 'tests.usersTests.TestUserInvalidScenarios')
-data.setCell(2, 3, 7607);
+data.setCell(2, 3, 4190);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testGetUnauthorizedUser')
-data.setCell(3, 2, 'tests.usersTests.TestUserInvalidScenarios')
-data.setCell(3, 3, 4160);
+data.setCell(3, 1, 'testUpdateNft')
+data.setCell(3, 2, 'tests.nftsTests.TestNfts')
+data.setCell(3, 3, 2550);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testGetContactsOfAnUser')
-data.setCell(4, 2, 'tests.contactsTests.TestContacts')
-data.setCell(4, 3, 2752);
+data.setCell(4, 1, 'testUpdateUser')
+data.setCell(4, 2, 'tests.usersTests.TestUserIntegration')
+data.setCell(4, 3, 2406);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'testGetUser')
 data.setCell(5, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(5, 3, 2537);
+data.setCell(5, 3, 2162);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testUpdateNft')
-data.setCell(6, 2, 'tests.nftsTests.TestNfts')
-data.setCell(6, 3, 2524);
+data.setCell(6, 1, 'testGetNftTransactions')
+data.setCell(6, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(6, 3, 2125);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testGetAllNfts')
-data.setCell(7, 2, 'tests.nftsTests.TestNfts')
-data.setCell(7, 3, 2291);
+data.setCell(7, 1, 'testVerifyLoginOtp')
+data.setCell(7, 2, 'tests.loginTests.TestLogin')
+data.setCell(7, 3, 1957);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testVerifyLoginOtp')
-data.setCell(8, 2, 'tests.TestLogin')
-data.setCell(8, 3, 1953);
+data.setCell(8, 1, 'testUpdateContact')
+data.setCell(8, 2, 'tests.contactsTests.TestContacts')
+data.setCell(8, 3, 1783);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'testGetContact')
 data.setCell(9, 2, 'tests.contactsTests.TestContacts')
-data.setCell(9, 3, 1820);
+data.setCell(9, 3, 1768);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'testUpdateUser')
-data.setCell(10, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(10, 3, 1742);
+data.setCell(10, 1, 'testUpdateTransaction')
+data.setCell(10, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(10, 3, 1659);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testGetNftTransactions')
-data.setCell(11, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(11, 3, 1613);
+data.setCell(11, 1, 'testCreateLoginOtp')
+data.setCell(11, 2, 'tests.loginTests.TestLogin')
+data.setCell(11, 3, 1207);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testUpdateTransaction')
-data.setCell(12, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(12, 3, 1471);
+data.setCell(12, 1, 'testCreateUserWithoutEmailOrPhone')
+data.setCell(12, 2, 'tests.usersTests.TestUserInvalidScenarios')
+data.setCell(12, 3, 968);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'testUpdateContact')
-data.setCell(13, 2, 'tests.contactsTests.TestContacts')
-data.setCell(13, 3, 1470);
+data.setCell(13, 1, 'testGetUserTransactions')
+data.setCell(13, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
+data.setCell(13, 3, 961);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'testGetUserTransactions')
-data.setCell(14, 2, 'tests.transactionsTests.TestUserTransactionsIntegration')
-data.setCell(14, 3, 957);
+data.setCell(14, 1, 'testImportOneOrMoreContacts')
+data.setCell(14, 2, 'tests.contactsTests.TestContacts')
+data.setCell(14, 3, 861);
 data.setCell(15, 0, 15)
 data.setCell(15, 1, 'testUserAttributes')
 data.setCell(15, 2, 'tests.usersTests.TestUserIntegration')
-data.setCell(15, 3, 916);
+data.setCell(15, 3, 851);
 data.setCell(16, 0, 16)
-data.setCell(16, 1, 'testGetSingleNft')
-data.setCell(16, 2, 'tests.nftsTests.TestNfts')
-data.setCell(16, 3, 892);
+data.setCell(16, 1, 'testGetContactsOfAnUser')
+data.setCell(16, 2, 'tests.contactsTests.TestContacts')
+data.setCell(16, 3, 817);
 data.setCell(17, 0, 17)
-data.setCell(17, 1, 'testImportOneOrMoreContacts')
-data.setCell(17, 2, 'tests.contactsTests.TestContacts')
-data.setCell(17, 3, 878);
+data.setCell(17, 1, 'testGetSingleNft')
+data.setCell(17, 2, 'tests.nftsTests.TestNfts')
+data.setCell(17, 3, 812);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'testCreateUserWithoutEmailOrPhone')
+data.setCell(18, 1, 'testCreateUserWithoutWalletName')
 data.setCell(18, 2, 'tests.usersTests.TestUserInvalidScenarios')
-data.setCell(18, 3, 873);
-data.setCell(19, 0, 19)
-data.setCell(19, 1, 'testCreateUserWithoutWalletName')
-data.setCell(19, 2, 'tests.usersTests.TestUserInvalidScenarios')
-data.setCell(19, 3, 809);
+data.setCell(18, 3, 802);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 58 seconds</span>
+              <span class="suite-total-time">Total running time: 36 seconds</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -617,215 +575,199 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.TestLogin</div> <!-- chronological-class-name -->
-              <div class="configuration-class before">
-                <span class="method-name">init</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-class before -->
-              <div class="test-method">
-                <span class="method-name">testCreateLoginOtp</span>
-                <span class="method-start">104 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testVerifyLoginOtp</span>
-                <span class="method-start">9635 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
               <div class="chronological-class-name">tests.transactionsTests.TestUserTransactionsIntegration</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">11591 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetNftTransactions</span>
-                <span class="method-start">20327 ms</span>
+                <span class="method-start">14378 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">21943 ms</span>
+                <span class="method-start">16523 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">27702 ms</span>
+                <span class="method-start">23296 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetUserTransactions</span>
-                <span class="method-start">34425 ms</span>
+                <span class="method-start">30294 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">35387 ms</span>
+                <span class="method-start">31259 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">39488 ms</span>
+                <span class="method-start">35571 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testUpdateTransaction</span>
-                <span class="method-start">46136 ms</span>
+                <span class="method-start">42376 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">47609 ms</span>
+                <span class="method-start">44037 ms</span>
               </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.loginTests.TestLogin</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">init</span>
+                <span class="method-start">48291 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testCreateLoginOtp</span>
+                <span class="method-start">48296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testVerifyLoginOtp</span>
+                <span class="method-start">49508 ms</span>
+              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.contactsTests.TestContacts</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">52717 ms</span>
+                <span class="method-start">51467 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetContact</span>
-                <span class="method-start">57882 ms</span>
+                <span class="method-start">55265 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">59704 ms</span>
+                <span class="method-start">57034 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">65530 ms</span>
+                <span class="method-start">61053 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetContactsOfAnUser</span>
-                <span class="method-start">68988 ms</span>
+                <span class="method-start">64014 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">71741 ms</span>
+                <span class="method-start">64838 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">76758 ms</span>
+                <span class="method-start">67308 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testImportOneOrMoreContacts</span>
-                <span class="method-start">80173 ms</span>
+                <span class="method-start">70011 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">81076 ms</span>
+                <span class="method-start">70874 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">83568 ms</span>
+                <span class="method-start">73348 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testUpdateContact</span>
-                <span class="method-start">86225 ms</span>
+                <span class="method-start">75935 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">87696 ms</span>
+                <span class="method-start">77719 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.usersTests.TestUserInvalidScenarios</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testCreateUserWithoutEmailOrPhone</span>
-                <span class="method-start">90198 ms</span>
+                <span class="method-start">80201 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCreateUserWithoutWalletName</span>
-                <span class="method-start">91073 ms</span>
+                <span class="method-start">81171 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetUnauthorizedUser</span>
-                <span class="method-start">91884 ms</span>
+                <span class="method-start">81975 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetUserWithProvidingEmptyUserId</span>
-                <span class="method-start">96045 ms</span>
+                <span class="method-start">86169 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testGetWrongUser</span>
-                <span class="method-start">103654 ms</span>
+                <span class="method-start">90560 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.usersTests.TestUserIntegration</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUpCreateUser</span>
-                <span class="method-start">115855 ms</span>
+                <span class="method-start">95112 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetUser</span>
-                <span class="method-start">119394 ms</span>
+                <span class="method-start">96983 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownAndDeleteUser</span>
-                <span class="method-start">121937 ms</span>
+                <span class="method-start">99146 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpCreateUser</span>
-                <span class="method-start">123756 ms</span>
+                <span class="method-start">100792 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testUpdateUser</span>
-                <span class="method-start">125501 ms</span>
+                <span class="method-start">102606 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownAndDeleteUser</span>
-                <span class="method-start">127253 ms</span>
+                <span class="method-start">105018 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUpCreateUser</span>
-                <span class="method-start">128995 ms</span>
+                <span class="method-start">106626 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">testUserAttributes</span>
-                <span class="method-start">130885 ms</span>
+                <span class="method-start">108371 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDownAndDeleteUser</span>
-                <span class="method-start">131805 ms</span>
+                <span class="method-start">109248 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.nftsTests.TestNfts</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">133643 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">testGetAllNfts</span>
-                <span class="method-start">138065 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">140361 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp</span>
-                <span class="method-start">143074 ms</span>
+                <span class="method-start">110954 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testGetSingleNft</span>
-                <span class="method-start">146285 ms</span>
+                <span class="method-start">113988 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">147185 ms</span>
+                <span class="method-start">114801 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">149967 ms</span>
+                <span class="method-start">117232 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testUpdateNft</span>
-                <span class="method-start">153007 ms</span>
+                <span class="method-start">120227 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">155533 ms</span>
+                <span class="method-start">122778 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

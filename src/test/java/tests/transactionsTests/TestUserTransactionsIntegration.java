@@ -1,5 +1,6 @@
 package tests.transactionsTests;
 
+import generatingData.GenerateNftData;
 import generatingData.GenerateUserData;
 import helpers.NftServiceHelper;
 import helpers.TransactionsServiceHelper;
@@ -21,7 +22,8 @@ public class TestUserTransactionsIntegration {
     private User sender;
     private User recipient;
     private NftServiceHelper nftServiceHelper = new NftServiceHelper();
-    GenerateUserData generateUserData= new GenerateUserData();
+    private GenerateUserData generateUserData= new GenerateUserData();
+    private GenerateNftData generateNftData= new GenerateNftData();
     private Nft nft;
     private Transactions transaction;
     private TransactionsData transactionsData;
@@ -33,22 +35,26 @@ public class TestUserTransactionsIntegration {
 
     @BeforeMethod
     public void setUp() {
+        // create sender
         response = userServiceHelper.createUser(generateUserData.createFullUserData());
         sender = response.as(User.class);
         userToken = sender.getJwtAccessToken();
         senderId = sender.getUserData().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
 
+        // create recipient
         response = userServiceHelper.createUser(generateUserData.createFullUserData());
         recipient = response.as(User.class);
         recipientId = recipient.getUserData().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
 
-        response = nftServiceHelper.createNftOnUser(senderId, userToken);
+        // create Nft on sender
+        response = nftServiceHelper.createNftOnUser(generateNftData.createNftData(senderId), userToken);
         nft = response.as(Nft.class);
         nftId = nft.getNftData().get(0).getNftId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
 
+        // create transaction
         response = transactionsServiceHelper
                 .createTransaction(senderId, userToken, nftId , recipientId);
         transaction =response.as(Transactions.class);

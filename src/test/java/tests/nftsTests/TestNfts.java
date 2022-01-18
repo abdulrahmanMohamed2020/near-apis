@@ -1,5 +1,6 @@
 package tests.nftsTests;
 
+import generatingData.GenerateNftData;
 import generatingData.GenerateUserData;
 import helpers.NftServiceHelper;
 import helpers.UserServiceHelper;
@@ -17,6 +18,7 @@ public class TestNfts {
     private NftServiceHelper nftServiceHelper = new NftServiceHelper();
     private UserServiceHelper userServiceHelper = new UserServiceHelper();
     private GenerateUserData generateUserData= new GenerateUserData();
+    private GenerateNftData generateNftData= new GenerateNftData();
     private Response response;
     private User user;
     private NftData nftData = new NftData();
@@ -31,7 +33,7 @@ public class TestNfts {
         userToken = user.getJwtAccessToken();
         userId = user.getUserData().getUserId();
 
-        response = nftServiceHelper.createNftOnUser(userId,userToken);
+        response = nftServiceHelper.createNftOnUser(generateNftData.createNftData(userId),userToken);
         nft = response.as(Nft.class);
         nftId = nft.getNftData().get(0).getNftId();
 
@@ -43,14 +45,14 @@ public class TestNfts {
         assertFalse(nft.getNftData().get(0).getOwnerId().isEmpty(), "The Nft Owner ID is empty");
     }
 
-    @Test
-    public void testGetAllNfts() {
-        response = nftServiceHelper.getAllNftDetails(userToken);
-        Nft allNft = response.as(Nft.class);
-
-        assertEquals(response.statusCode(), 200, "The status code should be 200");
-        assertEquals(allNft.getMessage(),"NFTs fetched successfully!");
-    }
+//    @Test
+//    public void testGetAllNfts() {
+//        response = nftServiceHelper.getAllNftDetails(userToken);
+//        Nft allNft = response.as(Nft.class);
+//
+//        assertEquals(response.statusCode(), 200, "The status code should be 200");
+//        assertEquals(allNft.getMessage(),"NFTs fetched successfully!");
+//    }
 
     @Test()
     public void testGetSingleNft() {

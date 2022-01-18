@@ -3,20 +3,6 @@
 <suite name="Failed suite [Command line suite]" verbose="0">
   <test thread-count="5" name="Command line test(failed)" verbose="0">
     <classes>
-      <class name="tests.contactsTests.TestContacts">
-        <methods>
-          <include name="setUp"/>
-          <include name="testImportOneOrMoreContacts"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- tests.contactsTests.TestContacts -->
-      <class name="tests.nftsTests.TestNfts">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="testGetAllNfts"/>
-        </methods>
-      </class> <!-- tests.nftsTests.TestNfts -->
       <class name="tests.usersTests.TestUserIntegration">
         <methods>
           <include name="setUpCreateUser"/>

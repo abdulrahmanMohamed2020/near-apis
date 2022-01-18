@@ -13,15 +13,13 @@ import java.io.File;
 public class NftServiceHelper {
     private static final String BASE_URL = ConfigManager.getInstance().getString("baseUrl").replace("\"","");
     private Response response;
-    private NftData nftData = new NftData();
 
     public NftServiceHelper() {
         RestAssured.baseURI = BASE_URL;
     }
 
-    public Response createNftOnUser(String userId,String userToken) {
+    public Response createNftOnUser(NftData nftData,String userToken) {
         File file = new File("resources/test-2.jpg");
-        createNftDataForUser(userId);
 
         response = RestAssured
                 .given().filter(new AllureRestAssured())
@@ -91,11 +89,5 @@ public class NftServiceHelper {
 
         response.prettyPrint();
         return response;
-    }
-
-    public void createNftDataForUser(String userId) {
-        nftData.setTitle("Hello from automation!");
-        nftData.setDescription("This is my automation framework!");
-        nftData.setOwnerId(userId);
     }
 }
