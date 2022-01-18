@@ -37,8 +37,8 @@ public class Login {
         assertNotNull(user.getJwtAccessToken());
         assertNotNull(user.getJwtIdToken());
         assertNotNull(user.getJwtRefreshToken());
-        assertEquals(user.getUserData().getUserId(),"ZA8n8ZASUj6IouGQTPIZZ");
-        assertEquals(user.getUserData().getWalletName(),"permanentuser.near");
-        assertEquals(user.getUserData().getEmail(),"permanentuser.near@test.com");
+        assertEquals(user.getUser_info().getUserId(),"ZA8n8ZASUj6IouGQTPIZZ");
+        assertEquals(user.getUser_info().getWalletName(),"permanentuser.near");
+        assertEquals(user.getUser_info().getEmail(),"permanentuser.near@test.com");
     }
 }

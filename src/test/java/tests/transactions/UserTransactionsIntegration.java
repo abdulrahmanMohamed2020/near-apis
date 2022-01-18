@@ -39,13 +39,13 @@ public class UserTransactionsIntegration {
         response = userServiceControllers.createUser(userDataGeneration.createFullUserData());
         sender = response.as(User.class);
         userToken = sender.getJwtAccessToken();
-        senderId = sender.getUserData().getUserId();
+        senderId = sender.getUser_info().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
 
         // create recipient
         response = userServiceControllers.createUser(userDataGeneration.createFullUserData());
         recipient = response.as(User.class);
-        recipientId = recipient.getUserData().getUserId();
+        recipientId = recipient.getUser_info().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
 
         // create Nft on sender

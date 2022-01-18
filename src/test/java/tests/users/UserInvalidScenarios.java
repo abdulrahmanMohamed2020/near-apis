@@ -25,7 +25,7 @@ public class UserInvalidScenarios {
         actualUser = response.as(User.class);
 
         userToken = actualUser.getJwtAccessToken();
-        userId = actualUser.getUserData().getUserId();
+        userId = actualUser.getUser_info().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
     }
 

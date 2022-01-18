@@ -26,7 +26,7 @@ public class ContactsIntegration {
     public void setUp() {
         user = userServiceControllers.createUser(userDataGeneration.createFullUserData()).as(User.class);
         userToken = user.getJwtAccessToken();
-        ownerId = user.getUserData().getUserId();
+        ownerId = user.getUser_info().getUserId();
 
         response = contactsServiceControllers.createContact(ownerId,userToken);
         contacts = response.as(Contacts.class);

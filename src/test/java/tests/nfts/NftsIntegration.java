@@ -31,7 +31,7 @@ public class NftsIntegration {
     public void setUp() {
         user = userServiceControllers.createUser(userDataGeneration.createFullUserData()).as(User.class);
         userToken = user.getJwtAccessToken();
-        userId = user.getUserData().getUserId();
+        userId = user.getUser_info().getUserId();
 
         nftData = nftDataGeneration.createNftData(userId);
 

@@ -26,13 +26,15 @@ public class UserIntegration {
         response = userServiceControllers.createUser(userData);
         actualUser = response.as(User.class);
 
-        userToken = actualUser.getJwtAccessToken();
-        userId = actualUser.getUserData().getUserId();
         assertEquals(response.statusCode(), 200, "The status code should be 200");
+
+        userToken = actualUser.getJwtAccessToken();
+        userId = actualUser.getUser_info().getUserId();
+
         //assertEquals(actualUser.getUserData().getFullName(),userData.getFullName(),"The full name created wrong");
-        assertEquals(actualUser.getUserData().getWalletName(),userData.getWalletName(),"The wallet name created wrong");
-        assertEquals(actualUser.getUserData().getEmail(),userData.getEmail(),"The email created wrong");
-        assertEquals(actualUser.getUserData().getPhone(),userData.getPhone(),"The phone created wrong");
+        assertEquals(actualUser.getUser_info().getWalletName(),userData.getWalletId(),"The wallet name created wrong");
+        assertEquals(actualUser.getUser_info().getEmail(),userData.getEmail(),"The email created wrong");
+        assertEquals(actualUser.getUser_info().getPhone(),userData.getPhone(),"The phone created wrong");
     }
 
     @Test()
@@ -46,8 +48,8 @@ public class UserIntegration {
         assertEquals(actualUser.getMessage(), "User retrieved successfully!");
         assertNotNull(actualUser, "The user data is empty");
         assertFalse(actualUser.getUserData().getUserId().isEmpty(),"The User ID is empty");
-        assertEquals(actualUser.getUserData().getFullName(),userData.getFullName(),"The full name returned wrong");
-        assertEquals(actualUser.getUserData().getWalletName(),userData.getWalletName(),"The wallet name returned wrong");
+        //assertEquals(actualUser.getUserData().getFullName(),userData.getFullName(),"The full name returned wrong");
+        assertEquals(actualUser.getUserData().getWalletName(),userData.getWalletId(),"The wallet name returned wrong");
         assertEquals(actualUser.getUserData().getEmail(),userData.getEmail(),"The email returned wrong");
         assertEquals(actualUser.getUserData().getPhone(),userData.getPhone(),"The phone returned wrong");
         assertEquals(actualUser.getUserData().getStatus(),"active", "The user status should be Active");

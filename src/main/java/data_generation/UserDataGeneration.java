@@ -9,7 +9,7 @@ public class UserDataGeneration {
 
     public UserData createFullUserData() {
         userData.setFullName(faker.name().fullName());
-        userData.setWalletName(faker.bothify("??????###.near"));
+        userData.setWalletId(faker.bothify("??????###.near"));
         userData.setEmail(faker.bothify("?????##@test.com"));
         userData.setPhone(faker.phoneNumber().cellPhone());
         return userData;
@@ -19,14 +19,14 @@ public class UserDataGeneration {
         userData.setFullName(faker.name().fullName());
         userData.setEmail(faker.bothify("?????##@test.com"));
         userData.setPhone(faker.phoneNumber().phoneNumber());
-        userData.setWalletName(null);
+        userData.setWalletId(null);
 
         return userData;
     }
 
     public UserData createUserDataWithoutEmailAndPhone() {
         userData.setFullName(faker.name().fullName());
-        userData.setWalletName(faker.bothify("???#???##.near"));
+        userData.setWalletId(faker.bothify("???#???##.near"));
         userData.setEmail(null);
         userData.setPhone(null);
 
